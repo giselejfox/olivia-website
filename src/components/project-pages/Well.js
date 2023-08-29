@@ -1,5 +1,3 @@
-
-
 import MainSplash from "../MainSplash"
 import Navbar from "../Navbar"
 
@@ -7,11 +5,12 @@ import ProjectHeader from "../project-sections/ProjectHeader"
 import SectionHeader from "../project-sections/SectionHeader"
 import FullWidthImage from "../project-sections/FullWidthImage"
 import ImageCarousel from "../project-sections/ImageCarousel"
+import TwoColumnImageLayout from "../project-sections/TwoColumnImageLayout"
 
 export default function Well() {
 
 
-    const carouselData = [
+    const researchCarouselImageData = [
         {
             imageTitle: "kettleUser.jpg",
             altText: "picture of earl grey who likes tea"
@@ -34,7 +33,11 @@ export default function Well() {
             <FullWidthImage project="Well" imageName="blackkettlesideboiling.jpg" altText="side view of a black kettle boiling"/>
             <div className="small-spacer"></div>
             <SectionHeader text="RESEARCH" />
-            <ImageCarousel project="Well" imageData={carouselData} />
+            <ImageCarousel project="Well" imageData={researchCarouselImageData} />
+            <SectionHeader text="INSPIRATION" />
+            <FullWidthImage project="Well" imageName="Mood_Boards.jpeg" altText="collage of images showing sophisticated and colorful interiors and sleek metal kettles"/>
+            <SectionHeader text="RAPID VISUALIZATION" />
+            <TwoColumnImageLayout project="Well" imageData={researchCarouselImageData} />
             <Navbar />
             <MainSplash />
         </div>

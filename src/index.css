@@ -56,6 +56,6 @@ a:hover {
   letter-spacing: 2px;
 }
 
-/* .carousel {
-  max-height: calc(100vh - 10rem);
-} */
+.col-image {
+  width: 100%;
+}

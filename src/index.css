@@ -31,3 +31,13 @@ code {
 .small-spacer {
   height: 3rem;
 }
+
+.section-header {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+/* .carousel {
+  max-height: calc(100vh - 10rem);
+} */

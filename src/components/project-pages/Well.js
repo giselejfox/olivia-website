@@ -4,8 +4,9 @@ import MainSplash from "../MainSplash"
 import Navbar from "../Navbar"
 
 import ProjectHeader from "../project-sections/ProjectHeader"
+import SectionHeader from "../project-sections/SectionHeader"
 import FullWidthImage from "../project-sections/FullWidthImage"
-import Carousel from "../project-sections/Carousel"
+import ImageCarousel from "../project-sections/ImageCarousel"
 
 export default function Well() {
 
@@ -32,7 +33,8 @@ export default function Well() {
             /> 
             <FullWidthImage project="Well" imageName="blackkettlesideboiling.jpg" altText="side view of a black kettle boiling"/>
             <div className="small-spacer"></div>
-            <Carousel project="Well" imageData={carouselData} />
+            <SectionHeader text="RESEARCH" />
+            <ImageCarousel project="Well" imageData={carouselData} />
             <Navbar />
             <MainSplash />
         </div>

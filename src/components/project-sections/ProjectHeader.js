@@ -9,14 +9,14 @@ export default function ProjectHeader(props) {
     const date = props.date
 
     return (
-        <div className="container py-5 mb-5">
+        <div className="container py-5">
             <h1 className="mb-4">{title}</h1>
-            <div className="d-flex flex-wrap justify-content-between">
-                <div className="fw-semibold">{description}</div>
-                <div className="d-flex flex-wrap justify-content-end">
-                    <div className="fw-semibold px-3">{projectType}</div>
-                    <div className="fw-semibold px-3">{duration}</div>
-                    <div className="fw-semibold px-3">{date}</div>
+            <div className="d-flex flex-column flex-md-row flex-wrap justify-content-between fw-bold">
+                <div className="pb-3 pb-lg-0">{description}</div>
+                <div className="d-flex flex-column flex-md-row flex-wrap justify-content-end">
+                    <div className="px-0 pb-3 pb-lg-0 pe-md-3">{projectType}</div>
+                    <div className="px-0 pb-3 pb-lg-0 pe-md-3">{duration}</div>
+                    <div className="px-0 pb-3 pb-lg-0 pe-md-3">{date}</div>
                 </div>
             </div>
         </div>

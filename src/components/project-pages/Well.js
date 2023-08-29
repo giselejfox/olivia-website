@@ -9,7 +9,6 @@ import TwoColumnImageLayout from "../project-sections/TwoColumnImageLayout"
 
 export default function Well() {
 
-
     const researchImages = [
         {
             imageTitle: "kettleUser.jpg",
@@ -18,6 +17,14 @@ export default function Well() {
         {
             imageTitle: "kettle-task-analysis-1-4.jpeg",
             altText: "series of pictures showing earl grey pouring tea"  
+        },
+        {
+            imageTitle: "kettle-task-analysis-5-8.jpeg",
+            altText: "series of pictures showing earl grey pouring tea"
+        },
+        {
+            imageTitle: "electrickettle-05.jpg",
+            altText: "competetive landscape matrix"  
         }
     ]
 

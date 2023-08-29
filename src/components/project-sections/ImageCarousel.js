@@ -11,8 +11,10 @@ export default function ImageCarousel({ project, imageData }) {
     })
 
     return (
-        <Carousel>
-            {carouselImages}
-        </Carousel>
+        <div className='container'>
+            <Carousel data-bs-theme="dark">
+                {carouselImages}
+            </Carousel>
+        </div>
     )
 }

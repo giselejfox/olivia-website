@@ -13,7 +13,7 @@ code {
 }
 
 .main-splash {
-  height: calc(100vh - 88px);
+  height: calc(100vh - 136px);
   width: 100%;
   background-color: lightblue;
   background-size: cover;
@@ -22,4 +22,12 @@ code {
 .main-splash-link {
   text-decoration: none;
   color: black;
+}
+
+.full-width-image {
+  width: 100vw;
+}
+
+.small-spacer {
+  height: 3rem;
 }

@@ -12,17 +12,35 @@ code {
     monospace;
 }
 
+a:hover {
+  text-decoration: line-through;
+}
+
 .main-splash {
   height: calc(100vh - 136px);
   width: 100%;
-  background-color: lightblue;
-  background-size: cover;
+  /* background-color: lightblue; */
+  /* background-size: cover; */
 }
 
 .main-splash-link {
   text-decoration: none;
   color: black;
 }
+
+.main-splash-letter {
+  transition: .2s;
+  position: relative;
+  font-size: 4rem;
+  font-weight: 900
+}
+
+@media (min-width: 768px) { 
+  .main-splash-letter {
+    font-size: 8rem;
+  }
+}
+
 
 .full-width-image {
   width: 100vw;

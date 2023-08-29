@@ -16,11 +16,15 @@ a:hover {
   text-decoration: line-through;
 }
 
+.no-bullets {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+}
+
 .main-splash {
   height: calc(100vh - 136px);
   width: 100%;
-  /* background-color: lightblue; */
-  /* background-size: cover; */
 }
 
 .main-splash-link {
@@ -34,13 +38,6 @@ a:hover {
   font-size: 4rem;
   font-weight: 900
 }
-
-@media (min-width: 768px) { 
-  .main-splash-letter {
-    font-size: 8rem;
-  }
-}
-
 
 .full-width-image {
   width: 100vw;
@@ -58,4 +55,46 @@ a:hover {
 
 .col-image {
   width: 100%;
+}
+
+.about-intro {
+  font-size: 72px;
+}
+
+.email-link {
+  color: #e1483d;
+  transition: .5s;
+}
+
+.email-link:hover {
+  color: black;
+}
+
+.circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  background-color: transparent;
+  border: 2px solid #e1483d;
+  font-size: 16px;
+  font-weight: bold;
+  /* color: red; */
+}
+
+
+
+@media (min-width: 768px) { 
+  .main-splash-letter {
+    font-size: 8rem;
+  }
+}
+
+@media (min-width: 992px) { 
+  .about-container {
+    margin-left: 10rem;
+    margin-right: 10rem;
+  }
 }

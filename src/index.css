@@ -16,22 +16,10 @@ a:hover {
   text-decoration: line-through;
 }
 
-.no-bullets {
-  list-style-type: none; /* Remove bullets */
-  padding: 0; /* Remove padding */
-  margin: 0; /* Remove margins */
-}
-
-ul.no-bullets li {
-  margin-bottom: 1.5rem;
-  font-weight: 600;
-}
-
 .main-splash {
   height: 100vh;
   width: 100%;
-  /* background-color: lightblue; */
-  margin-top: -136px
+  margin-top: -136px /* The navbar height*/
 }
 
 .main-splash-link {
@@ -63,6 +51,9 @@ ul.no-bullets li {
   width: 100%;
 }
 
+
+/* _____ ABOUT PAGE ______ */
+
 .about-intro {
   font-size: 72px;
 }
@@ -76,6 +67,7 @@ ul.no-bullets li {
   color: black;
 }
 
+/* The social media links circles */
 .circle {
   display: flex;
   justify-content: center;
@@ -90,7 +82,34 @@ ul.no-bullets li {
   /* color: red; */
 }
 
+.no-bullets {
+  list-style-type: none; /* Remove bullets */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margins */
+}
 
+ul.no-bullets li {
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+
+
+/* _______ SOLE OPINION ________ */
+
+.shoe-text-input {
+  border: none;
+  font-size: 2rem;
+  width: 100%;
+  word-wrap: break-word;
+}
+
+textarea.shoe-text-input:focus {
+  outline: none;
+}
+
+
+/* _______ MEDIA QUERIES _______ */
 
 @media (min-width: 768px) { 
   .main-splash-letter {

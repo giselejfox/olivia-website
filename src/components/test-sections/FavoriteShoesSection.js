@@ -15,7 +15,7 @@ export default function FavoriteShoesPrompt() {
     return (
         <div className="d-flex flex-column">
             <div className="d-flex flex-row justify-content-between">
-                <h1>Prompt</h1>
+                <h1>Tell Me About Your Favorite Shoes</h1>
                 <div className="mb-3">
                     <input
                         type="radio"
@@ -26,7 +26,7 @@ export default function FavoriteShoesPrompt() {
                         checked={!showTextInput}
                         onChange={handleRadioChange}
                     />
-                    <label class="btn" htmlFor="option-drawing">Draw</label>
+                    <label class={"btn border-0 fw-bold " + (!showTextInput ? "text-decoration-line-through" : "")} htmlFor="option-drawing">DRAW</label>
                     <input
                         type="radio"
                         className="btn-check"
@@ -36,7 +36,7 @@ export default function FavoriteShoesPrompt() {
                         checked={showTextInput}
                         onChange={handleRadioChange}
                     />
-                    <label class="btn" htmlFor="option-text">Type</label>
+                    <label className={"btn border-0 fw-bold " + (showTextInput ? "text-decoration-line-through" : "")} htmlFor="option-text">TYPE</label>
                 </div>
             </div>
             {showTextInput ? <TextInput showTextInput={showTextInput} /> : <DrawingArea /> }
@@ -47,18 +47,8 @@ export default function FavoriteShoesPrompt() {
 
 function TextInput({ showTextInput }) {
 
-    // have an imaginary cursor blink
-
-    // return (
-    //     <div class="input-group">
-    //         <span class="input-group-text">Add Text Here</span>
-    //         {/* <textarea class="form-control" aria-label="With textarea"></textarea> */}
-    //         <input type="text" class="rq-form-element" autofocus/>
-    //     </div>
-    // )
-
+    // Makes it so the person can type right away without clicking the 
     const textInputRef = useRef(null);
-
     useEffect(() => {
         if (showTextInput === true) {
             textInputRef.current.focus();
@@ -67,12 +57,14 @@ function TextInput({ showTextInput }) {
 
     return (
         <div>
-          <input
-            className="border-none"
-            type="text"
-            ref={textInputRef}
-            // placeholder="Click the button to focus and start typing here"
-          />
+            <label className="visibility-hidden" for="shoe-text-input"></label>
+            <textarea
+                id='shoe-text-input'
+                className="shoe-text-input"
+                type="text-area"
+                ref={textInputRef}
+                // placeholder="Click the button to focus and start typing here"
+            />
         </div>
     );
 }

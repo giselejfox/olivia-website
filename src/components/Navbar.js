@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom"
 
 export default function Navbar() {
+
+    // Make sure the tab is emphasized / crossed out when we're on thatpage
+
     return (
         <nav className="navbar navbar-expand-lg py-5 px-4">
             <div className="container-fluid">
@@ -15,6 +18,9 @@ export default function Navbar() {
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link active fw-bold"to="/about">ABOUT</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link className="nav-link active fw-bold"to="/test">TEST</Link>
                     </li>
                 </ul>
                 </div>

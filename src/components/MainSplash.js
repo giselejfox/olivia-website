@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 
 export default function MainSplash() {
     return (
-        <div className="main-splash d-flex flex-column justify-content-center align-items-center">
+        <div className="main-splash d-flex flex-column justify-content-center">
             <NameAnimation />
             <ProjectBar />
         </div>
@@ -25,19 +25,19 @@ function NameAnimation() {
         // Change it back after a certain period of time
         setTimeout(function(){
             e.target.removeAttribute("style")
-        }, 1000);
+        }, 1500);
     }
 
     const firstNameElements = firstName.split('').map((letter) => {
-        return <div onMouseOver={moveColorLetter} className="fw-bold main-splash-letter">{letter}</div>
+        return <div onMouseOver={moveColorLetter} className="main-splash-letter">{letter}</div>
     })
 
     const lastNameElements = lastName.split('').map((letter) => {
-        return <div onMouseOver={moveColorLetter} className="fw-bold main-splash-letter">{letter}</div>
+        return <div onMouseOver={moveColorLetter} className="main-splash-letter">{letter}</div>
     })
 
     return (
-        <h1 className="pb-4">
+        <h1 className="pb-4 justify-self-center">
             <div className="d-flex flex-column align-items-center justify-content-center">
                 <div className="d-flex flex-row">
                     {firstNameElements}
@@ -52,7 +52,7 @@ function NameAnimation() {
 
 function ProjectBar() {
     return (
-        <div className="d-flex flex-wrap py-4 justify-content-center">
+        <div className="d-flex flex-wrap justify-content-center project-bar">
             <div className=" mx-2">
                 <Link className="main-splash-link fw-bold" to='/well'>WELL</Link>
             </div>

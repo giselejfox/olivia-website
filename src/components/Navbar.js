@@ -20,7 +20,7 @@ export default function Navbar() {
                         <Link className="nav-link active fw-bold"to="/about">ABOUT</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link active fw-bold"to="/test">TEST</Link>
+                        <Link className="nav-link active fw-bold"to="/test">SOLE OPINION</Link>
                     </li>
                 </ul>
                 </div>

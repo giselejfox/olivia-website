@@ -122,10 +122,8 @@ function DrawingArea({ stageRef, lines, handleSetLines }) {
     };
 
     return (
-        <div className=" text-center text-dark">
+        <div className="text-center text-dark">
             <Stage
-                width={1200}
-                height={600}
                 onMouseDown={handleMouseDown}
                 onMousemove={handleMouseMove}
                 onMouseup={handleMouseUp}

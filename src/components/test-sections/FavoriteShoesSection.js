@@ -1,16 +1,20 @@
 import { useEffect, useRef, useState } from "react";
 import { Stage, Layer, Line } from 'react-konva';
 
+
+
+// TODO: Allow someone to clear the drawing pad
+// TODO: MAYBE allow someone to erase the drawing pad
+
+
+
+
 export default function FavoriteShoesPrompt() {
     const [showTextInput, setShowTextInput] = useState(false)
 
     const handleRadioChange = (e) => {
         setShowTextInput(e.target.value === 'text'); 
     };
-
-    // toggle to match the strikeout like the rest of the webiste
-
-    // cursor just starts blinking for the text box
 
     return (
         <div className="d-flex flex-column">
@@ -47,7 +51,7 @@ export default function FavoriteShoesPrompt() {
 
 function TextInput({ showTextInput }) {
 
-    // Makes it so the person can type right away without clicking the 
+    // Makes it so the person can type right away without clicking the box
     const textInputRef = useRef(null);
     useEffect(() => {
         if (showTextInput === true) {
@@ -63,7 +67,6 @@ function TextInput({ showTextInput }) {
                 className="shoe-text-input"
                 type="text-area"
                 ref={textInputRef}
-                // placeholder="Click the button to focus and start typing here"
             />
         </div>
     );

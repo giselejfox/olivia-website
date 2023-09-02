@@ -1,6 +1,6 @@
 import FavoriteShoesPrompt from "./test-sections/FavoriteShoesSection"
 
-export default function Test() {
+export default function SoleOpinion() {
 
     // Form input 
     //      Ppl could rearrange blocks to least/most important

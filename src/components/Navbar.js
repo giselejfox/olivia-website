@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom"
+import { useLocation } from 'react-router-dom';
 
 export default function Navbar() {
 
-    // Make sure the tab is emphasized / crossed out when we're on thatpage
-
+    const location = useLocation();
+    
     return (
         <nav className="navbar navbar-expand-lg py-5 px-4">
             <div className="container-fluid">
@@ -14,13 +15,22 @@ export default function Navbar() {
                 <div className="collapse navbar-collapse justify-content-end align-middle" id="navbarNav">
                 <ul className="navbar-nav">
                     <li className="nav-item">
-                        <Link className="nav-link active fw-bold" aria-current="page" to="/work">WORK</Link>
+                        <Link 
+                            className={"nav-link active fw-bold " + ( (location.pathname !== '/about' & location.pathname !== '/sole-opinion') ? "text-decoration-line-through" : '')}
+                            to="/work"
+                        >WORK</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link active fw-bold"to="/about">ABOUT</Link>
+                        <Link 
+                            className={"nav-link active fw-bold " + (location.pathname === '/about' ? "text-decoration-line-through" : '')}
+                            to="/about"
+                        >ABOUT</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link active fw-bold"to="/test">SOLE OPINION</Link>
+                        <Link 
+                            className={"nav-link active fw-bold " + (location.pathname === '/sole-opinion' ? "text-decoration-line-through" : '')}
+                            to="/sole-opinion"
+                        >SOLE OPINION</Link>
                     </li>
                 </ul>
                 </div>

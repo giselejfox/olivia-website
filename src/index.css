@@ -16,6 +16,9 @@ a:hover {
   text-decoration: line-through;
 }
 
+
+/* _____ MAIN SPLASH PAGE ______ */
+
 .main-splash {
   height: 100vh;
   width: 100%;
@@ -38,6 +41,9 @@ a:hover {
   /* background-color: blue; */
 }
 
+
+/* _____ PROJECT PAGES ______ */
+
 .full-width-image {
   width: 100vw;
 }
@@ -54,6 +60,18 @@ a:hover {
 
 .col-image {
   width: 100%;
+}
+
+.carousel-indicators {
+  bottom: -60px !important
+}
+
+.carousel-control-next-icon {
+  display: none !important
+}
+
+.carousel-control-prev-icon {
+  display: none !important
 }
 
 

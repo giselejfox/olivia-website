@@ -1,8 +1,9 @@
 
-import React, { useState } from 'react';
+import React from 'react';
 import { DndProvider, useDrag, useDrop } from 'react-dnd';
 import { TouchBackend } from 'react-dnd-touch-backend'; // Import the TouchBackend
 
+// A lot of this was copied from chatgpt and then simplified by me
 
 const ItemType = 'ITEM';
 

@@ -117,6 +117,26 @@ textarea.shoe-text-input:focus {
 }
 
 
+.dnd-item {
+  user-select: none;
+  padding: 8px;
+  margin: 0 8px 0 0;
+  background: lightgrey;
+  display: inline-block;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  width: 8rem;
+  text-align: center;
+}
+
+.dnd-list {
+  display: flex;
+  /* overflowX: auto; */
+  padding: 8px;
+}
+
+
 /* _______ MEDIA QUERIES _______ */
 
 @media (min-width: 768px) { 

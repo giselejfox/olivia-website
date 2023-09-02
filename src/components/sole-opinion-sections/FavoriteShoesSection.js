@@ -50,7 +50,6 @@ export default function FavoriteShoesSection({ canvasRef, favoriteShoeText, hand
                     <ReactSketchCanvasArea canvasRef={canvasRef}/>
                     <CanvasButtons canvasRef={canvasRef} />
                 </div>
-
             }
         </div>
     )

@@ -2,6 +2,7 @@ import { useState, useRef } from "react"
 
 import FavoriteShoesSection from "./sole-opinion-sections/FavoriteShoesSection"
 import DemographicsSection from "./sole-opinion-sections/DemographicsSection";
+import RankingSection from "./sole-opinion-sections/RankingSection";
 
 import { getDownloadURL, getStorage, uploadBytes, ref as storageRef } from "firebase/storage";
 import { getDatabase, ref, set as firebaseSet } from 'firebase/database'
@@ -42,8 +43,6 @@ export default function SoleOpinion() {
 
     // All on white background / fairly minimal
     // Needs to be accessible
-
-
 
 
     // --- Demographics Section States
@@ -133,6 +132,7 @@ export default function SoleOpinion() {
                 lines={lines}
                 handleSetLines={handleSetLines}
             />
+            <RankingSection />
             <button className="btn btn-secondary" onClick={saveInfo} >Save Info</button>
             {/* <div>{favoriteShoeText}</div> */}
         </div>

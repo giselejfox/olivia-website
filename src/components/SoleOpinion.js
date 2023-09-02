@@ -4,6 +4,7 @@ import FavoriteShoesSection from "./sole-opinion-sections/FavoriteShoesSection"
 import DemographicsSection from "./sole-opinion-sections/DemographicsSection";
 
 import { getDownloadURL, getStorage, uploadBytes, ref as storageRef } from "firebase/storage";
+import { getDatabase, ref, set as firebaseSet } from 'firebase/database'
 import { dataURLtoFile } from "../helpers/dataURLtoFile";
 
 export default function SoleOpinion() {
@@ -43,7 +44,7 @@ export default function SoleOpinion() {
     // Needs to be accessible
 
 
-    const storage = getStorage();
+
 
     // --- Demographics Section States
     const [name, setName] = useState('')
@@ -54,7 +55,6 @@ export default function SoleOpinion() {
     const handleSetAge = (newAge) => { setAge(newAge) }
     const handleSetGender = (newGender) => { setGender(newGender) }
 
-
     // --- Favorite Shoe Section States ---
     const [favoriteShoeText, setFavoriteShoeText] = useState('')
     const [lines, setLines] = useState([]);
@@ -64,23 +64,46 @@ export default function SoleOpinion() {
 
     const stageRef = useRef(null);     // drawing pad ref
 
-
     // --- Upload Handlers ---
-    const saveImage = async () => {
+    const saveInfo = async () => {
+
+        // Change to viewing the drawing so we can get the ref
+
+        const db = getDatabase();
+        const storage = getStorage();
+
         // Create the DataURL of the drawing
         const stageDataURL = stageRef.current.toDataURL();
-
         // Create a unique filename
         const filename = `drawing-${Date.now()}`;
-
         // Turn the data URL to a file
         const file = dataURLtoFile(stageDataURL, filename);
-
         // Create a reference to the storage location
         const imageRef = storageRef(storage, 'favoriteShoeDrawing/' + filename + '.jpg');
-      
         // Upload the image to Firebase Storage
         await uploadBytes(imageRef, file)
+        // Get the url to the picture
+        const drawingImageURL = await getDownloadURL(imageRef);
+        // Building the info to pass to firebase realtime database
+        let entryInfo = {
+            name: name,
+            age: age,
+            gender: gender,
+            drawingImage: drawingImageURL
+        }
+        // Pass up the info and then reset the page
+        const entryRef = ref(db, 'entries/' + name + Date.now() )
+        firebaseSet(entryRef, entryInfo)
+            .then(() => {
+                setName('')
+                setAge('')
+                setGender('')
+                setFavoriteShoeText('')
+                setLines([])
+            })
+            .catch((e) => {
+                console.log("There was an error " + e)
+            })
     };
 
     return (
@@ -100,7 +123,7 @@ export default function SoleOpinion() {
                 lines={lines}
                 handleSetLines={handleSetLines}
             />
-            <button className="btn btn-secondary" onClick={saveImage} >Save Info</button>
+            <button className="btn btn-secondary" onClick={saveInfo} >Save Info</button>
             {/* <div>{favoriteShoeText}</div> */}
         </div>
     )

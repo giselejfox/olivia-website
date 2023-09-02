@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 // import { Stage, Layer, Line } from 'react-konva';
 // import Sketch from 'react-p5';
 // import SignatureCanvas from 'react-signature-canvas'

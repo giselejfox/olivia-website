@@ -64,7 +64,7 @@ export default function SoleOpinion() {
     const handleSetFavoriteShoeText = (newText) => { setFavoriteShoeText(newText) }
     const handleSetLines = (newLines) => { setLines(newLines) }
 
-    const stageRef = useRef(null); // drawing pad ref
+    const canvasRef = useRef(null); // drawing pad ref
 
     // --- Upload Handlers ---
     const saveInfo = async () => {
@@ -73,11 +73,18 @@ export default function SoleOpinion() {
         // Change the favorite shoe input to the drawing so we can get the ref to download the image
         await handleSetShowTextInput(false)
         // Create the DataURL of the drawing
-        const stageDataURL = stageRef.current.toDataURL();
+        let canvasDataURL = ''
+        await canvasRef.current.exportImage("png")
+            .then(data => {
+                canvasDataURL = data
+            })
+            .catch(e => {
+                console.log(e);
+            });
         // Create a unique filename
         const filename = `drawing-${Date.now()}`;
         // Turn the data URL to a file
-        const file = dataURLtoFile(stageDataURL, filename);
+        const file = dataURLtoFile(canvasDataURL, filename);
         // Create a reference to the storage location
         const imageRef = storageRef(storage, 'favoriteShoeDrawing/' + filename + '.jpg');
         // Upload the image to Firebase Storage
@@ -120,7 +127,7 @@ export default function SoleOpinion() {
             <FavoriteShoesSection 
                 showTextInput={showTextInput}
                 handleSetShowTextInput={handleSetShowTextInput}
-                stageRef={stageRef} 
+                canvasRef={canvasRef} 
                 favoriteShoeText={favoriteShoeText} 
                 handleSetFavoriteShoeText={handleSetFavoriteShoeText}
                 lines={lines}

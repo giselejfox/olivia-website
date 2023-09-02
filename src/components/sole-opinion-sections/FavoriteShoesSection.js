@@ -1,10 +1,14 @@
 import { useEffect, useRef, useState } from "react";
-import { Stage, Layer, Line } from 'react-konva';
+// import { Stage, Layer, Line } from 'react-konva';
+// import Sketch from 'react-p5';
+// import SignatureCanvas from 'react-signature-canvas'
+import { ReactSketchCanvas } from 'react-sketch-canvas';
+
 
 // TODO: Allow someone to clear the drawing pad
 // TODO: MAYBE allow someone to erase the drawing pad
 
-export default function FavoriteShoesSection({ stageRef, favoriteShoeText, handleSetFavoriteShoeText, lines, handleSetLines, showTextInput, handleSetShowTextInput }) {
+export default function FavoriteShoesSection({ canvasRef, favoriteShoeText, handleSetFavoriteShoeText, lines, handleSetLines, showTextInput, handleSetShowTextInput }) {
 
     const handleRadioChange = (e) => { handleSetShowTextInput(e.target.value === 'text'); };
 
@@ -22,7 +26,7 @@ export default function FavoriteShoesSection({ stageRef, favoriteShoeText, handl
                         checked={!showTextInput}
                         onChange={handleRadioChange}
                     />
-                    <label class={"btn border-0 fw-bold " + (!showTextInput ? "text-decoration-line-through" : "")} htmlFor="option-drawing">DRAW</label>
+                    <label className={"btn border-0 fw-bold " + (!showTextInput ? "text-decoration-line-through" : "")} htmlFor="option-drawing">DRAW</label>
                     <input
                         type="radio"
                         className="btn-check"
@@ -42,16 +46,43 @@ export default function FavoriteShoesSection({ stageRef, favoriteShoeText, handl
                     handleSetFavoriteShoeText={handleSetFavoriteShoeText}
                 /> 
                 : 
-                <DrawingArea 
-                    stageRef={stageRef}
-                    lines={lines}
-                    handleSetLines={handleSetLines}
-                /> 
+                <div>
+                    <ReactSketchCanvasArea canvasRef={canvasRef}/>
+                    <CanvasButtons canvasRef={canvasRef} />
+                </div>
+
             }
         </div>
     )
 }
 
+function ReactSketchCanvasArea({ canvasRef }) {
+    return (
+        <ReactSketchCanvas
+            ref={canvasRef}
+            width="600"
+            height="400"
+            strokeWidth={4}
+            strokeColor="black"
+            className="react-sketch-canvas"
+        />
+    );
+}
+
+function CanvasButtons({ canvasRef }) {
+
+    const handleClearCanvas = () => { canvasRef.current.clearCanvas() }
+    const handleUndo = () => { canvasRef.current.undo() }
+    const handleRedo = () => { canvasRef.current.redo() }
+
+    return (
+        <div className="d-flex flex-row my-3">
+            <button className="btn btn-primary me-3" onClick={handleUndo} >Undo</button>
+            <button className="btn btn-primary me-3" onClick={handleRedo} >Redo</button>
+            <button className="btn btn-primary me-3" onClick={handleClearCanvas} >Clear</button>
+        </div>
+    )
+}
 
 function TextInput({ showTextInput, favoriteShoeText, handleSetFavoriteShoeText }) {
 
@@ -79,74 +110,4 @@ function TextInput({ showTextInput, favoriteShoeText, handleSetFavoriteShoeText 
             />
         </div>
     );
-}
-
-function DrawingArea({ stageRef, lines, handleSetLines }) {
-    // const [lines, setLines] = useState([]);
-    const isDrawing = useRef(false);
-
-    // useEffect(() => {
-    //     //loadImage();
-    // }, [clearLines])
-    
-    const handleMouseDown = (e) => {
-        isDrawing.current = true;
-        const pos = e.target.getStage().getPointerPosition();
-        handleSetLines([...lines, { points: [pos.x, pos.y] }]); // CHANGE LINES HERE
-    };
-    
-    const handleMouseMove = (e) => {
-        // no drawing - skipping
-        if (!isDrawing.current) {
-          return;
-        }
-        const stage = e.target.getStage();
-        const point = stage.getPointerPosition();
-    
-        // To draw line
-        let lastLine = lines[lines.length - 1];
-        
-        if(lastLine) {
-            // add point
-            lastLine.points = lastLine.points.concat([point.x, point.y]);
-                
-            // replace last
-            lines.splice(lines.length - 1, 1, lastLine);
-            handleSetLines(lines.concat());  // CHANGE LINES HERE
-        }
-        
-    };
-    
-    const handleMouseUp = () => {
-        isDrawing.current = false;
-    };
-
-    return (
-        <div className="text-center text-dark">
-            <Stage
-                onMouseDown={handleMouseDown}
-                onMousemove={handleMouseMove}
-                onMouseup={handleMouseUp}
-                className="canvas-stage border"
-                ref={stageRef}
-            >
-                <Layer>
-                    {lines.map((line, i) => (
-                        <Line
-                        key={i}
-                        points={line.points}
-                        stroke="black"
-                        strokeWidth={4}
-                        tension={0.5}
-                        lineCap="round"
-                        lineJoin='round'
-                        globalCompositeOperation={
-                            line.tool === 'eraser' ? 'destination-out' : 'source-over'
-                        }
-                        />
-                    ))}
-                </Layer>
-            </Stage>
-        </div>
-    )
 }

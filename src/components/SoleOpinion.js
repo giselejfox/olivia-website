@@ -64,14 +64,12 @@ export default function SoleOpinion() {
     const handleSetFavoriteShoeText = (newText) => { setFavoriteShoeText(newText) }
     const handleSetLines = (newLines) => { setLines(newLines) }
 
-    const stageRef = useRef(null);     // drawing pad ref
+    const stageRef = useRef(null); // drawing pad ref
 
     // --- Upload Handlers ---
     const saveInfo = async () => {
-
         const db = getDatabase();
         const storage = getStorage();
-
         // Change the favorite shoe input to the drawing so we can get the ref to download the image
         await handleSetShowTextInput(false)
         // Create the DataURL of the drawing
@@ -91,7 +89,8 @@ export default function SoleOpinion() {
             name: name,
             age: age,
             gender: gender,
-            drawingImage: drawingImageURL
+            drawingImage: drawingImageURL,
+            favoriteShoeText: favoriteShoeText
         }
         // Pass up the info and then reset the page
         const entryRef = ref(db, 'entries/' + name + Date.now() )

@@ -111,6 +111,11 @@ textarea.shoe-text-input:focus {
   outline: none;
 }
 
+.canvas-stage {
+  width: 100%;
+  height: 32rem
+}
+
 
 /* _______ MEDIA QUERIES _______ */
 

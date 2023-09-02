@@ -56,6 +56,7 @@ export default function SoleOpinion() {
     const handleSetGender = (newGender) => { setGender(newGender) }
     const handleSetShowTextInput = (newBool) => { setShowTextInput(newBool) }
 
+
     // --- Favorite Shoe Section States ---
     const [favoriteShoeText, setFavoriteShoeText] = useState('')
     const [lines, setLines] = useState([]);
@@ -65,7 +66,15 @@ export default function SoleOpinion() {
 
     const canvasRef = useRef(null); // drawing pad ref
 
-    // --- Upload Handlers ---
+
+    // --- Ranking Section State ---
+    const initialItems = [{ id: 1, title: "sustainability"}, { id: 2, title: "price" }, { id: 3, title: "modularity" }, { id: 4, title: "style" }, { id: 5, title: "durability" }]
+    const [items, setItems] = useState(initialItems);
+
+    const handleSetItems = (newRanking) => { setItems(newRanking) }
+
+
+    // --- Upload Handler ---
     const saveInfo = async () => {
         const db = getDatabase();
         const storage = getStorage();
@@ -132,7 +141,10 @@ export default function SoleOpinion() {
                 lines={lines}
                 handleSetLines={handleSetLines}
             />
-            <RankingSection />
+            <RankingSection 
+                items={items}
+                handleSetItems={handleSetItems}
+            />
             <button className="btn btn-secondary" onClick={saveInfo} >Save Info</button>
             {/* <div>{favoriteShoeText}</div> */}
         </div>

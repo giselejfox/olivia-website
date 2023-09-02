@@ -102,6 +102,9 @@ ul.no-bullets li {
   font-size: 2rem;
   width: 100%;
   word-wrap: break-word;
+  resize: none;
+  height: 50vh;
+  font-weight: 500;
 }
 
 textarea.shoe-text-input:focus {

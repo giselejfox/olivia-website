@@ -127,10 +127,11 @@ function DrawingArea() {
                         <Line
                         key={i}
                         points={line.points}
-                        stroke="#df4b26"
-                        strokeWidth={2}
+                        stroke="black"
+                        strokeWidth={4}
                         tension={0.5}
                         lineCap="round"
+                        lineJoin='round'
                         globalCompositeOperation={
                             line.tool === 'eraser' ? 'destination-out' : 'source-over'
                         }

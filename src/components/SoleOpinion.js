@@ -105,7 +105,8 @@ export default function SoleOpinion() {
             age: age,
             gender: gender,
             drawingImage: drawingImageURL,
-            favoriteShoeText: favoriteShoeText
+            favoriteShoeText: favoriteShoeText,
+            itemRanking: reduceArray(items)
         }
         // Pass up the info and then reset the page
         const entryRef = ref(db, 'entries/' + name + Date.now() )
@@ -120,6 +121,13 @@ export default function SoleOpinion() {
             .catch((e) => {
                 console.log("There was an error " + e)
             })
+    };
+
+    const reduceArray = (array) => {
+        return array.reduce((finalObj, item, index) => {
+          finalObj[index + 1] = item.title
+          return finalObj;
+        }, {});
     };
 
     return (

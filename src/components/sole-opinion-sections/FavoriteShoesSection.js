@@ -4,7 +4,7 @@ import { Stage, Layer, Line } from 'react-konva';
 // TODO: Allow someone to clear the drawing pad
 // TODO: MAYBE allow someone to erase the drawing pad
 
-export default function FavoriteShoesPrompt({ stageRef, favoriteShoeText, handleSetFavoriteShoeText, lines, handleSetLines }) {
+export default function FavoriteShoesSection({ stageRef, favoriteShoeText, handleSetFavoriteShoeText, lines, handleSetLines }) {
     
     const [showTextInput, setShowTextInput] = useState(false)
 

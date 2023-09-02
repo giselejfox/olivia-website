@@ -1,5 +1,7 @@
 import { useState, useRef } from "react"
-import FavoriteShoesPrompt from "./test-sections/FavoriteShoesSection"
+
+import FavoriteShoesSection from "./sole-opinion-sections/FavoriteShoesSection"
+import DemographicsSection from "./sole-opinion-sections/DemographicsSection";
 
 import { getDownloadURL, getStorage, uploadBytes, ref as storageRef } from "firebase/storage";
 import { dataURLtoFile } from "../helpers/dataURLtoFile";
@@ -39,18 +41,31 @@ export default function SoleOpinion() {
 
     // All on white background / fairly minimal
     // Needs to be accessible
+
+
     const storage = getStorage();
 
-    // Text area state
+    // --- Demographics Section States
+    const [name, setName] = useState('')
+    const [age, setAge] = useState('')
+    const [gender, setGender] = useState('')
+
+    const handleSetName = (newName) => { setName(newName) }
+    const handleSetAge = (newAge) => { setAge(newAge) }
+    const handleSetGender = (newGender) => { setGender(newGender) }
+
+
+    // --- Favorite Shoe Section States ---
     const [favoriteShoeText, setFavoriteShoeText] = useState('')
-    const handleSetFavoriteShoeText = (newText) => { setFavoriteShoeText(newText) }
-    
     const [lines, setLines] = useState([]);
+
+    const handleSetFavoriteShoeText = (newText) => { setFavoriteShoeText(newText) }
     const handleSetLines = (newLines) => { setLines(newLines) }
 
-    // drawing pad ref
-    const stageRef = useRef(null);
+    const stageRef = useRef(null);     // drawing pad ref
 
+
+    // --- Upload Handlers ---
     const saveImage = async () => {
         // Create the DataURL of the drawing
         const stageDataURL = stageRef.current.toDataURL();
@@ -70,7 +85,15 @@ export default function SoleOpinion() {
 
     return (
         <div className="container">
-            <FavoriteShoesPrompt 
+            <DemographicsSection 
+                name={name}
+                handleSetName={handleSetName}
+                age={age}
+                handleSetAge={handleSetAge}
+                gender={gender}
+                handleSetGender={handleSetGender}
+            />
+            <FavoriteShoesSection 
                 stageRef={stageRef} 
                 favoriteShoeText={favoriteShoeText} 
                 handleSetFavoriteShoeText={handleSetFavoriteShoeText}

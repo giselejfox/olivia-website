@@ -4,7 +4,7 @@ import { Stage, Layer, Line } from 'react-konva';
 // TODO: Allow someone to clear the drawing pad
 // TODO: MAYBE allow someone to erase the drawing pad
 
-export default function FavoriteShoesPrompt({ stageRef, favoriteShoeText, handleSetFavoriteShoeText }) {
+export default function FavoriteShoesPrompt({ stageRef, favoriteShoeText, handleSetFavoriteShoeText, lines, handleSetLines }) {
     
     const [showTextInput, setShowTextInput] = useState(false)
 
@@ -39,7 +39,19 @@ export default function FavoriteShoesPrompt({ stageRef, favoriteShoeText, handle
                     <label className={"btn border-0 fw-bold " + (showTextInput ? "text-decoration-line-through" : "")} htmlFor="option-text">TYPE</label>
                 </div>
             </div>
-            {showTextInput ? <TextInput showTextInput={showTextInput} favoriteShoeText={favoriteShoeText} handleSetFavoriteShoeText={handleSetFavoriteShoeText}/> : <DrawingArea stageRef={stageRef} /> }
+            {showTextInput ? 
+                <TextInput 
+                    showTextInput={showTextInput} 
+                    favoriteShoeText={favoriteShoeText} 
+                    handleSetFavoriteShoeText={handleSetFavoriteShoeText}
+                /> 
+                : 
+                <DrawingArea 
+                    stageRef={stageRef}
+                    lines={lines}
+                    handleSetLines={handleSetLines}
+                /> 
+            }
         </div>
     )
 }
@@ -73,8 +85,8 @@ function TextInput({ showTextInput, favoriteShoeText, handleSetFavoriteShoeText 
     );
 }
 
-function DrawingArea({ stageRef }) {
-    const [lines, setLines] = useState([]);
+function DrawingArea({ stageRef, lines, handleSetLines }) {
+    // const [lines, setLines] = useState([]);
     const isDrawing = useRef(false);
 
     // useEffect(() => {
@@ -84,7 +96,7 @@ function DrawingArea({ stageRef }) {
     const handleMouseDown = (e) => {
         isDrawing.current = true;
         const pos = e.target.getStage().getPointerPosition();
-        setLines([...lines, { points: [pos.x, pos.y] }]);
+        handleSetLines([...lines, { points: [pos.x, pos.y] }]); // CHANGE LINES HERE
     };
     
     const handleMouseMove = (e) => {
@@ -104,7 +116,7 @@ function DrawingArea({ stageRef }) {
                 
             // replace last
             lines.splice(lines.length - 1, 1, lastLine);
-            setLines(lines.concat());
+            handleSetLines(lines.concat());  // CHANGE LINES HERE
         }
         
     };

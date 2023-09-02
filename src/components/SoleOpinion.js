@@ -45,6 +45,9 @@ export default function SoleOpinion() {
     const [favoriteShoeText, setFavoriteShoeText] = useState('')
     const handleSetFavoriteShoeText = (newText) => { setFavoriteShoeText(newText) }
     
+    const [lines, setLines] = useState([]);
+    const handleSetLines = (newLines) => { setLines(newLines) }
+
     // drawing pad ref
     const stageRef = useRef(null);
 
@@ -67,7 +70,13 @@ export default function SoleOpinion() {
 
     return (
         <div className="container">
-            <FavoriteShoesPrompt stageRef={stageRef} favoriteShoeText={favoriteShoeText} handleSetFavoriteShoeText={handleSetFavoriteShoeText} />
+            <FavoriteShoesPrompt 
+                stageRef={stageRef} 
+                favoriteShoeText={favoriteShoeText} 
+                handleSetFavoriteShoeText={handleSetFavoriteShoeText}
+                lines={lines}
+                handleSetLines={handleSetLines}
+            />
             <button className="btn btn-secondary" onClick={saveImage} >Save Info</button>
             {/* <div>{favoriteShoeText}</div> */}
         </div>

@@ -4,7 +4,9 @@ import { Link } from "react-router-dom"
 
 export default function MainSplash() {
     return (
-        <div className="main-splash d-flex flex-column justify-content-center">
+        <div className="main-splash d-flex flex-column justify-content-between">
+            {/* First div is just to push the NameAnimation to the middle and ProjectBar to the bottom */}
+            <div className="main-splash-spacer"></div> 
             <NameAnimation />
             <ProjectBar />
         </div>
@@ -52,7 +54,7 @@ function NameAnimation() {
 
 function ProjectBar() {
     return (
-        <div className="d-flex flex-wrap justify-content-center project-bar">
+        <div className="d-flex flex-wrap justify-content-center project-bar mb-5 pb-4">
             <div className=" mx-2">
                 <Link className="main-splash-link fw-bold" to='/well'>WELL</Link>
             </div>

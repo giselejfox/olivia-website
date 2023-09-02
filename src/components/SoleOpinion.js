@@ -50,10 +50,12 @@ export default function SoleOpinion() {
     const [name, setName] = useState('')
     const [age, setAge] = useState('')
     const [gender, setGender] = useState('')
+    const [showTextInput, setShowTextInput] = useState(false)
 
     const handleSetName = (newName) => { setName(newName) }
     const handleSetAge = (newAge) => { setAge(newAge) }
     const handleSetGender = (newGender) => { setGender(newGender) }
+    const handleSetShowTextInput = (newBool) => { setShowTextInput(newBool) }
 
     // --- Favorite Shoe Section States ---
     const [favoriteShoeText, setFavoriteShoeText] = useState('')
@@ -67,11 +69,11 @@ export default function SoleOpinion() {
     // --- Upload Handlers ---
     const saveInfo = async () => {
 
-        // Change to viewing the drawing so we can get the ref
-
         const db = getDatabase();
         const storage = getStorage();
 
+        // Change the favorite shoe input to the drawing so we can get the ref to download the image
+        await handleSetShowTextInput(false)
         // Create the DataURL of the drawing
         const stageDataURL = stageRef.current.toDataURL();
         // Create a unique filename
@@ -117,6 +119,8 @@ export default function SoleOpinion() {
                 handleSetGender={handleSetGender}
             />
             <FavoriteShoesSection 
+                showTextInput={showTextInput}
+                handleSetShowTextInput={handleSetShowTextInput}
                 stageRef={stageRef} 
                 favoriteShoeText={favoriteShoeText} 
                 handleSetFavoriteShoeText={handleSetFavoriteShoeText}

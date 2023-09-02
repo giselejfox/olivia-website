@@ -4,13 +4,9 @@ import { Stage, Layer, Line } from 'react-konva';
 // TODO: Allow someone to clear the drawing pad
 // TODO: MAYBE allow someone to erase the drawing pad
 
-export default function FavoriteShoesSection({ stageRef, favoriteShoeText, handleSetFavoriteShoeText, lines, handleSetLines }) {
-    
-    const [showTextInput, setShowTextInput] = useState(false)
+export default function FavoriteShoesSection({ stageRef, favoriteShoeText, handleSetFavoriteShoeText, lines, handleSetLines, showTextInput, handleSetShowTextInput }) {
 
-    const handleRadioChange = (e) => {
-        setShowTextInput(e.target.value === 'text'); 
-    };
+    const handleRadioChange = (e) => { handleSetShowTextInput(e.target.value === 'text'); };
 
     return (
         <div className="d-flex flex-column">

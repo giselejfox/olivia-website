@@ -1,4 +1,8 @@
+import { useState, useRef } from "react"
 import FavoriteShoesPrompt from "./test-sections/FavoriteShoesSection"
+
+import { getDownloadURL, getStorage, uploadBytes, ref as storageRef } from "firebase/storage";
+import { dataURLtoFile } from "../helpers/dataURLtoFile";
 
 export default function SoleOpinion() {
 
@@ -35,12 +39,37 @@ export default function SoleOpinion() {
 
     // All on white background / fairly minimal
     // Needs to be accessible
+    const storage = getStorage();
 
+    // Text area state
+    const [favoriteShoeText, setFavoriteShoeText] = useState('')
+    const handleSetFavoriteShoeText = (newText) => { setFavoriteShoeText(newText) }
+    
+    // drawing pad ref
+    const stageRef = useRef(null);
 
+    const saveImage = async () => {
+        // Create the DataURL of the drawing
+        const stageDataURL = stageRef.current.toDataURL();
+
+        // Create a unique filename
+        const filename = `drawing-${Date.now()}`;
+
+        // Turn the data URL to a file
+        const file = dataURLtoFile(stageDataURL, filename);
+
+        // Create a reference to the storage location
+        const imageRef = storageRef(storage, 'favoriteShoeDrawing/' + filename + '.jpg');
+      
+        // Upload the image to Firebase Storage
+        await uploadBytes(imageRef, file)
+    };
 
     return (
         <div className="container">
-            <FavoriteShoesPrompt />
+            <FavoriteShoesPrompt stageRef={stageRef} favoriteShoeText={favoriteShoeText} handleSetFavoriteShoeText={handleSetFavoriteShoeText} />
+            <button className="btn btn-secondary" onClick={saveImage} >Save Info</button>
+            {/* <div>{favoriteShoeText}</div> */}
         </div>
     )
 

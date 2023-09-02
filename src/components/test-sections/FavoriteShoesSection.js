@@ -1,15 +1,11 @@
 import { useEffect, useRef, useState } from "react";
 import { Stage, Layer, Line } from 'react-konva';
 
-
-
 // TODO: Allow someone to clear the drawing pad
 // TODO: MAYBE allow someone to erase the drawing pad
 
-
-
-
-export default function FavoriteShoesPrompt() {
+export default function FavoriteShoesPrompt({ stageRef, favoriteShoeText, handleSetFavoriteShoeText }) {
+    
     const [showTextInput, setShowTextInput] = useState(false)
 
     const handleRadioChange = (e) => {
@@ -43,13 +39,13 @@ export default function FavoriteShoesPrompt() {
                     <label className={"btn border-0 fw-bold " + (showTextInput ? "text-decoration-line-through" : "")} htmlFor="option-text">TYPE</label>
                 </div>
             </div>
-            {showTextInput ? <TextInput showTextInput={showTextInput} /> : <DrawingArea /> }
+            {showTextInput ? <TextInput showTextInput={showTextInput} favoriteShoeText={favoriteShoeText} handleSetFavoriteShoeText={handleSetFavoriteShoeText}/> : <DrawingArea stageRef={stageRef} /> }
         </div>
     )
 }
 
 
-function TextInput({ showTextInput }) {
+function TextInput({ showTextInput, favoriteShoeText, handleSetFavoriteShoeText }) {
 
     // Makes it so the person can type right away without clicking the box
     const textInputRef = useRef(null);
@@ -59,20 +55,25 @@ function TextInput({ showTextInput }) {
         }
     }, [showTextInput])
 
+    const handleTextChange = (e) => { handleSetFavoriteShoeText(e.target.value) }
+
     return (
         <div>
             <label className="visibility-hidden" for="shoe-text-input"></label>
             <textarea
                 id='shoe-text-input'
+                value={favoriteShoeText}
+                onChange={handleTextChange}
                 className="shoe-text-input"
                 type="text-area"
                 ref={textInputRef}
+                placeholder="my favorite shoes are..."
             />
         </div>
     );
 }
 
-function DrawingArea() {
+function DrawingArea({ stageRef }) {
     const [lines, setLines] = useState([]);
     const isDrawing = useRef(false);
 
@@ -121,6 +122,7 @@ function DrawingArea() {
                 onMousemove={handleMouseMove}
                 onMouseup={handleMouseUp}
                 className="canvas-stage border"
+                ref={stageRef}
             >
                 <Layer>
                     {lines.map((line, i) => (

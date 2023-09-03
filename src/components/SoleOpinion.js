@@ -7,6 +7,7 @@ import RankingSection from "./sole-opinion-sections/RankingSection";
 import { getDownloadURL, getStorage, uploadBytes, ref as storageRef } from "firebase/storage";
 import { getDatabase, ref, set as firebaseSet } from 'firebase/database'
 import { dataURLtoFile } from "../helpers/dataURLtoFile";
+import HeroSection from "./sole-opinion-sections/HeroSection";
 
 export default function SoleOpinion() {
 
@@ -132,6 +133,7 @@ export default function SoleOpinion() {
 
     return (
         <div className="container">
+            <HeroSection />
             <DemographicsSection 
                 name={name}
                 handleSetName={handleSetName}

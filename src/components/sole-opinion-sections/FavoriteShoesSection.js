@@ -26,7 +26,7 @@ export default function FavoriteShoesSection({ canvasRef, favoriteShoeText, hand
                         checked={!showTextInput}
                         onChange={handleRadioChange}
                     />
-                    <label className={"btn border-0 fw-bold " + (!showTextInput ? "text-decoration-line-through" : "")} htmlFor="option-drawing">DRAW</label>
+                    <label className={"btn border-0 fw-bold " + (!showTextInput ? "text-decoration-line-through" : "")} htmlFor="option-drawing">WRITE</label>
                     <input
                         type="radio"
                         className="btn-check"

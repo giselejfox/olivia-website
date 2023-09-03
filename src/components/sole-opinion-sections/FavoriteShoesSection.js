@@ -8,9 +8,23 @@ import { ReactSketchCanvas } from 'react-sketch-canvas';
 // TODO: Allow someone to clear the drawing pad
 // TODO: MAYBE allow someone to erase the drawing pad
 
-export default function FavoriteShoesSection({ canvasRef, favoriteShoeText, handleSetFavoriteShoeText, lines, handleSetLines, showTextInput, handleSetShowTextInput }) {
+export default function FavoriteShoesSection({ canvasRef, favoriteShoeText, handleSetFavoriteShoeText, lines, handleSetLines, showTextInput, handleSetShowTextInput, handleSetShowDrawingWarningModal }) {
 
-    const handleRadioChange = (e) => { handleSetShowTextInput(e.target.value === 'text'); };
+    // const handleRadioChange = (e) => { handleSetShowTextInput(e.target.value === 'text'); };
+    const handleChooseDrawing = () => { handleSetShowTextInput(false) }
+    
+    const handleChooseText = () => {
+        // Check if there are any SVG paths in the canvas / make sure the person hasn't drawn anything
+        const divElement = document.getElementById('react-sketch-canvas');
+        const svgPaths = divElement.getElementsByTagName('path');
+        if (svgPaths.length > 0) {
+            // If they've drawn something we pull up the modal to ask if they want to continue
+            handleSetShowDrawingWarningModal(true)
+        } else {
+            // if they haven't drawn anything then there's nothing to lose and they can head over to typing
+            handleSetShowTextInput(true)
+        }
+    }
 
     return (
         <div className="container vh-100 d-flex flex-column justify-content-center">
@@ -24,7 +38,7 @@ export default function FavoriteShoesSection({ canvasRef, favoriteShoeText, hand
                         id="option-drawing"
                         value="drawing"
                         checked={!showTextInput}
-                        onChange={handleRadioChange}
+                        onChange={handleChooseDrawing}
                     />
                     <label className={"btn border-0 fw-bold " + (!showTextInput ? "text-decoration-line-through" : "")} htmlFor="option-drawing">WRITE</label>
                     <input
@@ -34,7 +48,7 @@ export default function FavoriteShoesSection({ canvasRef, favoriteShoeText, hand
                         id="option-text"
                         value="text"
                         checked={showTextInput}
-                        onChange={handleRadioChange}
+                        onChange={handleChooseText}
                     />
                     <label className={"btn border-0 fw-bold " + (showTextInput ? "text-decoration-line-through" : "")} htmlFor="option-text">TYPE</label>
                 </div>
@@ -64,6 +78,7 @@ function ReactSketchCanvasArea({ canvasRef }) {
             strokeWidth={4}
             strokeColor="black"
             className="react-sketch-canvas"
+            id="react-sketch-canvas"
         />
     );
 }

@@ -1,4 +1,4 @@
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 
 import FavoriteShoesSection from "./sole-opinion-sections/FavoriteShoesSection"
 import DemographicsSection from "./sole-opinion-sections/DemographicsSection";
@@ -8,6 +8,7 @@ import { getDownloadURL, getStorage, uploadBytes, ref as storageRef } from "fire
 import { getDatabase, ref, set as firebaseSet } from 'firebase/database'
 import { dataURLtoFile } from "../helpers/dataURLtoFile";
 import HeroSection from "./sole-opinion-sections/HeroSection";
+import DrawingWarningModal from "./sole-opinion-sections/DrawingWarningModal";
 
 export default function SoleOpinion() {
 
@@ -50,30 +51,35 @@ export default function SoleOpinion() {
     const [name, setName] = useState('')
     const [age, setAge] = useState('')
     const [gender, setGender] = useState('')
-    const [showTextInput, setShowTextInput] = useState(false)
 
     const handleSetName = (newName) => { setName(newName) }
     const handleSetAge = (newAge) => { setAge(newAge) }
     const handleSetGender = (newGender) => { setGender(newGender) }
-    const handleSetShowTextInput = (newBool) => { setShowTextInput(newBool) }
 
 
     // --- Favorite Shoe Section States ---
+    const [showTextInput, setShowTextInput] = useState(false)
     const [favoriteShoeText, setFavoriteShoeText] = useState('')
     const [lines, setLines] = useState([]);
 
+    const handleSetShowTextInput = (newBool) => { setShowTextInput(newBool) }
     const handleSetFavoriteShoeText = (newText) => { setFavoriteShoeText(newText) }
     const handleSetLines = (newLines) => { setLines(newLines) }
 
     const canvasRef = useRef(null); // drawing pad ref
 
 
-    // --- Ranking Section State ---
+    // --- Ranking Section States ---
     const initialItems = [{ id: 1, title: "sustainability"}, { id: 2, title: "price" }, { id: 3, title: "modularity" }, { id: 4, title: "style" }, { id: 5, title: "durability" }]
     const [items, setItems] = useState(initialItems);
 
     const handleSetItems = (newRanking) => { setItems(newRanking) }
 
+
+    // --- Warning Modal State ---
+    const [showDrawingWarningModal, setShowDrawingWarningModal] = useState(false)
+
+    const handleSetShowDrawingWarningModal = (newBool) => { setShowDrawingWarningModal(newBool) }
 
     // --- Upload Handler ---
     const saveInfo = async () => {
@@ -148,8 +154,9 @@ export default function SoleOpinion() {
                 canvasRef={canvasRef} 
                 favoriteShoeText={favoriteShoeText} 
                 handleSetFavoriteShoeText={handleSetFavoriteShoeText}
-                lines={lines}
-                handleSetLines={handleSetLines}
+                // lines={lines}
+                // handleSetLines={handleSetLines}
+                handleSetShowDrawingWarningModal={handleSetShowDrawingWarningModal}
             />
             <RankingSection 
                 items={items}
@@ -157,6 +164,11 @@ export default function SoleOpinion() {
             />
             <button className="btn btn-secondary" onClick={saveInfo} >Save Info</button>
             {/* <div>{favoriteShoeText}</div> */}
+            <DrawingWarningModal 
+                showDrawingWarningModal={showDrawingWarningModal}
+                handleSetShowDrawingWarningModal={handleSetShowDrawingWarningModal}
+                handleSetShowTextInput={handleSetShowTextInput}
+            />
         </div>
     )
 

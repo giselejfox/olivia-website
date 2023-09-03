@@ -9,7 +9,9 @@ export default function DemographicsSection({ name, handleSetName, age, handleSe
     const handleGenderChange = (e) => { handleSetGender(e.target.value) }
 
     return (
-        <div>
+        <div className="container vh-100 d-flex flex-column justify-content-center">
+            <h2 className="fw-bold mb-4" >DEMOGRAPHICS</h2>
+            <p className="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             <form>
                 <div className="d-flex flex-row mb-3 align-items-center">
                     <label htmlFor="nameInput" className="form-label me-4">Name</label>
@@ -19,7 +21,7 @@ export default function DemographicsSection({ name, handleSetName, age, handleSe
                     <label htmlFor="ageInput" className="form-label me-4">Age</label>
                     <input value={age} onChange={handleAgeChange} type="text" className="form-control" id="ageInput" />
                 </div>
-                <div className="d-flex flex-row mb-3 align-items-center">
+                <div className="d-flex flex-column flex-sm-row mb-3 ms-4 ms-sm-0 mt-4 mt-sm-0 align-items-sm-center">
                     <div className="form-check me-4">
                         <input value="Female" checked={gender === 'Female'} onChange={handleGenderChange} className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" />
                         <label className="form-check-label" htmlFor="flexRadioDefault1">

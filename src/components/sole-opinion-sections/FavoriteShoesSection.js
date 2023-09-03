@@ -13,7 +13,7 @@ export default function FavoriteShoesSection({ canvasRef, favoriteShoeText, hand
     const handleRadioChange = (e) => { handleSetShowTextInput(e.target.value === 'text'); };
 
     return (
-        <div className="d-flex flex-column">
+        <div className="container vh-100 d-flex flex-column justify-content-center">
             <div className="d-flex flex-row justify-content-between">
                 <h1>Tell Me About Your Favorite Shoes</h1>
                 <div className="mb-3">

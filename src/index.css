@@ -133,7 +133,7 @@ ul.no-bullets li {
 }
 
 .sole-opinion-hero-section h1 {
-  font-size: 9rem
+  font-size: 4rem
 }
 
 .shoe-text-input {
@@ -204,6 +204,9 @@ textarea.shoe-text-input:focus {
   .main-splash-letter {
     font-size: 8rem;
   }
+  .sole-opinion-hero-section h1 {
+    font-size: 8rem
+  }
 }
 
 @media (min-width: 992px) { 
@@ -219,6 +222,9 @@ textarea.shoe-text-input:focus {
 
   .main-splash-letter {
     font-size: 10rem;
+  }
+  .sole-opinion-hero-section h1 {
+    font-size: 10rem
   }
 
 }

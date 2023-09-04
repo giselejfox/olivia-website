@@ -125,6 +125,7 @@ export default function SoleOpinion() {
                 // handleSetLines={handleSetLines}
                 handleSetShowDrawingWarningModal={handleSetShowDrawingWarningModal}
             />
+            <div className="sole-option-between-spacer"></div>
             <RankingSection 
                 items={items}
                 handleSetItems={handleSetItems}

@@ -28,8 +28,11 @@ export default function FavoriteShoesSection({ canvasRef, favoriteShoeText, hand
 
     return (
         <div className="container d-flex flex-column justify-content-center">
-            <div className="d-flex flex-row justify-content-between">
-                <h2 className="fw-bold">WHAT'S YOUR FAVORITE PAIR OF SHOES AND WHY? HOW LONG HAVE YOU HAD THEM?</h2>
+            <div className="d-flex flex-row justify-content-between align-items-center mb-4">
+                <h2 className="fw-bold d-flex flex-column">
+                    <span>WHAT'S YOUR FAVORITE PAIR OF SHOES AND WHY?</span>
+                    <span>HOW LONG HAVE YOU HAD THEM?</span>
+                </h2>
                 <div className="d-flex flex-nowrap mb-3">
                     <input
                         type="radio"
@@ -91,9 +94,9 @@ function CanvasButtons({ canvasRef }) {
 
     return (
         <div className="d-flex flex-row my-3">
-            <button className="btn btn-primary me-3" onClick={handleUndo} >Undo</button>
-            <button className="btn btn-primary me-3" onClick={handleRedo} >Redo</button>
-            <button className="btn btn-primary me-3" onClick={handleClearCanvas} >Clear</button>
+            <button className="btn btn-dark me-3" onClick={handleUndo} >Undo</button>
+            <button className="btn btn-dark me-3" onClick={handleRedo} >Redo</button>
+            <button className="btn btn-dark me-3" onClick={handleClearCanvas} >Clear</button>
         </div>
     )
 }

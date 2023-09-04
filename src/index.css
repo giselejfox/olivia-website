@@ -148,7 +148,8 @@ ul.no-bullets li {
 .form-check-input:checked[type=radio] {
   background-color: black;
   background-image: none;
-  border-color: black
+  border-color: black;
+  box-shadow: none !important
 }
 
 .form-check-input[type=radio]:not(:checked) {
@@ -158,6 +159,17 @@ ul.no-bullets li {
 .form-check-input[type=radio]:focus {
   outline: none;
   border: none;
+}
+
+.form-check-input[type=text]:focus {
+  outline: none;
+  border: none;
+  box-shadow: none !important
+}
+
+.form-control[type=text]:focus {
+  box-shadow: none;
+  /* border-color: rgb(168, 168, 168) */
 }
 
 .shoe-text-input {

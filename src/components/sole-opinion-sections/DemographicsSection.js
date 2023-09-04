@@ -21,8 +21,8 @@ export default function DemographicsSection({ name, handleSetName, age, handleSe
                     <label htmlFor="ageInput" className="form-label me-4">Age</label>
                     <input value={age} onChange={handleAgeChange} type="text" className="form-control" id="ageInput" />
                 </div>
-                {/* <CustomBlackRadioGenderOptions gender={gender} handleGenderChange={handleGenderChange} /> */}
-                <CustomShoeGenderOptions gender={gender} handleGenderChange={handleGenderChange} />
+                <CustomBlackRadioGenderOptions gender={gender} handleGenderChange={handleGenderChange} />
+                {/* <CustomShoeGenderOptions gender={gender} handleGenderChange={handleGenderChange} /> */}
             </form>
         </div>
     )

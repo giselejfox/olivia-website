@@ -43,8 +43,7 @@ a:hover {
 }
 
 .main-splash-spacer {
-  height: 100px;
-  /* background-color: blue; */
+  height: 100px
 }
 
 
@@ -132,6 +131,10 @@ ul.no-bullets li {
   margin-top: calc(-1 * var(--navbar-height));
 }
 
+.sole-option-between-spacer {
+  height: 5rem;
+}
+
 
 .sole-opinion-hero-section > div {
   opacity: 1
@@ -139,6 +142,22 @@ ul.no-bullets li {
 
 .sole-opinion-hero-section h1 {
   font-size: 4rem
+}
+
+/* Demographics custom black input */
+.form-check-input:checked[type=radio] {
+  background-color: black;
+  background-image: none;
+  border-color: black
+}
+
+.form-check-input[type=radio]:not(:checked) {
+  border: 1px solid #000; /* 1px solid black */
+}
+
+.form-check-input[type=radio]:focus {
+  outline: none;
+  border: none;
 }
 
 .shoe-text-input {

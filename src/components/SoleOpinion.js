@@ -15,7 +15,7 @@ export default function SoleOpinion() {
     // --- Demographics Section States
     const [name, setName] = useState('')
     const [age, setAge] = useState('')
-    const [gender, setGender] = useState('')
+    const [gender, setGender] = useState("starting-blank")
 
     const handleSetName = (newName) => { setName(newName) }
     const handleSetAge = (newAge) => { setAge(newAge) }
@@ -105,6 +105,7 @@ export default function SoleOpinion() {
     return (
         <div>
             <HeroSection />
+            <div className="sole-option-between-spacer"></div>
             <DemographicsSection 
                 name={name}
                 handleSetName={handleSetName}
@@ -113,6 +114,7 @@ export default function SoleOpinion() {
                 gender={gender}
                 handleSetGender={handleSetGender}
             />
+            <div className="sole-option-between-spacer"></div>
             <FavoriteShoesSection 
                 showTextInput={showTextInput}
                 handleSetShowTextInput={handleSetShowTextInput}

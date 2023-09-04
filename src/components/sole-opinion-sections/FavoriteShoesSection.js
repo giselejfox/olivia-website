@@ -27,10 +27,10 @@ export default function FavoriteShoesSection({ canvasRef, favoriteShoeText, hand
     }
 
     return (
-        <div className="container vh-100 d-flex flex-column justify-content-center">
+        <div className="container d-flex flex-column justify-content-center">
             <div className="d-flex flex-row justify-content-between">
-                <h1>Tell Me About Your Favorite Shoes</h1>
-                <div className="mb-3">
+                <h2 className="fw-bold">WHAT'S YOUR FAVORITE PAIR OF SHOES AND WHY? HOW LONG HAVE YOU HAD THEM?</h2>
+                <div className="d-flex flex-nowrap mb-3">
                     <input
                         type="radio"
                         className="btn-check"

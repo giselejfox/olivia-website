@@ -40,7 +40,7 @@ export default function RankingSection({ items, handleSetItems }) {
     };
 
     return (
-        <div className='container vh-100 d-flex flex-column align-items-center justify-content-center d-none d-md-flex'>
+        <div className='container d-flex flex-column align-items-center justify-content-center d-none d-md-flex'>
             <div className='w-100'>
                 <div className='d-flex justify-content-between'>
                     <div>Most Important</div>

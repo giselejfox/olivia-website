@@ -37,6 +37,7 @@ export default function HeroSection() {
 
     const backgroundStyle = {
         backgroundImage: `url(${imageCache[currentBackgroundImage]?.src || ''})`,
+        backgroundSize: 'cover',
     }
 
     return (

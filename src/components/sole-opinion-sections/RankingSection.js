@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 // import { DndProvider, useDrag, useDrop } from 'react-dnd';
 // import { TouchBackend } from 'react-dnd-touch-backend'; // Import the TouchBackend
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
@@ -69,7 +69,70 @@ export default function RankingSection({ items, handleSetItems }) {
             </div>
             <div className='text-nowrap fs-5 fw-semibold'>LEAST</div>
         </div>
+        <TryAgainRanking />
       </div>
+    </div>
+  );
+}
+
+function TryAgainRanking() {
+  const [circles, setCircles] = useState([1, 2, 3, 4, 5]);
+
+  const reorder = (list, startIndex, endIndex) => {
+    const result = Array.from(list);
+    const [removed] = result.splice(startIndex, 1);
+    result.splice(endIndex, 0, removed);
+    return result;
+  };
+
+  const onDragEnd = (result) => {
+    if (!result.destination) {
+      return;
+    }
+
+    const updatedCircles = reorder(
+      circles,
+      result.source.index,
+      result.destination.index
+    );
+
+    setCircles(updatedCircles);
+  };
+
+  return (
+    <div className="App">
+      <h1>Drag and Drop Circles with React Beautiful Dnd</h1>
+      <DragDropContext onDragEnd={onDragEnd}>
+        <Droppable droppableId="circles" direction="horizontal">
+          {(provided) => (
+            <div
+              {...provided.droppableProps}
+              ref={provided.innerRef}
+              className="circle-container d-flex p-4 align-items-end"
+            >
+              {circles.map((circle, index) => (
+                <Draggable
+                  key={circle}
+                  draggableId={circle.toString()}
+                  index={index}
+                >
+                  {(provided) => (
+                    <div
+                      ref={provided.innerRef}
+                      {...provided.draggableProps}
+                      {...provided.dragHandleProps}
+                      className="circle"
+                    >
+                      {circle}
+                    </div>
+                  )}
+                </Draggable>
+              ))}
+              {provided.placeholder}
+            </div>
+          )}
+        </Droppable>
+      </DragDropContext>
     </div>
   );
 }

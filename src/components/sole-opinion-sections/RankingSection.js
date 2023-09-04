@@ -67,7 +67,7 @@ export default function RankingSection({ items, handleSetItems }) {
             <div className="w-100 arrow-container d-flex align-items-center">
                 <div className="line mx-5"></div>
             </div>
-            <div className='text-nowrap fs-5 '>LEAST</div>
+            <div className='text-nowrap fs-5 fw-semibold'>LEAST</div>
         </div>
       </div>
     </div>

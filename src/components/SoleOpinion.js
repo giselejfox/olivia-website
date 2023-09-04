@@ -130,7 +130,10 @@ export default function SoleOpinion() {
                 items={items}
                 handleSetItems={handleSetItems}
             />
-            <button className="btn btn-secondary" onClick={saveInfo} >Save Info</button>
+            <div className="sole-option-between-spacer"></div>
+            <div className="w-100 d-flex justify-content-center py-5">
+                <button className="btn btn-secondary" onClick={saveInfo} >Save Info</button>
+            </div>
             {/* <div>{favoriteShoeText}</div> */}
             <DrawingWarningModal 
                 showDrawingWarningModal={showDrawingWarningModal}

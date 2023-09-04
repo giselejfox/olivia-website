@@ -46,7 +46,7 @@ export default function RankingSection({ items, handleSetItems }) {
   return (
     <div className="container d-flex flex-column align-items-center justify-content-center d-none d-md-flex">
       <DragDropContext onDragEnd={moveItem}>
-        <Droppable droppableId="items">
+        <Droppable droppableId="items" direction="horizontal">
           {(provided) => (
             <div
               {...provided.droppableProps}

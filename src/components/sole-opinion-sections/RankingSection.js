@@ -1,13 +1,7 @@
 import React from 'react';
-import { DndProvider, useDrag, useDrop } from 'react-dnd';
-import { TouchBackend } from 'react-dnd-touch-backend'; // Import the TouchBackend
+// import { DndProvider, useDrag, useDrop } from 'react-dnd';
+// import { TouchBackend } from 'react-dnd-touch-backend'; // Import the TouchBackend
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-
-
-// A lot of this was copied from chatgpt and then simplified by me
-
-
-// const ItemType = 'ITEM';
 
 const Item = ({ item, index }) => {
 
@@ -34,6 +28,7 @@ const Item = ({ item, index }) => {
 };
 
 export default function RankingSection({ items, handleSetItems }) {
+  
   const moveItem = (result) => {
     if (!result.destination) return;
 
@@ -44,89 +39,41 @@ export default function RankingSection({ items, handleSetItems }) {
   };
 
   return (
-    <div className="container d-flex flex-column align-items-center justify-content-center d-none d-md-flex">
-      <DragDropContext onDragEnd={moveItem}>
-        <Droppable droppableId="items" direction="horizontal">
-          {(provided) => (
-            <div
-              {...provided.droppableProps}
-              ref={provided.innerRef}
-              className="d-flex p-4 align-items-end"
-            >
-              {items.map((item, index) => (
-                <Item key={item.id} item={item} index={index} />
-              ))}
-              {provided.placeholder}
+    <div className="container ">
+      <div className='d-flex flex-column'>
+        <h2 className='fw-bold mb-0 me-3'>SHOE VALUES</h2>
+        <p className='fst-italic mb-1'>drag and drop</p>
+      </div>
+      <div className='d-flex flex-column align-items-center justify-content-center d-none d-md-flex'>
+        <DragDropContext onDragEnd={moveItem}>
+          <Droppable droppableId="items" direction="horizontal">
+            {(provided) => (
+              <div
+                {...provided.droppableProps}
+                ref={provided.innerRef}
+                className="d-flex p-4 align-items-end"
+                style={{ display: 'inline-block' }}
+              >
+                {items.map((item, index) => (
+                  <Item key={item.id} item={item} index={index} />
+                ))}
+                {provided.placeholder}
+              </div>
+            )}
+          </Droppable>
+        </DragDropContext>
+        <div className='w-100 d-flex flex-row justify-content-between align-items-center'>
+            <div className='text-nowrap fs-5 fw-semibold'>MOST</div>
+            <div className="w-100 arrow-container d-flex align-items-center">
+                <div className="line mx-5"></div>
             </div>
-          )}
-        </Droppable>
-      </DragDropContext>
-
-      {/* Rest of your component */}
+            <div className='text-nowrap fs-5 '>LEAST</div>
+        </div>
+      </div>
     </div>
   );
 }
 
-
-
-// const ItemType = 'ITEM';
-
-// const Item = ({ item, index, moveItem }) => {
-//   const [, ref] = useDrag({
-//     type: ItemType,
-//     item: { index },
-//   });
-
-//   const [, drop] = useDrop({
-//     accept: ItemType,
-//     hover: (draggedItem) => {
-//       if (draggedItem.index !== index) {
-//         moveItem(draggedItem.index, index);
-//         draggedItem.index = index;
-//       }
-//     },
-//   });
-
-//   console.log(item)
-
-//   return (
-//     <div ref={(node) => ref(drop(node))} className={"dnd-item"}>
-//       <ShoeSvg shoe={item.shoeIcon} />
-//       <div className="mt-3 fw-bold" style={{color: item.textColor}}>{item.title}</div>
-//     </div>
-//   );
-// };
-
-// export default function RankingSection({ items, handleSetItems }) {
-
-//     const moveItem = (fromIndex, toIndex) => {
-//         const updatedItems = [...items];
-//         const [movedItem] = updatedItems.splice(fromIndex, 1);
-//         updatedItems.splice(toIndex, 0, movedItem);
-//         handleSetItems(updatedItems);
-//     };
-
-//     return (
-//         <div className='container d-flex flex-column align-items-center justify-content-center d-none d-md-flex'>
-//             <DndProvider backend={TouchBackend} options={{ enableMouseEvents: true }} >
-//                 <div className="d-flex p-4 align-items-end" >
-//                     {items.map((item, index) => (
-//                         <Item key={item.id} item={item} index={index} moveItem={moveItem} />
-//                     ))}
-//                 </div>
-//             </DndProvider>
-//             <div className='w-100 d-flex flex-row justify-content-between align-items-center'>
-//                 <div className='text-nowrap'>MOST</div>
-//                 <div className="w-100 arrow-container d-flex align-items-center">
-//                     {/* <div className="arrow-left"></div> */}
-//                     <div className="line mx-5"></div>
-//                     {/* <div className="arrow-right"></div> */}
-//                 </div>
-//                 <div className='text-nowrap'>LEAST</div>
-//             </div>
-//         </div>
-//     );
-// }
 
 function ShoeSvg({ shoe }) {
   console.log(shoe)

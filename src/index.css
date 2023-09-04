@@ -133,9 +133,9 @@ ul.no-bullets li {
 }
 
 
-/* .sole-opinion-hero-section > div {
-
-} */
+.sole-opinion-hero-section > div {
+  opacity: 1
+}
 
 .sole-opinion-hero-section h1 {
   font-size: 4rem

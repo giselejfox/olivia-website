@@ -28,7 +28,7 @@ export default function HeroSection() {
         });
         };
 
-        const interval = setInterval(updateBackgroundImage, 500);
+        const interval = setInterval(updateBackgroundImage, 200);
 
         return () => {
         clearInterval(interval);
@@ -36,9 +36,7 @@ export default function HeroSection() {
     }, []);
 
     const backgroundStyle = {
-        // backgroundImage: "url(/img/sole-opinion/sole-opinion-title-" + currentBackgroundImage + ".png",
         backgroundImage: `url(${imageCache[currentBackgroundImage]?.src || ''})`,
-        transition: 'background-image 0.5s ease', // Add a CSS transition for smooth image changes
     }
 
     return (

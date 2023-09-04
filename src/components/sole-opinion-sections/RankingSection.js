@@ -78,6 +78,25 @@ export default function RankingSection({ items, handleSetItems }) {
 function TryAgainRanking() {
   const [circles, setCircles] = useState([1, 2, 3, 4, 5]);
 
+  const draggableElements = circles.map((circle, index) => (
+    <Draggable
+      key={circle}
+      draggableId={circle.toString()}
+      index={index}
+    >
+      {(provided) => (
+        <div
+          ref={provided.innerRef}
+          {...provided.draggableProps}
+          {...provided.dragHandleProps}
+          className="circle"
+        >
+          {circle}
+        </div>
+      )}
+    </Draggable>
+  ))
+
   const reorder = (list, startIndex, endIndex) => {
     const result = Array.from(list);
     const [removed] = result.splice(startIndex, 1);
@@ -110,24 +129,7 @@ function TryAgainRanking() {
               ref={provided.innerRef}
               className="circle-container d-flex p-4 align-items-end"
             >
-              {circles.map((circle, index) => (
-                <Draggable
-                  key={circle}
-                  draggableId={circle.toString()}
-                  index={index}
-                >
-                  {(provided) => (
-                    <div
-                      ref={provided.innerRef}
-                      {...provided.draggableProps}
-                      {...provided.dragHandleProps}
-                      className="circle"
-                    >
-                      {circle}
-                    </div>
-                  )}
-                </Draggable>
-              ))}
+              {draggableElements}
               {provided.placeholder}
             </div>
           )}

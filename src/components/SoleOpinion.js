@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from "react"
+import { useState, useRef } from "react"
 
 import FavoriteShoesSection from "./sole-opinion-sections/FavoriteShoesSection"
 import DemographicsSection from "./sole-opinion-sections/DemographicsSection";
@@ -11,41 +11,6 @@ import HeroSection from "./sole-opinion-sections/HeroSection";
 import DrawingWarningModal from "./sole-opinion-sections/DrawingWarningModal";
 
 export default function SoleOpinion() {
-
-    // Form input 
-    //      Ppl could rearrange blocks to least/most important
-    //      Ppl could draw something (canvas API) // Handwrite response to a question/cursor input
-    //          Toggle between writing and typing
-    //          Bc Liv wants to hand things to people
-    //      Drag and drop pictures of different parts of shoes to make a shoes themselves
-
-
-    // ipad be able to scroll down -- maybe make phone go into horizontal format?
-    // computer be able to scroll down
-
-    // Have one of the responses be in a gallery other people can see
-
-
-    // STRUCTURE
-
-    // beginning demographic info
-    //      Age/gender/name (all optional, can also put pseudonym)
-
-    // Writing/drawing prompt
-    //      Prompt: what they're favorite shoes are and why (how long they've had them) (can add any other details they think are important)
-    
-    // Sorting prompt
-    //      Prompt: sort factors from most to least important 
-    //      Sustainability, price, modularity, style, durability
-
-    // Make your ideal shoe // collage one
-    
-
-    // DESIGN
-
-    // All on white background / fairly minimal
-    // Needs to be accessible
-
 
     // --- Demographics Section States
     const [name, setName] = useState('')
@@ -60,11 +25,11 @@ export default function SoleOpinion() {
     // --- Favorite Shoe Section States ---
     const [showTextInput, setShowTextInput] = useState(false)
     const [favoriteShoeText, setFavoriteShoeText] = useState('')
-    const [lines, setLines] = useState([]);
+    // const [lines, setLines] = useState([]);
 
     const handleSetShowTextInput = (newBool) => { setShowTextInput(newBool) }
     const handleSetFavoriteShoeText = (newText) => { setFavoriteShoeText(newText) }
-    const handleSetLines = (newLines) => { setLines(newLines) }
+    // const handleSetLines = (newLines) => { setLines(newLines) }
 
     const canvasRef = useRef(null); // drawing pad ref
 
@@ -123,7 +88,7 @@ export default function SoleOpinion() {
                 setAge('')
                 setGender('')
                 setFavoriteShoeText('')
-                setLines([])
+                // setLines([])
             })
             .catch((e) => {
                 console.log("There was an error " + e)
@@ -138,7 +103,7 @@ export default function SoleOpinion() {
     };
 
     return (
-        <div className="container">
+        <div>
             <HeroSection />
             <DemographicsSection 
                 name={name}

@@ -35,7 +35,7 @@ export default function SoleOpinion() {
 
 
     // --- Ranking Section States ---
-    const initialItems = [{ id: 1, title: "sustainability"}, { id: 2, title: "price" }, { id: 3, title: "modularity" }, { id: 4, title: "style" }, { id: 5, title: "durability" }]
+    const initialItems = [{ id: 1, title: "sustainability", shoeIcon: "oxford", textColor: "#00471B"}, { id: 2, title: "price", shoeIcon: "birkenstock mule", textColor: "#000BA1"}, { id: 3, title: "modularity", shoeIcon: "cowboy boot", textColor: "#380053" }, { id: 4, title: "style", shoeIcon: "heel", textColor: "#FF84F2" }, { id: 5, title: "durability", shoeIcon: "hiking boot", textColor: "#DE0000" }, { id: 6, title: "comfort", shoeIcon: "sneaker", textColor: "#E1A400" }]
     const [items, setItems] = useState(initialItems);
 
     const handleSetItems = (newRanking) => { setItems(newRanking) }

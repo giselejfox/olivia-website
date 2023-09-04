@@ -204,18 +204,28 @@ textarea.shoe-text-input:focus {
   height: 50vh
 }
 
+/* .undo-svg, .redo-svg, .clear-svg {
+  fill: white
+} */
+
+
+/* Ranking Section */
+
 
 .dnd-item {
   user-select: none;
   padding: 8px;
-  margin: 0 8px 0 0;
+  /* margin: 0 8px 0 0; */
   /* background: lightgrey; */
   display: inline-block;
   border-radius: 16px;
   cursor: pointer;
   transition: background-color 0.2s ease;
-  /* width: 8rem; */
+  width: 10rem;
   text-align: center;
+  height: 12rem;
+  /* align-content: end;
+  display: flex; */
 }
 
 .dnd-list {
@@ -228,22 +238,6 @@ textarea.shoe-text-input:focus {
   width: 100%;
   height: 1px; /* Set the height of the line */
   background-color: rgb(56, 56, 56); /* Line color */
-}
-
-.arrow-left, .arrow-right {
-  width: 10px; /* Set the arrow width */
-  height: 10px; /* Set the arrow height */
-  background-color: black; /* Arrow color */
-}
-
-.arrow-left {
-  left: 0;
-  clip-path: polygon(0% 50%, 100% 0%, 100% 100%);
-}
-
-.arrow-right {
-  right: 0;
-  clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
 }
 
 

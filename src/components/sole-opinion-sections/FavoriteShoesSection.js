@@ -3,6 +3,7 @@ import { useEffect, useRef } from "react";
 // import Sketch from 'react-p5';
 // import SignatureCanvas from 'react-signature-canvas'
 import { ReactSketchCanvas } from 'react-sketch-canvas';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 
 // TODO: Allow someone to clear the drawing pad
@@ -94,9 +95,9 @@ function CanvasButtons({ canvasRef }) {
 
     return (
         <div className="d-flex flex-row my-3">
-            <button className="btn btn-dark me-3" onClick={handleUndo} >Undo</button>
-            <button className="btn btn-dark me-3" onClick={handleRedo} >Redo</button>
-            <button className="btn btn-dark me-3" onClick={handleClearCanvas} >Clear</button>
+            <button className="btn me-3" onClick={handleUndo} ><svg classname="undo-svg" height="1em" viewBox="0 0 512 512"><path d="M212.333 224.333H12c-6.627 0-12-5.373-12-12V12C0 5.373 5.373 0 12 0h48c6.627 0 12 5.373 12 12v78.112C117.773 39.279 184.26 7.47 258.175 8.007c136.906.994 246.448 111.623 246.157 248.532C504.041 393.258 393.12 504 256.333 504c-64.089 0-122.496-24.313-166.51-64.215-5.099-4.622-5.334-12.554-.467-17.42l33.967-33.967c4.474-4.474 11.662-4.717 16.401-.525C170.76 415.336 211.58 432 256.333 432c97.268 0 176-78.716 176-176 0-97.267-78.716-176-176-176-58.496 0-110.28 28.476-142.274 72.333h98.274c6.627 0 12 5.373 12 12v48c0 6.627-5.373 12-12 12z"/></svg></button>
+            <button className="btn me-3" onClick={handleRedo} ><svg classname="redo-svg" height="1em" viewBox="0 0 512 512"><path d="M463.5 224H472c13.3 0 24-10.7 24-24V72c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8H463.5z"/></svg></button>
+            <button className="btn me-3" onClick={handleClearCanvas} ><svg classname="clear-svg" height="1em" viewBox="0 0 384 512"><path d="M376.6 84.5c11.3-13.6 9.5-33.8-4.1-45.1s-33.8-9.5-45.1 4.1L192 206 56.6 43.5C45.3 29.9 25.1 28.1 11.5 39.4S-3.9 70.9 7.4 84.5L150.3 256 7.4 427.5c-11.3 13.6-9.5 33.8 4.1 45.1s33.8 9.5 45.1-4.1L192 306 327.4 468.5c11.3 13.6 31.5 15.4 45.1 4.1s15.4-31.5 4.1-45.1L233.7 256 376.6 84.5z"/></svg></button>
         </div>
     )
 }

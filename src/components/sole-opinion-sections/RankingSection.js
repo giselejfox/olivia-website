@@ -1,8 +1,5 @@
-import React, { useState } from 'react';
-// import { DndProvider, useDrag, useDrop } from 'react-dnd';
-// import { TouchBackend } from 'react-dnd-touch-backend'; // Import the TouchBackend
+import React from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-
 
 const Item = ({ item, index }) => {
 
@@ -70,83 +67,12 @@ export default function RankingSection({ items, handleSetItems }) {
             </div>
             <div className='text-nowrap fs-5 fw-semibold'>LEAST</div>
         </div>
-        {/* <TryAgainRanking /> */}
       </div>
     </div>
   );
 }
 
-function TryAgainRanking() {
-
-  const initialItems = [{ id: 1, title: "sustainability", shoeIcon: "oxford", textColor: "#00471B"}, { id: 2, title: "price", shoeIcon: "birkenstock mule", textColor: "#000BA1"}, { id: 3, title: "modularity", shoeIcon: "cowboy boot", textColor: "#380053" }, { id: 4, title: "style", shoeIcon: "heel", textColor: "#FF84F2" }, { id: 5, title: "durability", shoeIcon: "hiking boot", textColor: "#DE0000" }, { id: 6, title: "comfort", shoeIcon: "sneaker", textColor: "#E1A400" }]
-
-  const [items, setItems] = useState(initialItems);
-
-  const draggableElements = items.map((item, index) => (
-    <Draggable
-      key={item.id}
-      draggableId={item.id.toString()}
-      index={index}
-    >
-      {(provided) => (
-        <div
-          ref={provided.innerRef}
-          {...provided.draggableProps}
-          {...provided.dragHandleProps}
-          className="h-25 dnd-item"
-        >
-          <ShoeSvg shoe={item.shoeIcon} />
-          <div className="mt-3 fw-bold" style={{color: item.textColor}}>{item.title}</div>
-        </div>
-      )}
-    </Draggable>
-  ))
-
-  const reorder = (list, startIndex, endIndex) => {
-    const result = Array.from(list);
-    const [removed] = result.splice(startIndex, 1);
-    result.splice(endIndex, 0, removed);
-    return result;
-  };
-
-  const onDragEnd = (result) => {
-    if (!result.destination) {
-      return;
-    }
-
-    const updateditems = reorder(
-      items,
-      result.source.index,
-      result.destination.index
-    );
-
-    setItems(updateditems);
-  };
-
-  return (
-    <div className="App">
-      <h1>Drag and Drop items with React Beautiful Dnd</h1>
-      <DragDropContext onDragEnd={onDragEnd}>
-        <Droppable droppableId="items" direction="horizontal">
-          {(provided) => (
-            <div
-              {...provided.droppableProps}
-              ref={provided.innerRef}
-              className="d-flex p-4 align-items-end"
-            >
-              {draggableElements}
-              {provided.placeholder}
-            </div>
-          )}
-        </Droppable>
-      </DragDropContext>
-    </div>
-  );
-}
-
-
 function ShoeSvg({ shoe }) {
-  console.log(shoe)
   return (
     <div>
       {shoe === 'oxford' && <OxfordSvg />}

@@ -3,11 +3,7 @@ import { useEffect, useRef } from "react";
 // import Sketch from 'react-p5';
 // import SignatureCanvas from 'react-signature-canvas'
 import { ReactSketchCanvas } from 'react-sketch-canvas';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-
-// TODO: Allow someone to clear the drawing pad
-// TODO: MAYBE allow someone to erase the drawing pad
 
 export default function FavoriteShoesSection({ canvasRef, favoriteShoeText, handleSetFavoriteShoeText, lines, handleSetLines, showTextInput, handleSetShowTextInput, handleSetShowDrawingWarningModal }) {
 

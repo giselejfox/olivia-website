@@ -1,17 +1,23 @@
-import { useState } from "react"
+import React, { useState } from "react";
 import { Link } from "react-router-dom"
 
 import NameColorAnimation from "./name-animations/NameColorAnimation"
 import NameSketchAnimation from "./name-animations/NameSketchAnimation"
 
-
 export default function MainSplash() {
+
+    const [currentAnimation, setCurrentAnimation] = useState(1);
+
+    // Cycles through numbers 1-n (n being after the %)
+    const handleClick = () => {
+        setCurrentAnimation((currentAnimation % 2) + 1);
+    };
+
     return (
-        <div className="main-splash d-flex flex-column justify-content-between">
-            {/* First div is just to push the NameAnimation to the middle and ProjectBar to the bottom */}
-            <div className="main-splash-spacer"></div> 
-            {/* <NameColorAnimation /> */}
-            <NameSketchAnimation />
+        <div className="main-splash d-flex flex-column justify-content-between" onClick={handleClick}>
+            <div className="main-splash-spacer"></div>     {/* First div is just to push the NameAnimation to the middle and ProjectBar to the bottom */}
+            {currentAnimation === 1 && <NameColorAnimation />}
+            {currentAnimation === 2 && <NameSketchAnimation />}
             <ProjectBar />
         </div>
     )

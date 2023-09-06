@@ -42,6 +42,11 @@ a:hover {
   font-weight: 800
 }
 
+.main-splash-svg-letter {
+  position: relative;
+  height: 8rem;
+}
+
 .main-splash-spacer {
   height: 100px
 }

@@ -1,5 +1,6 @@
-
+import { useState } from "react"
 import { Link } from "react-router-dom"
+import LetterSVG from "../svg-banks/LetterSVGs"
 
 
 export default function MainSplash() {
@@ -7,13 +8,54 @@ export default function MainSplash() {
         <div className="main-splash d-flex flex-column justify-content-between">
             {/* First div is just to push the NameAnimation to the middle and ProjectBar to the bottom */}
             <div className="main-splash-spacer"></div> 
-            <NameAnimation />
+            {/* <NameColorAnimation /> */}
+            <NameSketchAnimation />
             <ProjectBar />
         </div>
     )
 }
 
-function NameAnimation() {
+function NameSketchAnimation() {
+
+    const firstName = "OLIVIA"
+    const lastName = "OOMEN"
+
+    const firstNameElements = firstName.split('').map((letter) => {
+        return (
+            <HoverLetter 
+                defaultSvg={<DefaultLetter letter={letter} />} 
+                hoverSvg={<LetterSVG styledLetter={"dotted-" + letter} />} 
+            />
+        )
+    })
+
+    const lastNameElements = lastName.split('').map((letter) => {
+        return (
+            <HoverLetter 
+                defaultSvg={<DefaultLetter letter={letter} />} 
+                hoverSvg={<LetterSVG styledLetter={"dotted-" + letter} />} 
+            />
+        )
+    })
+
+    return (
+        <h1 className="pb-4 justify-self-center">
+            <div className="d-flex flex-column align-items-center justify-content-center">
+                <div className="d-flex flex-row">
+                    {firstNameElements}
+                </div>
+                <div className="d-flex flex-row">
+                    {lastNameElements}
+                </div>
+            </div>
+        </h1>
+    )
+}
+
+function NameColorAnimation() {
+
+    // Whenever someone hovers over a letter it changes color and moves in a random direction and back
+    // after a little bit
 
     const firstName = "OLIVIA"
     const lastName = "OOMEN"
@@ -72,4 +114,34 @@ function ProjectBar() {
             </div>
         </div>
     )
+}
+
+
+function DefaultLetter({letter}) {
+    return (
+        <div className="main-splash-letter">{letter}</div>
+    )
+}
+
+
+function HoverLetter({ defaultSvg, hoverSvg }) {
+    const [isHovered, setIsHovered] = useState(true);
+
+    const handleMouseEnter = () => {
+        setIsHovered(true);
+
+        setTimeout(function(){
+            setIsHovered(false)
+        }, 1500);
+    };
+
+    return (
+        <div
+            className="hover-object d-flex align-items-center justify-content-center align-content-center"
+            onMouseEnter={handleMouseEnter}
+            // onMouseLeave={handleMouseLeave}
+        >
+            {isHovered ? hoverSvg : defaultSvg }
+        </div>
+    );
 }

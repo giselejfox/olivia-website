@@ -3,6 +3,7 @@ import { useState, useRef } from "react"
 import FavoriteShoesSection from "./sole-opinion-sections/FavoriteShoesSection"
 import DemographicsSection from "./sole-opinion-sections/DemographicsSection";
 import RankingSection from "./sole-opinion-sections/RankingSection";
+import CollageSection from "./sole-opinion-sections/CollageSection";
 
 import { getDownloadURL, getStorage, uploadBytes, ref as storageRef } from "firebase/storage";
 import { getDatabase, ref, set as firebaseSet } from 'firebase/database'
@@ -130,6 +131,8 @@ export default function SoleOpinion() {
                 items={items}
                 handleSetItems={handleSetItems}
             />
+            <div className="sole-option-between-spacer"></div>
+            <CollageSection />
             <div className="sole-option-between-spacer"></div>
             <div className="w-100 d-flex justify-content-center py-5">
                 <button className="btn btn-secondary" onClick={saveInfo} >Save Info</button>

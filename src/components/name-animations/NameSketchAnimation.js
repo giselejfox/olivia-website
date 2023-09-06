@@ -6,6 +6,8 @@ import DefaultLetter from "./letters/DefaultLetter"
 
 export default function NameSketchAnimation() {
 
+    // Right now whenever someone hovers over a letter it turns into a bad dashed line
+
     const firstName = "OLIVIA"
     const lastName = "OOMEN"
 

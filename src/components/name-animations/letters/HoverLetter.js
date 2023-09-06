@@ -17,7 +17,7 @@ export default function HoverLetter({ defaultSvg, hoverSvg }) {
             className="hover-object d-flex flex-column justify-content-center"
             onMouseEnter={handleMouseEnter}
         >
-            {isHovered ? <div className='py-4'>{hoverSvg}</div> : defaultSvg }
+            {isHovered ? hoverSvg : defaultSvg }
         </div>
     );
 }

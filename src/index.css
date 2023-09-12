@@ -220,19 +220,17 @@ textarea.shoe-text-input:focus {
 
 /* Ranking Section */
 
-
 .dnd-item {
   user-select: none;
-  padding: 8px;
+  /* padding: 8px; */
   /* margin: 0 8px 0 0; */
-  /* background: lightgrey; */
+  background: rgb(249, 249, 249);
   display: inline-block;
   border-radius: 16px;
   cursor: pointer;
   transition: background-color 0.2s ease;
-  width: 10rem;
+  width: 16rem;
   text-align: center;
-  height: 12rem;
   /* align-content: end;
   display: flex; */
 }
@@ -242,6 +240,40 @@ textarea.shoe-text-input:focus {
   /* overflowX: auto; */
   padding: 8px;
 }
+
+.dnd-svg {
+  width: 4rem;
+}
+
+@media (min-width: 576px) {
+  .dnd-item {
+    user-select: none;
+    padding: 8px;
+    /* margin: 0 8px 0 0; */
+    /* background: lightgrey; */
+    display: inline-block;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: 10rem;
+    text-align: center;
+    height: 12rem;
+    /* align-content: end;
+    display: flex; */
+  }
+  
+  .dnd-list {
+    display: flex;
+    /* overflowX: auto; */
+    padding: 8px;
+  }
+  
+  .dnd-svg {
+    width: 4rem;
+  }
+}
+  
+
 
 .line {
   width: 100%;

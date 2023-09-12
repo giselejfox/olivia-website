@@ -241,18 +241,9 @@ textarea.shoe-text-input:focus {
 
 @media (min-width: 576px) {
   .dnd-item {
-    user-select: none;
     display: flex;
-    border-radius: 16px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
     width: auto;
-    text-align: center;
     height: 7rem;
-  }
-  
-  .dnd-list {
-    display: flex;
   }
   
   .dnd-svg {
@@ -262,18 +253,7 @@ textarea.shoe-text-input:focus {
 
 @media (min-width: 768px) {
   .dnd-item {
-    user-select: none;
-    display: flex;
-    border-radius: 16px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-    width: auto;
-    text-align: center;
     height: 10rem;
-  }
-  
-  .dnd-list {
-    display: flex;
   }
   
   .dnd-svg {
@@ -283,18 +263,7 @@ textarea.shoe-text-input:focus {
 
 @media (min-width: 992px) {
   .dnd-item {
-    user-select: none;
-    display: flex;
-    border-radius: 16px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-    width: auto;
-    text-align: center;
     height: 12rem;
-  }
-  
-  .dnd-list {
-    display: flex;
   }
   
   .dnd-svg {
@@ -304,18 +273,7 @@ textarea.shoe-text-input:focus {
 
 @media (min-width: 1200px) {
   .dnd-item {
-    user-select: none;
-    display: flex;
-    border-radius: 16px;
-    cursor: pointer;
-    transition: background-color 0.2s ease;
-    width: auto;
-    text-align: center;
     height: 15rem;
-  }
-  
-  .dnd-list {
-    display: flex;
   }
   
   .dnd-svg {

@@ -26,9 +26,42 @@ export default function CollageSection() {
                     <TestUpperSVG num={upperNum} svgClasses={"collage-upper-svg"}/>
                     <TestLowerSVG num={lowerNum} wrapperClasses={"collage-element-lower"} svgClasses={"collage-lower-svg"} />
                 </div>
+                <SelectionButtons handleSetCurrentSelection={handleSetCurrentSelection}/>
                 {currentSelection === "uppers" && <ResponsiveSelectionCarousel selection={"uppers"} selectionData={upperSVGData} handleSetNum={handleSetUpperNum} />}
                 {currentSelection === "lowers" && <ResponsiveSelectionCarousel selection={"lowers"} selectionData={lowerSVGData} handleSetNum={handleSetLowerNum} />}
             </div>
+        </div>
+    )
+}
+
+function SelectionButtons({ currentSelection, handleSetCurrentSelection }) {
+
+    const handleClick = (e) => { handleSetCurrentSelection(e.target.value) }
+
+    console.log(currentSelection)
+
+    return (
+        <div className='mb-4'>
+            <input
+                type="radio"
+                className="btn-check"
+                name="options-base"
+                id="option-uppers"
+                value="uppers"
+                checked={currentSelection === "uppers"}
+                onChange={handleClick}
+            />
+            <label className={"btn border-0 fw-bold " + (currentSelection === "uppers" ? "text-decoration-line-through" : "")} htmlFor="option-uppers">UPPERS</label>
+            <input
+                type="radio"
+                className="btn-check"
+                name="options-base"
+                id="option-lowers"
+                value="lowers"
+                checked={currentSelection === "lowers"}
+                onChange={handleClick}
+            />
+            <label className={"btn border-0 fw-bold " + (currentSelection === "lowers" ? "text-decoration-line-through" : "")} htmlFor="option-lowers">LOWERS</label>
         </div>
     )
 }

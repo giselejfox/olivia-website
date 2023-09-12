@@ -3,9 +3,7 @@ import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
 const Item = ({ item, index }) => {
 
-  console.log('item.id:', item.id);
   const draggableId = item.id.toString(); // Ensure it's a string
-  console.log('draggableId:', draggableId);
 
   return (
     <Draggable draggableId={draggableId} index={index}>

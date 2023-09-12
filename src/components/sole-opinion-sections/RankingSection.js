@@ -35,20 +35,23 @@ export default function RankingSection({ items, handleSetItems }) {
     handleSetItems(updatedItems);
   };
 
+  const width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
   return (
     <div className="container ">
       <div className='d-flex flex-column'>
         <h2 className='fw-bold mb-0 me-3'>SHOE VALUES</h2>
         <p className='fst-italic mb-1 my-3'>Drag and drop the values below from most to least</p>
       </div>
-      <div className='d-flex flex-column align-items-center justify-content-center d-sm-none d-lg-flex py-5'>
+      <div className='fw-bold mt-4 d-sm-none'>MOST VALUED</div>
+      <div className='d-flex flex-sm-column align-items-center justify-content-center'>
         <DragDropContext onDragEnd={moveItem}>
-          <Droppable droppableId="items" direction="vertical">
+          <Droppable droppableId="items" direction={width < 576 ? "vertical" : "horizontal"}>
             {(provided) => (
               <div
                 {...provided.droppableProps}
                 ref={provided.innerRef}
-                className="d-flex flex-column p-4 align-items-center w-100"
+                className="d-flex flex-column flex-sm-row p-4 align-items-center w-100"
                 // style={{ display: 'inline-block' }}
               >
                 {items.map((item, index) => (
@@ -59,14 +62,17 @@ export default function RankingSection({ items, handleSetItems }) {
             )}
           </Droppable>
         </DragDropContext>
-        {/* <div className='w-100 d-flex flex-row justify-content-between align-items-center'>
+
+        {/* Horizonatal line on sm and up*/}
+        <div className='w-100 d-none d-sm-flex flex-row justify-content-between align-items-center'>
             <div className='text-nowrap fs-5 fw-semibold'>MOST</div>
             <div className="w-100 arrow-container d-flex align-items-center">
                 <div className="line mx-5"></div>
             </div>
             <div className='text-nowrap fs-5 fw-semibold'>LEAST</div>
-        </div> */}
+        </div>
       </div>
+      <div className='fw-bold d-sm-none'>LEAST VALUED</div>
     </div>
   );
 }

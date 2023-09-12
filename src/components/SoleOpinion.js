@@ -26,11 +26,9 @@ export default function SoleOpinion() {
     // --- Favorite Shoe Section States ---
     const [showTextInput, setShowTextInput] = useState(false)
     const [favoriteShoeText, setFavoriteShoeText] = useState('')
-    // const [lines, setLines] = useState([]);
 
     const handleSetShowTextInput = (newBool) => { setShowTextInput(newBool) }
     const handleSetFavoriteShoeText = (newText) => { setFavoriteShoeText(newText) }
-    // const handleSetLines = (newLines) => { setLines(newLines) }
 
     const canvasRef = useRef(null); // drawing pad ref
 
@@ -46,6 +44,7 @@ export default function SoleOpinion() {
     const [showDrawingWarningModal, setShowDrawingWarningModal] = useState(false)
 
     const handleSetShowDrawingWarningModal = (newBool) => { setShowDrawingWarningModal(newBool) }
+    
 
     // --- Upload Handler ---
     const saveInfo = async () => {
@@ -122,8 +121,6 @@ export default function SoleOpinion() {
                 canvasRef={canvasRef} 
                 favoriteShoeText={favoriteShoeText} 
                 handleSetFavoriteShoeText={handleSetFavoriteShoeText}
-                // lines={lines}
-                // handleSetLines={handleSetLines}
                 handleSetShowDrawingWarningModal={handleSetShowDrawingWarningModal}
             />
             <div className="sole-option-between-spacer"></div>

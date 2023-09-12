@@ -1,13 +1,9 @@
 import { useEffect, useRef } from "react";
-// import { Stage, Layer, Line } from 'react-konva';
-// import Sketch from 'react-p5';
-// import SignatureCanvas from 'react-signature-canvas'
 import { ReactSketchCanvas } from 'react-sketch-canvas';
 
 
 export default function FavoriteShoesSection({ canvasRef, favoriteShoeText, handleSetFavoriteShoeText, lines, handleSetLines, showTextInput, handleSetShowTextInput, handleSetShowDrawingWarningModal }) {
 
-    // const handleRadioChange = (e) => { handleSetShowTextInput(e.target.value === 'text'); };
     const handleChooseDrawing = () => { handleSetShowTextInput(false) }
     
     const handleChooseText = () => {

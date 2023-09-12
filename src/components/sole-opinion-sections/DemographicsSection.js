@@ -28,41 +28,41 @@ export default function DemographicsSection({ name, handleSetName, age, handleSe
     )
 }
 
-function CustomBlackRadioGenderOptions({ gender, handleGenderChange }) {
+// function CustomBlackRadioGenderOptions({ gender, handleGenderChange }) {
 
-    const otherChecked = gender !== 'Female' && gender !== 'Male' && gender !== 'Non-binary' && gender !== 'starting-blank'
+//     const otherChecked = gender !== 'Female' && gender !== 'Male' && gender !== 'Non-binary' && gender !== 'starting-blank'
 
-    return (
-        <div className="d-flex flex-column flex-sm-row mb-3 ms-4 ms-sm-0 mt-4 mt-sm-0 align-items-sm-center">
-            <div className="form-check me-4">
-                <input value="Female" checked={gender === 'Female'} onChange={handleGenderChange} className="form-check-input" type="radio" name="flexRadioDefault" id="femaleRadio" />
-                <label className="form-check-label" htmlFor="femaleRadio">
-                    Female
-                </label>
-            </div>
-            <div className="form-check me-4">
-                <input value="Male" checked={gender === 'Male'} onChange={handleGenderChange} className="form-check-input" type="radio" name="flexRadioDefault" id="maleRadio" />
-                <label className="form-check-label" htmlFor="maleRadio">
-                    Male
-                </label>
-            </div>
-            <div className="form-check me-4">
-                <input value="Non-binary" checked={gender === 'Non-binary'} onChange={handleGenderChange} className="form-check-input" type="radio" name="flexRadioDefault" id="nonBianryRadio" />
-                <label className="form-check-label" htmlFor="nonBianryRadio">
-                    Non-binary
-                </label>
-            </div>
-            <div className="form-check d-flex flex-row align-items-center">
-                <label className="form-check-label visually-hidden" htmlFor="otherRadio">Other Gender Select</label>
-                <input className="form-check-input me-2" checked={otherChecked} value="Not Listed" onChange={handleGenderChange} type="radio" name="flexRadioDefault" id="otherRadio" />
-            </div>
-            <div className="">
-                <label className="form-label visually-hidden" htmlFor="genderTextInpu">Other Gender Input</label>
-                <input value={otherChecked ? gender : 'Not Listed'} onChange={handleGenderChange} type="text" className="form-control" id="genderTextInput" />
-            </div>
-        </div>
-    )
-}
+//     return (
+//         <div className="d-flex flex-column flex-sm-row mb-3 ms-4 ms-sm-0 mt-4 mt-sm-0 align-items-sm-center">
+//             <div className="form-check me-4">
+//                 <input value="Female" checked={gender === 'Female'} onChange={handleGenderChange} className="form-check-input" type="radio" name="flexRadioDefault" id="femaleRadio" />
+//                 <label className="form-check-label" htmlFor="femaleRadio">
+//                     Female
+//                 </label>
+//             </div>
+//             <div className="form-check me-4">
+//                 <input value="Male" checked={gender === 'Male'} onChange={handleGenderChange} className="form-check-input" type="radio" name="flexRadioDefault" id="maleRadio" />
+//                 <label className="form-check-label" htmlFor="maleRadio">
+//                     Male
+//                 </label>
+//             </div>
+//             <div className="form-check me-4">
+//                 <input value="Non-binary" checked={gender === 'Non-binary'} onChange={handleGenderChange} className="form-check-input" type="radio" name="flexRadioDefault" id="nonBianryRadio" />
+//                 <label className="form-check-label" htmlFor="nonBianryRadio">
+//                     Non-binary
+//                 </label>
+//             </div>
+//             <div className="form-check d-flex flex-row align-items-center">
+//                 <label className="form-check-label visually-hidden" htmlFor="otherRadio">Other Gender Select</label>
+//                 <input className="form-check-input me-2" checked={otherChecked} value="Not Listed" onChange={handleGenderChange} type="radio" name="flexRadioDefault" id="otherRadio" />
+//             </div>
+//             <div className="">
+//                 <label className="form-label visually-hidden" htmlFor="genderTextInpu">Other Gender Input</label>
+//                 <input value={otherChecked ? gender : 'Not Listed'} onChange={handleGenderChange} type="text" className="form-control" id="genderTextInput" />
+//             </div>
+//         </div>
+//     )
+// }
 
 function CustomShoeGenderOptions({ gender, handleGenderChange }) {
     return (

@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 
 import Slider from 'react-slick';
+import ArrowBackIosIcon from '@mui/icons-material/ArrowBackIos';
+import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
+
 import { TestUpperSVG, upperSVGData } from '../../svg-banks/TestUpperSVG';
 import { TestLowerSVG, lowerSVGData } from '../../svg-banks/TestLowerSVG';
 
@@ -21,6 +24,10 @@ export default function CollageSection() {
 
     return (
         <div className="collage-section container">
+            <div className='d-flex flex-column'>
+                <h2 className='fw-bold mb-0 me-3'>DREAM SHOE</h2>
+                <p className='fst-italic my-3 mb-5'>Choose from the different uppers, lowers, and accessories to create your dream shoe</p>
+            </div>
             <div className='d-flex flex-column align-items-center'>
                 <div className='collage-result mb-5'>
                     <TestUpperSVG num={upperNum} svgClasses={"collage-upper-svg"}/>
@@ -94,6 +101,8 @@ function ResponsiveSelectionCarousel({ selection, selectionData, handleSetNum })
         speed: 500,
         slidesToShow: 3, // Number of slides to show at once
         slidesToScroll: 2,
+        prevArrow: <ArrowBackIosIcon sx={{ color: "black" }} />,
+        nextArrow: <ArrowForwardIosIcon sx={{ color: "black" }} />,
         responsive: [
             {
                 breakpoint: 1024,

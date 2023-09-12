@@ -9,12 +9,14 @@ const Item = ({ item, index }) => {
 
   const lighterColor = lightenColor(item.textColor, 95);
 
+  const width  = window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+
   return (
     <Draggable draggableId={draggableId} index={index}>
       {(provided) => (
-        <div {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef} className="dnd-item mx-4 my-1">
+        <div {...provided.draggableProps} {...provided.dragHandleProps} ref={provided.innerRef} className="dnd-item mx-4 mx-sm-0 my-1">
           {/* Your item content here */}
-          <div className="w-100 p-3 rounded d-flex flex-sm-column justify-content-evenly align-items-center" style={{backgroundColor: lighterColor}}>
+          <div className="w-100 p-3 p-sm-2 p-lg-3 p-xl-4 rounded d-flex flex-sm-column justify-content-evenly justify-content-sm-end align-items-center" style={width < 576 ? {backgroundColor: lighterColor} : {}}>
             <RankingShoeSvg shoe={item.shoeIcon} />
             <div className="fw-bold" style={{color: item.textColor}}>{item.title}</div>
           </div>
@@ -41,7 +43,7 @@ export default function RankingSection({ items, handleSetItems }) {
     <div className="container ">
       <div className='d-flex flex-column'>
         <h2 className='fw-bold mb-0 me-3'>SHOE VALUES</h2>
-        <p className='fst-italic mb-1 my-3'>Drag and drop the values below from most to least</p>
+        <p className='fst-italic mb-1 my-3'>Drag and drop the values below based on what you value most in a shoe</p>
       </div>
       <div className='fw-bold mt-4 d-sm-none'>MOST VALUED</div>
       <div className='d-flex flex-sm-column align-items-center justify-content-center'>
@@ -51,8 +53,7 @@ export default function RankingSection({ items, handleSetItems }) {
               <div
                 {...provided.droppableProps}
                 ref={provided.innerRef}
-                className="d-flex flex-column flex-sm-row p-4 align-items-center w-100"
-                // style={{ display: 'inline-block' }}
+                className="d-flex flex-column flex-sm-row p-4 p-sm-0 align-items-center justify-content-sm-center w-100 mb-sm-3"
               >
                 {items.map((item, index) => (
                   <Item key={item.id} item={item} index={index} />
@@ -65,11 +66,11 @@ export default function RankingSection({ items, handleSetItems }) {
 
         {/* Horizonatal line on sm and up*/}
         <div className='w-100 d-none d-sm-flex flex-row justify-content-between align-items-center'>
-            <div className='text-nowrap fs-5 fw-semibold'>MOST</div>
+            <div className='text-nowrap fs-sm-6 fw-semibold'>MOST</div>
             <div className="w-100 arrow-container d-flex align-items-center">
                 <div className="line mx-5"></div>
             </div>
-            <div className='text-nowrap fs-5 fw-semibold'>LEAST</div>
+            <div className='text-nowrap fs-sm-6 fw-semibold'>LEAST</div>
         </div>
       </div>
       <div className='fw-bold d-sm-none'>LEAST VALUED</div>

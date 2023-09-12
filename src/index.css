@@ -222,22 +222,16 @@ textarea.shoe-text-input:focus {
 
 .dnd-item {
   user-select: none;
-  /* padding: 8px; */
-  /* margin: 0 8px 0 0; */
-  background: rgb(249, 249, 249);
   display: inline-block;
   border-radius: 16px;
   cursor: pointer;
   transition: background-color 0.2s ease;
   width: 16rem;
   text-align: center;
-  /* align-content: end;
-  display: flex; */
 }
 
 .dnd-list {
   display: flex;
-  /* overflowX: auto; */
   padding: 8px;
 }
 
@@ -248,30 +242,87 @@ textarea.shoe-text-input:focus {
 @media (min-width: 576px) {
   .dnd-item {
     user-select: none;
-    padding: 8px;
-    /* margin: 0 8px 0 0; */
-    /* background: lightgrey; */
-    display: inline-block;
+    display: flex;
     border-radius: 16px;
     cursor: pointer;
     transition: background-color 0.2s ease;
-    width: 10rem;
+    width: auto;
     text-align: center;
-    height: 12rem;
-    /* align-content: end;
-    display: flex; */
+    height: 7rem;
   }
   
   .dnd-list {
     display: flex;
-    /* overflowX: auto; */
-    padding: 8px;
   }
   
   .dnd-svg {
-    width: 4rem;
+    width: 3rem;
   }
 }
+
+@media (min-width: 768px) {
+  .dnd-item {
+    user-select: none;
+    display: flex;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: auto;
+    text-align: center;
+    height: 10rem;
+  }
+  
+  .dnd-list {
+    display: flex;
+  }
+  
+  .dnd-svg {
+    width: 6rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .dnd-item {
+    user-select: none;
+    display: flex;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: auto;
+    text-align: center;
+    height: 12rem;
+  }
+  
+  .dnd-list {
+    display: flex;
+  }
+  
+  .dnd-svg {
+    width: 7rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .dnd-item {
+    user-select: none;
+    display: flex;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    width: auto;
+    text-align: center;
+    height: 15rem;
+  }
+  
+  .dnd-list {
+    display: flex;
+  }
+  
+  .dnd-svg {
+    width: 8rem;
+  }
+}
+  
   
 
 

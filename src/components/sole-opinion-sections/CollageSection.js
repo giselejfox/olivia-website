@@ -13,7 +13,7 @@ export default function CollageSection() {
 
     const [upperNum, setUpperNum] = useState(1)
     const [lowerNum, setLowerNum] = useState(1)
-    const [currentSelection, setCurrentSelection] = useState("lowers")
+    const [currentSelection, setCurrentSelection] = useState("uppers")
 
     const handleSetUpperNum = (num) => { setUpperNum(num) }
     const handleSetLowerNum = (num) => { setLowerNum(num) }
@@ -26,7 +26,7 @@ export default function CollageSection() {
                     <TestUpperSVG num={upperNum} svgClasses={"collage-upper-svg"}/>
                     <TestLowerSVG num={lowerNum} wrapperClasses={"collage-element-lower"} svgClasses={"collage-lower-svg"} />
                 </div>
-                <SelectionButtons handleSetCurrentSelection={handleSetCurrentSelection}/>
+                <SelectionButtons currentSelection={currentSelection} handleSetCurrentSelection={handleSetCurrentSelection}/>
                 {currentSelection === "uppers" && <ResponsiveSelectionCarousel selection={"uppers"} selectionData={upperSVGData} handleSetNum={handleSetUpperNum} />}
                 {currentSelection === "lowers" && <ResponsiveSelectionCarousel selection={"lowers"} selectionData={lowerSVGData} handleSetNum={handleSetLowerNum} />}
             </div>
@@ -34,11 +34,11 @@ export default function CollageSection() {
     )
 }
 
+
+
 function SelectionButtons({ currentSelection, handleSetCurrentSelection }) {
 
     const handleClick = (e) => { handleSetCurrentSelection(e.target.value) }
-
-    console.log(currentSelection)
 
     return (
         <div className='mb-4'>

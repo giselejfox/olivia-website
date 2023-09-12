@@ -201,7 +201,7 @@ ul.no-bullets li {
 
 .shoe-text-input {
   border: none;
-  font-size: 2rem;
+  font-size: 1.5rem;
   width: 100%;
   word-wrap: break-word;
   resize: none;
@@ -320,10 +320,6 @@ textarea.shoe-text-input:focus {
     margin-left: 10rem;
     margin-right: 10rem;
   }
-
-  /* .name-input-group, .age-input-group {
-    width: 50% !important
-  } */
 
 }
 

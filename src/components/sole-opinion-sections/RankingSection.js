@@ -40,7 +40,7 @@ export default function RankingSection({ items, handleSetItems }) {
     <div className="container ">
       <div className='d-flex flex-column'>
         <h2 className='fw-bold mb-0 me-3'>SHOE VALUES</h2>
-        <p className='fst-italic mb-1 my-3'>drag and drop</p>
+        <p className='fst-italic mb-1 my-3'>Drag and drop the values below from most to least</p>
       </div>
       <div className='d-flex flex-column align-items-center justify-content-center d-none d-lg-flex py-5'>
         <DragDropContext onDragEnd={moveItem}>

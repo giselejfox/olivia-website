@@ -21,11 +21,8 @@ export default function FavoriteShoesSection({ canvasRef, favoriteShoeText, hand
 
     return (
         <div className="container d-flex flex-column justify-content-center">
-            <div className="d-flex flex-row justify-content-between align-items-center mb-4">
-                <h2 className="fw-bold d-flex flex-column">
-                    <span>WHAT'S YOUR FAVORITE PAIR OF SHOES AND WHY?</span>
-                    <span>HOW LONG HAVE YOU HAD THEM?</span>
-                </h2>
+            <div className="d-flex flex-row justify-content-between align-items-center mb-2">
+                <h2 className="fw-bold ">FAVORITE SHOES</h2>
                 <div className="d-flex flex-nowrap mb-3">
                     <input
                         type="radio"
@@ -49,6 +46,7 @@ export default function FavoriteShoesSection({ canvasRef, favoriteShoeText, hand
                     <label className={"btn border-0 fw-bold " + (showTextInput ? "text-decoration-line-through" : "")} htmlFor="option-text">TYPE</label>
                 </div>
             </div>
+            <p className="fst-italic mb-5">What are your favorite pair of shoes and why? How long have you had them?</p>
             {showTextInput ? 
                 <TextInput 
                     showTextInput={showTextInput} 

@@ -213,11 +213,6 @@ textarea.shoe-text-input:focus {
   height: 50vh
 }
 
-/* .undo-svg, .redo-svg, .clear-svg {
-  fill: white
-} */
-
-
 /* Ranking Section */
 
 
@@ -247,6 +242,28 @@ textarea.shoe-text-input:focus {
   width: 100%;
   height: 1px; /* Set the height of the line */
   background-color: rgb(56, 56, 56); /* Line color */
+}
+
+
+/* Collage Section */
+
+.collage-result {
+  position: relative;
+  height: 10rem;
+  display: flex;
+  justify-content: center;
+}
+.collage-element-lower {
+  position: absolute;
+  bottom: 0;
+}
+
+.collage-upper-svg {
+  height: 10rem;
+}
+
+.collage-lower-svg {
+  height: 5rem;
 }
 
 

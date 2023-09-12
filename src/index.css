@@ -249,7 +249,7 @@ textarea.shoe-text-input:focus {
 
 .collage-result {
   position: relative;
-  height: 10rem;
+  height: 30rem;
   display: flex;
   justify-content: center;
 }
@@ -259,11 +259,40 @@ textarea.shoe-text-input:focus {
 }
 
 .collage-upper-svg {
-  height: 10rem;
+  height: 30rem;
 }
 
 .collage-lower-svg {
+  height: 15rem;
+}
+
+.carousel-svg {
   height: 5rem;
+}
+
+.collage-carousel {
+  width: 50%
+}
+
+.carousel-button {
+  /* Remove default button styles */
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+}
+
+/* Override the arrow button color */
+.slick-prev:before,
+.slick-next:before {
+  color: black !important;
+}
+
+/* Override the hover color of the arrow buttons (optional) */
+.slick-prev:hover:before,
+.slick-next:hover:before {
+  color: black !important;
 }
 
 

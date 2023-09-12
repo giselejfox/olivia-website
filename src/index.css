@@ -180,8 +180,12 @@ ul.no-bullets li {
   box-shadow: none;
 }
 
-.form-control[type=text] {
-  width: 10rem;
+/* .name-input-group, .age-input-group {
+  width: 100% !important
+} */
+
+.gender-text-input {
+  width: 10rem !important;
 }
 
 .form-control[type=text]:focus {
@@ -193,6 +197,7 @@ ul.no-bullets li {
   width: 2.5rem;
 }
 
+/* Favorite shoe section */
 
 .shoe-text-input {
   border: none;
@@ -298,6 +303,7 @@ textarea.shoe-text-input:focus {
 
 /* _______ MEDIA QUERIES _______ */
 
+/* md */
 @media (min-width: 768px) { 
   .main-splash-letter {
     font-size: 8rem;
@@ -307,6 +313,7 @@ textarea.shoe-text-input:focus {
   }
 }
 
+/* lg */
 @media (min-width: 992px) { 
 
   .about-container {
@@ -314,8 +321,13 @@ textarea.shoe-text-input:focus {
     margin-right: 10rem;
   }
 
+  /* .name-input-group, .age-input-group {
+    width: 50% !important
+  } */
+
 }
 
+/* xl */
 @media (min-width: 1200px) { 
 
   .main-splash-letter {

@@ -2,6 +2,33 @@
 
 // TODO: Should be able to randomize pseudonym
 
+// export default function DemographicsSection({ name, handleSetName, age, handleSetAge, gender, handleSetGender}) {
+
+//     const handleNameChange = (e) => { handleSetName(e.target.value) }
+//     const handleAgeChange = (e) => { handleSetAge(e.target.value) }
+//     const handleGenderChange = (e) => { handleSetGender(e.target.value) }
+
+//     return (
+//         <div className="demographics-section container d-flex flex-column justify-content-center">
+//             <h2 className="fw-bold mb-4">DEMOGRAPHICS</h2>
+//             <p className="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+//             <form>
+//                 <div className="d-flex flex-row mb-3 align-items-center">
+//                     <label htmlFor="nameInput" className="form-label me-4">Name</label>
+//                     <input value={name} onChange={handleNameChange} type="text" className="form-control" id="nameInput" />
+//                 </div>
+//                 <div className="d-flex flex-row mb-3 align-items-center">
+//                     <label htmlFor="ageInput" className="form-label me-4">Age</label>
+//                     <input value={age} onChange={handleAgeChange} type="text" className="form-control" id="ageInput" />
+//                 </div>
+//                 {/* <CustomBlackRadioGenderOptions gender={gender} handleGenderChange={handleGenderChange} /> */}
+//                 <CustomShoeGenderOptions gender={gender} handleGenderChange={handleGenderChange} />
+//             </form>
+//         </div>
+//     )
+// }
+
+// Attempting a different layout
 export default function DemographicsSection({ name, handleSetName, age, handleSetAge, gender, handleSetGender}) {
 
     const handleNameChange = (e) => { handleSetName(e.target.value) }
@@ -10,20 +37,24 @@ export default function DemographicsSection({ name, handleSetName, age, handleSe
 
     return (
         <div className="demographics-section container d-flex flex-column justify-content-center">
-            <h2 className="fw-bold mb-4">DEMOGRAPHICS</h2>
-            <p className="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-            <form>
-                <div className="d-flex flex-row mb-3 align-items-center">
-                    <label htmlFor="nameInput" className="form-label me-4">Name</label>
-                    <input value={name} onChange={handleNameChange} type="text" className="form-control" id="nameInput" />
-                </div>
-                <div className="d-flex flex-row mb-3 align-items-center">
-                    <label htmlFor="ageInput" className="form-label me-4">Age</label>
-                    <input value={age} onChange={handleAgeChange} type="text" className="form-control" id="ageInput" />
-                </div>
-                {/* <CustomBlackRadioGenderOptions gender={gender} handleGenderChange={handleGenderChange} /> */}
-                <CustomShoeGenderOptions gender={gender} handleGenderChange={handleGenderChange} />
-            </form>
+            <h2 className="fw-bold mb-3">DEMOGRAPHICS</h2>
+            <p className="mb-5 fst-italic">I use this information to make sure we're covering a wide range of demographics, feel free to click anonymous to opt out</p>
+            <div className="row row-cols-1 row-cols-lg-3">
+                <div className="col d-none d-lg-flex"></div>
+                <form className="col d-flex flex-column">
+                    <div className="d-flex flex-column mb-3 name-input-group">
+                        <label htmlFor="nameInput" className="form-label me-4">Name <span className="fw-bold" style={{color:"red"}}>*</span></label>
+                        <input value={name} onChange={handleNameChange} type="text" className="form-control" id="nameInput" />
+                    </div>
+                    <div className="d-flex flex-column mb-3 age-input-group">
+                        <label htmlFor="ageInput" className="form-label me-4">Age <span className="fw-bold" style={{color:"red"}}>*</span></label>
+                        <input value={age} onChange={handleAgeChange} type="text" className="form-control" id="ageInput" />
+                    </div>
+                    {/* <CustomBlackRadioGenderOptions gender={gender} handleGenderChange={handleGenderChange} /> */}
+                    <CustomShoeGenderOptions gender={gender} handleGenderChange={handleGenderChange} />
+                </form>
+                <div className="col d-none d-lg-flex"></div>
+            </div>
         </div>
     )
 }
@@ -66,11 +97,16 @@ export default function DemographicsSection({ name, handleSetName, age, handleSe
 
 function CustomShoeGenderOptions({ gender, handleGenderChange }) {
     return (
-        <div className="d-flex flex-column flex-sm-col mb-3 ms-4 ms-sm-0 mt-4 mt-sm-0">
-            <CustomShoeRadio gender="Female" genderState={gender} handleGenderChange={handleGenderChange} />
-            <CustomShoeRadio gender="Male" genderState={gender} handleGenderChange={handleGenderChange} />
-            <CustomShoeRadio gender="Non-binary" genderState={gender} handleGenderChange={handleGenderChange} />
-            <CustomShoeTextInputRadio genderState={gender} handleGenderChange={handleGenderChange} />
+        <div className="d-flex flex-column flex-sm-col mb-3 ms-sm-0 mt-4 mt-sm-0">
+            <fieldset>
+                <legend className="form-label fs-6">Gender <span className="fw-bold" style={{color:"red"}}>*</span></legend>
+                <div className="ms-3">
+                    <CustomShoeRadio gender="Female" genderState={gender} handleGenderChange={handleGenderChange} />
+                    <CustomShoeRadio gender="Male" genderState={gender} handleGenderChange={handleGenderChange} />
+                    <CustomShoeRadio gender="Non-binary" genderState={gender} handleGenderChange={handleGenderChange} />
+                    <CustomShoeTextInputRadio genderState={gender} handleGenderChange={handleGenderChange} />
+                </div>
+            </fieldset>
         </div>
     )
 }
@@ -129,7 +165,7 @@ function CustomShoeTextInputRadio({ genderState, handleGenderChange }) {
                 </svg>
                 <span className="visually-hidden">Other Gender</span>
             </label>
-            <input value={checked ? genderState : 'Not Listed'} onChange={handleGenderChange} type="text" className="form-control" id="genderTextInput" />
+            <input value={checked ? genderState : 'Not Listed'} onChange={handleGenderChange} type="text" className="form-control gender-text-input" id="genderTextInput" />
         </div>
     )
 }

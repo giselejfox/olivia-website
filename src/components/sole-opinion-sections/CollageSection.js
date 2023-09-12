@@ -34,6 +34,7 @@ export default function CollageSection() {
                     <TestLowerSVG num={lowerNum} wrapperClasses={"collage-element-lower"} svgClasses={"collage-lower-svg"} />
                 </div>
                 <SelectionButtons currentSelection={currentSelection} handleSetCurrentSelection={handleSetCurrentSelection}/>
+                {/* Based on what we can select, show the appropriate carousel */}
                 {currentSelection === "uppers" && <ResponsiveSelectionCarousel selection={"uppers"} selectionData={upperSVGData} handleSetNum={handleSetUpperNum} />}
                 {currentSelection === "lowers" && <ResponsiveSelectionCarousel selection={"lowers"} selectionData={lowerSVGData} handleSetNum={handleSetLowerNum} />}
             </div>

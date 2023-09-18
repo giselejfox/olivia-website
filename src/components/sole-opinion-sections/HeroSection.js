@@ -9,13 +9,13 @@ export default function HeroSection() {
     useEffect(() => {
         // Function to preload images
         const preloadImages = () => {
-        const imagesToPreload = {};
-        for (let i = 1; i <= 35; i++) {
-            const image = new Image();
-            image.src = `/img/sole-opinion/sole-opinion-title-${i}.png`;
-            imagesToPreload[i] = image;
-        }
-        setImageCache(imagesToPreload);
+            const imagesToPreload = {};
+            for (let i = 1; i <= 35; i++) {
+                const image = new Image();
+                image.src = `/img/sole-opinion/sole-opinion-title-${i}.png`;
+                imagesToPreload[i] = image;
+            }
+            setImageCache(imagesToPreload);
         };
 
         // Call the preloadImages function
@@ -23,9 +23,9 @@ export default function HeroSection() {
 
         // Function to update background image
         const updateBackgroundImage = () => {
-        setCurrentBackgroundImage((prevImage) => {
-            return prevImage === 35 ? 1 : prevImage + 1;
-        });
+            setCurrentBackgroundImage((prevImage) => {
+                return prevImage === 35 ? 1 : prevImage + 1;
+            });
         };
 
         const interval = setInterval(updateBackgroundImage, 200);

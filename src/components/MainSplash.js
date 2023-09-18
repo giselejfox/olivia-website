@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 
 import NameColorAnimation from "./name-animations/NameColorAnimation"
 import NameSketchAnimation from "./name-animations/NameSketchAnimation"
+import ImagesBasedOnCursor from "./name-animations/ImagesBasedOnCursor";
 
 export default function MainSplash() {
 
@@ -10,7 +11,7 @@ export default function MainSplash() {
 
     // Cycles through numbers 1-n (n being after the %)
     const handleClick = () => {
-        setCurrentAnimation((currentAnimation % 2) + 1);
+        setCurrentAnimation((currentAnimation % 3) + 1);
     };
 
     return (
@@ -18,6 +19,7 @@ export default function MainSplash() {
             <div className="main-splash-spacer"></div>     {/* First div is just to push the NameAnimation to the middle and ProjectBar to the bottom */}
             {currentAnimation === 1 && <NameColorAnimation />}
             {currentAnimation === 2 && <NameSketchAnimation />}
+            {currentAnimation === 3 && <ImagesBasedOnCursor />}
             <ProjectBar />
         </div>
     )

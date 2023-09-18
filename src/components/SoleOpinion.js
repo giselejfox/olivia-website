@@ -44,7 +44,7 @@ export default function SoleOpinion() {
     const [showDrawingWarningModal, setShowDrawingWarningModal] = useState(false)
 
     const handleSetShowDrawingWarningModal = (newBool) => { setShowDrawingWarningModal(newBool) }
-    
+
 
     // --- Upload Handler ---
     const saveInfo = async () => {
@@ -129,6 +129,7 @@ export default function SoleOpinion() {
                 handleSetItems={handleSetItems}
             />
             <div className="sole-option-between-spacer"></div>
+            {/* <div className="sole-option-between-spacer"></div> */}
             <CollageSection />
             <div className="sole-option-between-spacer"></div>
             <div className="w-100 d-flex justify-content-center py-5">

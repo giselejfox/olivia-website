@@ -295,29 +295,38 @@ textarea.shoe-text-input:focus {
 
 .collage-result {
   position: relative;
-  height: 20rem;
+  /* height: 20rem; */
   display: flex;
   justify-content: center;
 }
 .collage-element-lower {
   position: absolute;
-  bottom: 0;
+  /* bottom: -6px; */
+  /* top: 2.5rem */
 }
 
 .collage-upper-svg {
-  height: 20rem;
+  /* height: 20rem; */
+  width: 30rem;
 }
 
 .collage-lower-svg {
-  height: 10rem;
+  /* height: 10rem; */
+  width: 30rem;
+}
+
+.slick-track {
+  display: flex !important;
+  align-items: flex-end;
 }
 
 .carousel-svg {
-  height: 5rem;
+  /* height: 5rem; */
+  width: 5rem;
 }
 
 .collage-carousel {
-  width: 50%
+  width: 70%
 }
 
 .carousel-button {

@@ -38,6 +38,9 @@ function ProjectBar() {
                 <Link className="main-splash-link fw-bold" to='/spur'>SPUR</Link>
             </div>
             <div className="mx-2">
+                <Link className="main-splash-link fw-bold" to='/onsight'>ONSIGHT</Link>
+            </div>
+            <div className="mx-2">
                 <Link className="main-splash-link fw-bold" to='/conversation-ave'>CONVERSATION AVE</Link>
             </div>
             <div className="mx-2">

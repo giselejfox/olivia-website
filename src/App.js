@@ -3,7 +3,9 @@ import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar';
 import MainSplash from './components/MainSplash';
 import About from './components/About';
+
 import Well from './components/project-pages/Well';
+
 import SoleOpinion from './components/SoleOpinion.js';
 
 function App() {

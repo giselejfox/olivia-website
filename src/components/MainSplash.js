@@ -4,22 +4,27 @@ import { Link } from "react-router-dom"
 import NameColorAnimation from "./name-animations/NameColorAnimation"
 import NameSketchAnimation from "./name-animations/NameSketchAnimation"
 import ImagesBasedOnCursor from "./name-animations/ImagesBasedOnCursor";
+import FloatingImages from "./name-animations/FloatingImages";
+import CursorFollow3D from "./name-animations/CursorFollow3D";
 
 export default function MainSplash() {
 
     const [currentAnimation, setCurrentAnimation] = useState(1);
 
     // Cycles through numbers 1-n (n being after the %)
-    const handleClick = () => {
-        setCurrentAnimation((currentAnimation % 3) + 1);
-    };
+    // const handleClick = () => {
+    //     setCurrentAnimation((currentAnimation % 4) + 1);
+    // };
 
     return (
-        <div className="main-splash d-flex flex-column justify-content-between" onClick={handleClick}>
+        <div className="main-splash d-flex flex-column justify-content-between">
             <div className="main-splash-spacer"></div>     {/* First div is just to push the NameAnimation to the middle and ProjectBar to the bottom */}
-            {currentAnimation === 1 && <NameColorAnimation />}
+            {/* {currentAnimation === 1 && <NameColorAnimation />}
             {currentAnimation === 2 && <NameSketchAnimation />}
-            {currentAnimation === 3 && <ImagesBasedOnCursor />}
+            {currentAnimation === 3 && <ImagesBasedOnCursor />} */}
+            {/* {currentAnimation === 4 && <FloatingImages />} */}
+            {/* <FloatingImages /> */}
+            <CursorFollow3D />
             <ProjectBar />
         </div>
     )

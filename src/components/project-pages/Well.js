@@ -4,7 +4,7 @@ import Navbar from "../Navbar"
 import ProjectHeader from "../project-sections/ProjectHeader"
 import SectionHeader from "../project-sections/SectionHeader"
 import FullWidthImage from "../project-sections/FullWidthImage"
-import ImageCarousel from "../project-sections/ImageCarousel"
+import { ImageCarousel } from "../project-sections/ImageCarousel"
 import TwoColumnImageLayout from "../project-sections/TwoColumnImageLayout"
 
 export default function Well() {

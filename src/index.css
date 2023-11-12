@@ -55,6 +55,31 @@ a:hover {
   height: 12rem;
 }
 
+/* Spinning Images */
+.draggable-div {
+  /* border: 1px solid black; */
+  padding: 10px;
+  position: absolute;
+  animation: spin 10s linear infinite; /* Add the spin animation */
+}
+
+.content {
+  cursor: move;
+}
+
+.homepage-shoe {
+  height: 200px;
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 
 /* _____ PROJECT PAGES ______ */
 
@@ -86,6 +111,10 @@ a:hover {
 
 .carousel-control-prev-icon {
   display: none !important
+}
+
+.project-carousel-image {
+  width: 100%;
 }
 
 

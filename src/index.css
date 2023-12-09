@@ -81,6 +81,36 @@ a:hover {
 }
 
 
+
+/* 3D images screen */
+
+.canvas-container {
+  position: relative;
+  width: 100vw; /* Adjust as needed */
+  height: 100vh; /* Adjust as needed */
+}
+
+.heading-container {
+  position: absolute;
+  top: 50%; /* Adjust to vertically center the heading */
+  left: 50%; /* Adjust to horizontally center the heading */
+  transform: translate(-50%, -50%); /* Center the heading precisely */
+  z-index: 1; /* Ensure the heading is above the canvas */
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2; /* Ensure the canvas is below the heading */
+}
+
+.main-name-3D-backdrop {
+  font-size: 12rem;
+  font-weight: 800
+}
+
+
 /* _____ PROJECT PAGES ______ */
 
 .full-width-image {

@@ -6,6 +6,7 @@ import About from './components/About';
 
 import Well from './components/project-pages/Well';
 import Beam from './components/project-pages/Beam';
+import Spur from './components/project-pages/Spur.js'
 
 import SoleOpinion from './components/SoleOpinion.js';
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="sole-opinion" element={<SoleOpinion />} />
         <Route path="well" element={<Well />} />
         <Route path="beam" element={<Beam />} />
+        <Route path="spur" element={<Spur />} />
         <Route path="*" element={<MainSplash />} />
       </Routes>
     </div>

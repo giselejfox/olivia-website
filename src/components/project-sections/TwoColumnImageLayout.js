@@ -12,7 +12,7 @@ export default function TwoColumnImageLayout({ project, imageData }) {
 
     return (
         <div className="container">
-            <div className="row row-cols-1 row-cols-lg-2">
+            <div className="row row-cols-1 row-cols-lg-2 mb-2">
                 {imageElements}
             </div>
         </div>

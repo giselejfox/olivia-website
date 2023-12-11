@@ -13,7 +13,6 @@ import SoleOpinion from './components/SoleOpinion.js';
 function App() {
   return (
     <div>
-      {/* <Navbar /> */}
       <Routes>
         <Route index element={<MainSplash />} />
         <Route path="about" element={<About />} />

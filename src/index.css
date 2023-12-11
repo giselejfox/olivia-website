@@ -22,6 +22,24 @@ a:hover {
   text-decoration: line-through;
 }
 
+/* For fading in and out when going to new projects */
+.fade-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: white; /* Set the initial background color */
+  opacity: 1;
+  pointer-events: none;
+  transition: opacity 0.5s ease-in-out; /* Adjust the transition duration as needed */
+  z-index: 9999; /* Ensure it's above other elements */
+}
+
+.fade-out {
+  opacity: 0;
+}
+
 
 /* _____ MAIN SPLASH PAGE ______ */
 
@@ -138,6 +156,7 @@ canvas {
 }
 
 .col-image {
+  height: 100%;
   width: 100%;
 }
 

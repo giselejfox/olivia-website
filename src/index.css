@@ -110,6 +110,16 @@ canvas {
   font-weight: 800
 }
 
+/* Floating Shapes Example CSS */
+.floating-shapes-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Ensure the shapes stay in the background */
+}
+
 
 /* _____ PROJECT PAGES ______ */
 

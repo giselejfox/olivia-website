@@ -4,7 +4,7 @@ import Navbar from "../Navbar"
 import ProjectHeader from "../project-sections/ProjectHeader"
 import SectionHeader from "../project-sections/SectionHeader"
 import FullWidthImage from "../project-sections/FullWidthImage"
-import { ImageCarousel, ResponsiveSelectionCarousel} from "../project-sections/ImageCarousel"
+import { ImageCarousel } from "../project-sections/ImageCarousel"
 import TwoColumnImageLayout from "../project-sections/TwoColumnImageLayout"
 import Paragraph from "../project-sections/Paragraph"
 
@@ -13,7 +13,7 @@ export default function Beam() {
     const researchImages = [
         {
             imageTitle: "20170111_NewProducts_Lifestyle_Shoot_194.jpg",
-            altText: "man standing on a balance board at his desj"
+            altText: "man standing on a balance board at his desk"
         },
         {
             imageTitle: "balance-board-for-standing-desk.jpg",
@@ -71,10 +71,10 @@ export default function Beam() {
 
             <FullWidthImage project="Beam" imageName="beamonfloor3.jpg" altText="Man standing on a balance beam and another balance beams showing workout stats to the right" />
 
-            <SectionHeader text="HI THERE" />
+            <SectionHeader text="RESEARCH" />
             <FullWidthImage project="Beam" imageName="Slide+16_9+-+14.jpg" />
             <Paragraph text={"Balance boards have several health benefits including increasing coordination, strengthening leg muscles, helping injury recovery, and improving posture. However, users can’t easily track their time balancing, it’s difficult to track progress over time, boards are difficult to store when not in use, aesthetics rarely blend well with home interiors, and it can be difficult to come up with new workout ideas. These pain points were seen as opportunities to enhance the user experience of balance boards using new technology and innovative design."} />
-            <ResponsiveSelectionCarousel project="Beam" imageData={researchImages} />
+         
 
             <SectionHeader text="INSPIRATION" />
             <FullWidthImage project="Well" imageName="Mood_Boards.jpeg" altText="Collage of images showing sophisticated and colorful interiors and sleek metal kettles"/>

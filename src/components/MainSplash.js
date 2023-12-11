@@ -1,55 +1,48 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom"
 
-import NameColorAnimation from "./name-animations/NameColorAnimation"
-import NameSketchAnimation from "./name-animations/NameSketchAnimation"
-import ImagesBasedOnCursor from "./name-animations/ImagesBasedOnCursor";
-import FloatingImages from "./name-animations/FloatingImages";
-import CursorFollow3D from "./name-animations/CursorFollow3D";
+import Navbar from "./Navbar";
+import FloatingShapesWrapper from "./FloatingShapesWrapper";
 
 export default function MainSplash() {
 
-    const [currentAnimation, setCurrentAnimation] = useState(1);
-
-    // Cycles through numbers 1-n (n being after the %)
-    // const handleClick = () => {
-    //     setCurrentAnimation((currentAnimation % 4) + 1);
-    // };
-
     return (
-        <div className="main-splash d-flex flex-column justify-content-between">
-            <div className="main-splash-spacer"></div>     {/* First div is just to push the NameAnimation to the middle and ProjectBar to the bottom */}
-            {/* {currentAnimation === 1 && <NameColorAnimation />}
-            {currentAnimation === 2 && <NameSketchAnimation />}
-            {currentAnimation === 3 && <ImagesBasedOnCursor />} */}
-            {/* {currentAnimation === 4 && <FloatingImages />} */}
-            {/* <FloatingImages /> */}
-            <CursorFollow3D />
-            <ProjectBar />
+        <div>
+            <FloatingShapesWrapper />
+            <div className="content-wrapper d-flex vh-100 flex-column justify-content-between">
+                <Navbar />
+                <ProjectBar />
+            </div>
         </div>
     )
+
 }
 
-function ProjectBar() {
+export function ProjectBar() {
+
+    const scrollToTop = () => {
+        window.scrollTo(0, 0);
+    };
+
     return (
         <div className="d-flex flex-wrap justify-content-center project-bar mb-5 pb-4">
             <div className=" mx-2">
-                <Link className="main-splash-link fw-bold" to='/well'>WELL</Link>
+                <Link className="main-splash-link fw-bold" to='/well' onClick={scrollToTop}>WELL</Link>
             </div>
             <div className="mx-2">
-                <Link className="main-splash-link fw-bold" to='/beam'>BEAM</Link>
+                <Link className="main-splash-link fw-bold" to='/beam' onClick={scrollToTop}>BEAM</Link>
             </div>
             <div className="mx-2">
-                <Link className="main-splash-link fw-bold" to='/spur'>SPUR</Link>
+                <Link className="main-splash-link fw-bold" to='/spur' onClick={scrollToTop}>SPUR</Link>
             </div>
             <div className="mx-2">
-                <Link className="main-splash-link fw-bold" to='/onsight'>ONSIGHT</Link>
+                <Link className="main-splash-link fw-bold" to='/onsight' onClick={scrollToTop}>ONSIGHT</Link>
             </div>
             <div className="mx-2">
-                <Link className="main-splash-link fw-bold" to='/conversation-ave'>CONVERSATION AVE</Link>
+                <Link className="main-splash-link fw-bold" to='/conversation-ave' onClick={scrollToTop}>CONVERSATION AVE</Link>
             </div>
             <div className="mx-2">
-                <Link className="main-splash-link fw-bold" to='/site-archive-cite'>SITE / ARCHIVE / SITE</Link>
+                <Link className="main-splash-link fw-bold" to='/site-archive-cite' onClick={scrollToTop}>SITE / ARCHIVE / SITE</Link>
             </div>
         </div>
     )

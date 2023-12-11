@@ -3,33 +3,8 @@ import { Canvas, useFrame } from 'react-three-fiber';
 import { STLLoader } from 'three/addons/loaders/STLLoader';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader';
 import { Box, OrbitControls } from '@react-three/drei';
+import gsap from 'gsap';
 import * as THREE from 'three';
-
-
-function STLModel({ group }) {
-  
-  // Load the STL model
-  const loader = new STLLoader();
-  // const loader = new GLTFLoader();
-  const modelPath = 'img/ShoeModel.stl';
-
-  // FOR THE SHOE
-  loader.load(modelPath, (geometry) => {
-    const material = new THREE.MeshNormalMaterial({
-      transparent: true,
-      opacity: 0.7, // Adjust the opacity as needed
-    });
-    const mesh = new THREE.Mesh(geometry, material);
-
-    // Scale down the model
-    mesh.scale.set(0.2, 0.2, 0.2); // Adjust the scale factor as needed
-
-    group.current.add(mesh);
-
-  });
-
-  return <group ref={group} />;
-}
 
 function GLTFModel({ group }) {
   const modelPath = 'img/3D+Shoe+Sketch+by+Archie+RefImage+Copy@08122023-195607.glb';
@@ -62,24 +37,34 @@ function GLTFModel({ group }) {
 
 export default function CursorFollow3D() {
   const group = useRef();
+  const prevMousePosition = useRef({ x: 0, y: 0 });
 
   const updateShoeRotation = (event) => {
     const mouseX = (event.clientX / window.innerWidth) * 2 - 1;
     const mouseY = (event.clientY / window.innerHeight) * 2 - 1;
 
-    group.current.rotation.x = mouseY * Math.PI * 1; // Adjust the scale factor as needed
-    group.current.rotation.y = mouseX * Math.PI * 1; // Adjust the scale factor as needed
+    gsap.to(group.current.rotation, {
+      x: mouseY,
+      y: mouseX,
+      duration: 0.3, // Adjust the duration as needed
+      ease: 'quad.inOut', // Use any easing function you prefer
+    });
+    
+    prevMousePosition.current = { x: mouseX, y: mouseY };
+  };
 
+  const handleWheel = (event) => {
+    event.preventDefault();
+    // Prevent zooming in and out
   };
 
   return (
-    <div className="canvas-container">
+    <div className="canvas-container" onWheel={handleWheel}>
       <Canvas style={{ background: 'white' }} onMouseMove={updateShoeRotation}>
         <ambientLight />
         <pointLight position={[10, 10, 10]} />
-        {/* <STLModel group={group} /> */}
         <GLTFModel group={group}/>
-        <OrbitControls />
+        <OrbitControls enableZoom={false} />
       </Canvas>
       <div className="heading-container">
         <h1 className='main-name-3D-backdrop d-flex flex-column align-items-center'>
@@ -90,3 +75,29 @@ export default function CursorFollow3D() {
     </div>
   );
 };
+
+
+// function STLModel({ group }) {
+  
+//   // Load the STL model
+//   const loader = new STLLoader();
+//   // const loader = new GLTFLoader();
+//   const modelPath = 'img/ShoeModel.stl';
+
+//   // FOR THE SHOE
+//   loader.load(modelPath, (geometry) => {
+//     const material = new THREE.MeshNormalMaterial({
+//       transparent: true,
+//       opacity: 0.7, // Adjust the opacity as needed
+//     });
+//     const mesh = new THREE.Mesh(geometry, material);
+
+//     // Scale down the model
+//     mesh.scale.set(0.2, 0.2, 0.2); // Adjust the scale factor as needed
+
+//     group.current.add(mesh);
+
+//   });
+
+//   return <group ref={group} />;
+// }

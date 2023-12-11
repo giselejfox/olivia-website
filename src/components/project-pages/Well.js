@@ -60,32 +60,38 @@ export default function Well() {
 
     return(
         <div>
-            <ProjectHeader
-                title="Well"
-                description="An electric kettle designed for making the perfect cup of tea."
-                projectType="INDIVIDUAL PROJECT"
-                duration="5 WEEKS"
-                date="NOV - DEC 2022"
-            /> 
+            <div style={{background:"white"}}>
 
-            <FullWidthImage project="Well" imageName="blackkettlesideboiling.jpg" altText="Side view of a black kettle boiling"/>
+                <div id="top"></div>
 
-            <SectionHeader text="RESEARCH" />
-            <ImageCarousel project="Well" imageData={researchImages} />
+                <Navbar />
 
-            <SectionHeader text="INSPIRATION" />
-            <FullWidthImage project="Well" imageName="Mood_Boards.jpeg" altText="Collage of images showing sophisticated and colorful interiors and sleek metal kettles"/>
+                <ProjectHeader
+                    title="Well"
+                    description="An electric kettle designed for making the perfect cup of tea."
+                    projectType="INDIVIDUAL PROJECT"
+                    duration="5 WEEKS"
+                    date="NOV - DEC 2022"
+                /> 
 
-            <SectionHeader text="RAPID VISUALIZATION" />
-            <TwoColumnImageLayout project="Well" imageData={rapidVisImages} />
+                <FullWidthImage project="Well" imageName="blackkettlesideboiling.jpg" altText="Side view of a black kettle boiling"/>
 
-            <SectionHeader text="IDEATION SKETCHING" />
-            <TwoColumnImageLayout project="Well" imageData={ideationSketchingImages} />
-            <FullWidthImage project="Well" imageName="kettlecablemanagement.19.jpg" altText="View of kettle base" />
-            <FullWidthImage project="Well" imageName="kettleexplode.jpg" altText="Expanded view of kettle" />
-            <FullWidthImage project="Well" imageName="WellColorLine.jpg" altText="Examples of kettles in different colors" />
+                <SectionHeader text="RESEARCH" />
+                <ImageCarousel project="Well" imageData={researchImages} />
 
-            <Navbar />
+                <SectionHeader text="INSPIRATION" />
+                <FullWidthImage project="Well" imageName="Mood_Boards.jpeg" altText="Collage of images showing sophisticated and colorful interiors and sleek metal kettles"/>
+
+                <SectionHeader text="RAPID VISUALIZATION" />
+                <TwoColumnImageLayout project="Well" imageData={rapidVisImages} />
+
+                <SectionHeader text="IDEATION SKETCHING" />
+                <TwoColumnImageLayout project="Well" imageData={ideationSketchingImages} />
+                <FullWidthImage project="Well" imageName="kettlecablemanagement.19.jpg" altText="View of kettle base" />
+                <FullWidthImage project="Well" imageName="kettleexplode.jpg" altText="Expanded view of kettle" />
+                <FullWidthImage project="Well" imageName="WellColorLine.jpg" altText="Examples of kettles in different colors" />
+            </div>
+
             <MainSplash />
         </div>
     )

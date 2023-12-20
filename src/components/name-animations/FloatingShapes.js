@@ -51,20 +51,29 @@ function Model({mouse}) {
       }, 2000)
     }, [activeShape])
   
-    const { nodes } = useGLTF("/img/floating-shapes/floating_shapes4.glb");
+    const { nodes } = useGLTF("/img/floating-shapes/webpagetexturesspecedouttestrenderedview.glb");
+    console.log(nodes)
+
     return (
+      // <group>
+      //   <Mesh node={nodes.Sphere001} multiplier={10} mouse={mouse} isActive={activeShape === 1}/>
+      //   <Mesh node={nodes.Sphere002} multiplier={12} mouse={mouse} isActive={activeShape === 2}/>
+      //   <Mesh node={nodes.Cylinder002} multiplier={15} mouse={mouse} isActive={activeShape === 3}/>
+      //   <Mesh node={nodes.Sphere003} multiplier={15} mouse={mouse} isActive={activeShape === 4}/>
+      //   <Mesh node={nodes.Cylinder003} multiplier={15} mouse={mouse} isActive={activeShape === 5}/>
+      //   <Mesh node={nodes.Cylinder005} multiplier={14} mouse={mouse} isActive={activeShape === 6}/>
+      //   <Mesh node={nodes.Cube002} multiplier={11} mouse={mouse} isActive={activeShape === 7}/>
+      //   <Mesh node={nodes.Cylinder006} multiplier={15} mouse={mouse} isActive={activeShape === 8}/>
+      //   <Mesh node={nodes.Cylinder007} multiplier={14} mouse={mouse} isActive={activeShape === 9}/>
+      //   <Mesh node={nodes.Cylinder009} multiplier={15} mouse={mouse} isActive={activeShape === 10}/>
+      //   <Mesh node={nodes.Sphere} multiplier={9} mouse={mouse} isActive={activeShape === 11}/>
+      // </group>
       <group>
-        <Mesh node={nodes.Sphere001} multiplier={10} mouse={mouse} isActive={activeShape === 1}/>
-        <Mesh node={nodes.Sphere002} multiplier={12} mouse={mouse} isActive={activeShape === 2}/>
-        <Mesh node={nodes.Cylinder002} multiplier={15} mouse={mouse} isActive={activeShape === 3}/>
-        <Mesh node={nodes.Sphere003} multiplier={15} mouse={mouse} isActive={activeShape === 4}/>
-        <Mesh node={nodes.Cylinder003} multiplier={15} mouse={mouse} isActive={activeShape === 5}/>
-        <Mesh node={nodes.Cylinder005} multiplier={14} mouse={mouse} isActive={activeShape === 6}/>
-        <Mesh node={nodes.Cube002} multiplier={11} mouse={mouse} isActive={activeShape === 7}/>
-        <Mesh node={nodes.Cylinder006} multiplier={15} mouse={mouse} isActive={activeShape === 8}/>
-        <Mesh node={nodes.Cylinder007} multiplier={14} mouse={mouse} isActive={activeShape === 9}/>
-        <Mesh node={nodes.Cylinder009} multiplier={15} mouse={mouse} isActive={activeShape === 10}/>
-        <Mesh node={nodes.Sphere} multiplier={9} mouse={mouse} isActive={activeShape === 11}/>
+        <Mesh node={nodes.Cube} multiplier={10} mouse={mouse} isActive={activeShape === 1}/>
+        <Mesh node={nodes.Cube001} multiplier={12} mouse={mouse} isActive={activeShape === 2}/>
+        <Mesh node={nodes.Cube002} multiplier={15} mouse={mouse} isActive={activeShape === 3}/>
+        <Mesh node={nodes.Cube003} multiplier={15} mouse={mouse} isActive={activeShape === 4}/>
+        <Mesh node={nodes.Cube004} multiplier={15} mouse={mouse} isActive={activeShape === 5}/>
       </group>
     );
 }

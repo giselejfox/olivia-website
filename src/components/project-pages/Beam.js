@@ -7,6 +7,7 @@ import FullWidthImage from "../project-sections/FullWidthImage"
 import Spacer from "../project-sections/Spacer"
 import TwoColumnImageLayout from "../project-sections/TwoColumnImageLayout"
 import Paragraph from "../project-sections/Paragraph"
+import { ImageCarousel, SmallImageCarousel } from "../project-sections/ImageCarousel"
 
 export default function Beam() {
 
@@ -29,6 +30,37 @@ export default function Beam() {
         {
             imageTitle: "collage-other-balance-boards.jpg",
             altText: "people using balance boards in multiple stances"  
+        }
+    ]
+
+    const endRenders = [
+        {
+            imageTitle: "design+callouts.jpg",
+            altText: "diagram showing different parts of the balance board"  
+        },      
+        {
+            imageTitle: "beamtouchbar.jpg",
+            altText: "someone touching the top of the balance board"  
+        },
+        {
+            imageTitle: 'beamrestingonfloorconcretefocalpoint.jpg',
+            altText: "someone using the balance board and looking at the projection on the floor"
+        },
+        {
+            imageTitle: "balancelamponshelf.jpg",
+            altText: "balance board lit up on a shelf"  
+        },
+        {
+            imageTitle: "balanceboardfrontcontext.jpg",
+            altText: "closeup of someone using the balance board"
+        },
+        { 
+            imageTitle: "balanceboardonshelf.jpg",
+            altText: "balance board on a shelf"
+        },
+        {
+            imageTitle: "black-beam-day.jpg",
+            altText: "black balance beam in a living room"  
         }
     ]
 
@@ -65,19 +97,27 @@ export default function Beam() {
 
                 <SectionHeader text="CONCEPT RENDERS" />
                 <FullWidthImage project="Beam" imageName="beamrestingonfloor.13.jpg" altText="View beam on the floor" />
+                
                 <Spacer />
+
                 <Paragraph text={"Storing balance boards is often challenging given they are used frequently and are an irregular, fairly large form. Beam eliminates this issue by turning into a lamp with adjustable colors when not in use, making it aesthetically pleasing to keep out."} />
                 <FullWidthImage project="Beam" imageName="Beamlightlivingroom.jpg" altText="beam in a living room at dusk" />
+                
                 <Spacer />
+
                 <Paragraph text={"Beam utilizes smart technology to provide on enhanced experience. A mini projector with the ability to adjust angles is embedded on the top of Beam's base alongside surface sensing technology. This projector displays the inter­face on the board, which slides into the base and is stabilized by magnets embedded in the base and the board's frame. Users can navigate the inter­face using the touch bar. Workout statistics are stored in Beam's interface that can be navigated using the touch bar on the top of the base. Users can track progress including their average time and success rate for a workout for specific days, weeks, and months."} />
+
+                <div className="container d-flex justify-content-center">
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/3FG6hDLRaQk?si=-1dqPzlpL576V32p&amp;" title="YouTube video player" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; gyroscope; web-share" allowfullscreen></iframe>
+                </div>
+                
                 <Spacer />
-                <p>VIDEO WILL GO HERE</p>
-                <Spacer />
+
                 <Paragraph text={"Beam offers users ideas for different exercises and workout routines, including but not limited to balancing time trials, planks, squats, mountain climbers, tricep dips, and controlled board movements. Beam allows users to set an amount of time for their workout of choice. When balancing, a focal point is projected on the floor or the wall which aids the user in balancing. The amount of time that has passed is displayed as the progress circles surrounding the focal point are slowly filled. "} />
-                <p>SLIDESHOW WILL GO HERE</p>
+                <ImageCarousel project="Beam" imageData={endRenders} />
 
+                <Spacer />
             </div>
-
             <MainSplash />
         </div>
     )

@@ -31,7 +31,7 @@ export default function FloatingShapes() {
     }, [])
 
     return (
-        <Canvas style={{background: "#FFFFFF"}} orthographic camera={{position: [0, 0, 100], zoom: 12}}>
+        <Canvas style={{background: "#FFFFFF"}} orthographic camera={{position: [0, 0, 100], zoom: 10}}>
             <Model mouse={smoothMouse}/>
             <Environment preset="studio"/>
         </Canvas>
@@ -39,142 +39,120 @@ export default function FloatingShapes() {
 }
 
 
-function Model() {
+function Model({mouse}) {
 
-  const { nodes } = useGLTF("/img/floating-shapes/homepagesmallsize.glb");
+    const { nodes } = useGLTF("/img/floating-shapes/homepagesmallsize.glb");
+    console.log("Main Nodes")
+    console.log(nodes)
 
-  return (
-    <Float>
-      <group>
-        <Mesh node={nodes.Codatest} />
-        <Mesh node={nodes.Default021} />
-        <Mesh node={nodes.Default023} />
-        <Mesh node={nodes.final_join} />
-        <Mesh node={nodes.industrialboottest} />
-        <Mesh node={nodes.stitchloaferstest} />
-        <Mesh node={nodes.Text} />
-      </group>
-    </Float>
- 
-  );
+    return (
+        <group>
+          <Mesh node={nodes.Codatest} multiplier={8} mouse={mouse} />
+          <Mesh node={nodes.Default021} multiplier={8} mouse={mouse} />
+          <Mesh node={nodes.Default023} multiplier={8} mouse={mouse} />
+          <Mesh node={nodes.final_join} multiplier={8} mouse={mouse} />
+          <Mesh node={nodes.industrialboottest} multiplier={8} mouse={mouse} />
+          <Mesh node={nodes.stitchloaferstest} multiplier={8} mouse={mouse} />
+          <Mesh node={nodes.Text} multiplier={0} mouse={mouse} mainText={true}/>
+        </group>
+    );
+}
+  
+useGLTF.preload("/img/floating-shapes/homepagesmallsize.glb");
+
+function Mesh({node, multiplier, mouse, isActive, mainText}) {
+    const { geometry, material, position, scale, rotation } = node;
+
+    // const [currentColorIndex, setCurrentColorIndex] = useState(0)
+
+    const a = multiplier / 2;
+    const rotationX = useTransform(mouse.x, [0,1], [rotation.x - a, rotation.x + a]);
+    const rotationY = useTransform(mouse.y, [0,1], [rotation.y - a, rotation.y + a]);
+    const positionX = useTransform(mouse.x, [0,1], [position.x - multiplier * 2, position.x + multiplier * 2]);
+    const positionY = useTransform(mouse.y, [0,1], [position.y + multiplier * 2, position.y - multiplier * 2])
+
+    let initialPosition = new THREE.Vector3().copy(position);
+
+    if (mainText) {
+      initialPosition.set(-200, -200, 0);
+    }
+
+    // console.log(initialPosition)
+
+    const [customMaterial, setCustomMaterial] = useState(material.clone())
+
+    // List of Liv's colors
+    const livColors = [0x002FA7, 0x000000, 0x01796f, 0xDFFF00, 0xFF0000, 0x568259, 0xF2542D, 0xC1DF1F, 0x5E2BFF, 0x131200, 0xEDAE49, 0xF90093, 0xD00000, 0x05299E, 0x89FC00]
+
+    // Check if changesColor is true and update color every 5 seconds otherwise makes the mesh transparent
+    useEffect(() => {
+      // can't use state so have to use a varible
+      var currentColorIndex = 0
+
+      if (mainText) {
+        const tempMaterial = customMaterial.clone()
+        tempMaterial.color = new THREE.Color(livColors[livColors.length - 1]) // start at the last
+        setCustomMaterial(tempMaterial);
+        const interval = setInterval(() => {
+          // console.log("currentcolorIndex"+currentColorIndex)
+          const otherTempMaterial = customMaterial.clone()
+          otherTempMaterial.color = new THREE.Color(livColors[currentColorIndex])
+          setCustomMaterial(otherTempMaterial);
+          if (currentColorIndex === livColors.length - 1) {
+            currentColorIndex = 0
+          } else {
+            currentColorIndex = currentColorIndex + 1
+          }
+        }, 1000);
+        return () => clearInterval(interval);
+      } else {
+        const tempMaterial = customMaterial.clone()
+        tempMaterial.color = new THREE.Color(0xCCCCCC)
+        tempMaterial.transparent = true; // Make the material transparent
+        tempMaterial.opacity = 0.7; // Set the opacity (0 = fully transparent, 1 = fully opaque)
+        setCustomMaterial(tempMaterial);
+      }
+  }, []);
+
+    const getRandomMultiplier = () => {
+      return Math.floor(Math.random() * 2) * (Math.round(Math.random()) ? 1 : -1);
+    };
+
+    if (mainText) {
+      return (
+        <Float>
+            <motion.mesh
+            castShadow={true}
+            receiveShadow={true}
+            geometry={geometry}
+            material={customMaterial}
+            position={[position.x, position.y+5, position.z]}
+            rotation={[20, 0, 0]}
+            scale={scale}
+            transition={{type: "spring", stiffness: 75, damping: 100, mass: 3}}
+            />
+        </Float>
+      )
+    } else {
+      return (
+        <Float>
+            <motion.mesh
+            castShadow={true}
+            receiveShadow={true}
+            geometry={geometry}
+            material={customMaterial}
+            position={[position.x, position.y, position.z]}
+            rotation={[10, 10, 10]}
+            scale={scale}
+            rotation-y={rotationX}
+            rotation-x={rotationY}
+            position-x={positionX}
+            position-y={positionY}
+            animate={{ rotateZ: isActive ? rotation.z + getRandomMultiplier() : null }}
+            transition={{type: "spring", stiffness: 75, damping: 100, mass: 3}}
+            />
+        </Float>
+      )
+    }
 
 }
-
-function Mesh({node}) {
-
-  const { geometry, material, position, scale, rotation } = node;
-
-  return (
-    <motion.mesh
-        castShadow={true}
-        receiveShadow={true}
-        geometry={geometry}
-        material={material}
-        position={position}
-        rotation={rotation}
-        scale={scale}
-    />
-  )
-
-}
-
-
-
-
-
-// function Model({mouse}) {
-//     const [activeShape, setActiveShape] = useState(1);
-  
-//     useEffect( () => {
-//       setTimeout( () => {
-//         if(activeShape === 7){
-//           setActiveShape(1)
-//         }
-//         else{
-//           setActiveShape(activeShape + 1)
-//         }
-//       }, 2000)
-//     }, [activeShape])
-  
-//     const { nodes } = useGLTF("/img/floating-shapes/homepagesmallsize.glb");
-//     console.log("Main Nodes")
-//     console.log(nodes)
-
-//     return (
-//         <group>
-//           <Mesh node={nodes.Codatest} multiplier={10} mouse={mouse} isActive={activeShape === 1}/>
-//           <Mesh node={nodes.Default021} multiplier={15} mouse={mouse} isActive={activeShape === 2}/>
-//           <Mesh node={nodes.Default023} multiplier={15} mouse={mouse} isActive={activeShape === 3}/>
-//           <Mesh node={nodes.final_join} multiplier={15} mouse={mouse} isActive={activeShape === 4}/>
-//           <Mesh node={nodes.industrialboottest} multiplier={15} mouse={mouse} isActive={activeShape === 5}/>
-//           <Mesh node={nodes.stitchloaferstest} multiplier={15} mouse={mouse} isActive={activeShape === 6}/>
-//           <Mesh node={nodes.Text} multiplier={15} mouse={mouse} isActive={activeShape === 7} mainText={true}/>
-//         </group>
-//     );
-// }
-  
-// useGLTF.preload("/img/floating-shapes/homepagesmallsize.glb");
-
-// function Mesh({node, multiplier, mouse, isActive, mainText}) {
-//     const { geometry, material, position, scale, rotation } = node;
-//     const a = multiplier / 2;
-//     const rotationX = useTransform(mouse.x, [0,1], [rotation.x - a, rotation.x + a]);
-//     const rotationY = useTransform(mouse.y, [0,1], [rotation.y - a, rotation.y + a]);
-//     const positionX = useTransform(mouse.x, [0,1], [position.x - multiplier * 2, position.x + multiplier * 2]);
-//     const positionY = useTransform(mouse.y, [0,1], [position.y + multiplier * 2, position.y - multiplier * 2])
-
-//     let initialPosition = new THREE.Vector3().copy(position);
-
-//     if (mainText) {
-//       initialPosition.set(-200, -200, 0);
-//     }
-
-//     // console.log(initialPosition)
-
-//     const [customMaterial, setCustomMaterial] = useState(material.clone())
-
-//     // Check if changesColor is true and update color every 5 seconds otherwise makes the mesh transparent
-//     useEffect(() => {
-//       if (mainText) {
-//         const tempMaterial = customMaterial.clone()
-//         tempMaterial.color = new THREE.Color(Math.random(), Math.random(), Math.random())
-//         setCustomMaterial(tempMaterial);
-//         const interval = setInterval(() => {
-//           const otherTempMaterial = customMaterial.clone()
-//           otherTempMaterial.color = new THREE.Color(Math.random(), Math.random(), Math.random())
-//           setCustomMaterial(otherTempMaterial);
-//         }, 2500);
-//         return () => clearInterval(interval);
-//       } else {
-//         const tempMaterial = customMaterial.clone()
-//         tempMaterial.color = new THREE.Color(0xCCCCCC)
-//         tempMaterial.transparent = true; // Make the material transparent
-//         tempMaterial.opacity = 0.7; // Set the opacity (0 = fully transparent, 1 = fully opaque)
-//         setCustomMaterial(tempMaterial);
-//       }
-//   }, []);
-
-//     const getRandomMultiplier = () => {
-//       return Math.floor(Math.random() * 2) * (Math.round(Math.random()) ? 1 : -1);
-//     };
-
-//     return (
-//         <Float>
-//             <motion.mesh
-//             castShadow={true}
-//             receiveShadow={true}
-//             geometry={geometry}
-//             material={customMaterial}
-//             position={[position.x, position.y, position.z]}
-//             rotation={[10, 10, 10]}
-//             scale={scale}
-//             rotation-y={rotationX}
-//             rotation-x={rotationY}
-//             position-x={positionX}
-//             position-y={positionY}
-//             animate={{ rotateZ: isActive ? rotation.z + getRandomMultiplier() : null }}
-//             transition={{type: "spring", stiffness: 75, damping: 100, mass: 3}}
-//             />
-//         </Float>
-//     )
-// }

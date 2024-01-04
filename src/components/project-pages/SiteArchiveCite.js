@@ -9,7 +9,7 @@ import Spacer from "../project-sections/Spacer"
 import TwoColumnImageLayout from "../project-sections/TwoColumnImageLayout"
 import Paragraph from "../project-sections/Paragraph"
 
-export default function Spur() {
+export default function SiteArchiveSite() {
 
     const finalTwoImages = [
         {
@@ -31,12 +31,24 @@ export default function Spur() {
                 <Navbar />
 
                 <ProjectHeader
-                    title="Spur"
-                    description="Spur is a cowboy boot that combines classic western style with modern functionality. The zip-up design makes it easy to put on and take off, while the slip-on inner foot sleeve adds an extra layer of comfort."
-                    projectType="INDIVIDUAL PROJECT"
-                    duration="3 WEEKS"
-                    date="OCT 2022"
+                    title="SITE / ARCHIVE / CITE"
+                    description="A mixed reality art intervention based on the National Archives at Seattle."
+                    projectType="COLLABORATORS: AMARANTH BORSUK, CARRIE BODLE"
+                    duration="NOV 2021 - JUN 2023"
+                    date="FIRST SHOW: MAY 2023"
                 /> 
+
+                <div className='row'>
+                    <div className='col-12 col-lg-9 d-flex justify-content-center align-items-center'>
+                        <img className="col-image" src="img/SiteArchiveSite/sac-intro-1.jpeg" alt="two long posters taped to the wall" />
+                    </div>
+                    <div className='col-12 col-lg-3 d-flex justify-content-center align-items-center'>
+                        <img className="col-image" src="img/SiteArchiveSite/sac-intro-2.jpeg" alt="two long posters taped to the wall" />
+                    </div>
+                </div>
+
+                <Paragraph text="Site/Archive/Cite is an augmented reality art intervention based on the National Archives at Seattle that interrogates the relationship of archive to place and public. At a time when many institutions hold out hope for digital accessibility to broaden the audience for their holdings, the realities of what gets digitized and who has access do not always live up to those heightened expectations. What is cited on a website may only be a fraction of the materials available onsite, providing a partial—and highly subjective—window into a collection that fundamentally gains meaning through public access and interaction. What ghosts haunt the archive? Who has put them there? And how might we both bear witness to and intervene into the construction of a public archive? " />
+                <Paragraph text="In two large-scale prints that layer and distort archival holdings, visitors can materialize the spectral presence of digital documents, inviting us to re-envision an archive that is simultaneously here and gone. Visitors were invited to take home a poster and open their own portal into the collection." />
 
                 <FullWidthImage project="Spur" imageName="mainSpurImage.jpeg" altText="Black modular cowboy boot in the desert" />
 

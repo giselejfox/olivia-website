@@ -9,6 +9,7 @@ import Spacer from "../project-sections/Spacer"
 import TwoColumnImageLayout from "../project-sections/TwoColumnImageLayout"
 import Paragraph from "../project-sections/Paragraph"
 import { ImageCarousel } from '../project-sections/ImageCarousel';
+import ThreeColumnImageLayout from '../project-sections/ThreeColumnImageLayout';
 
 export default function ConversationAvenue() {
 
@@ -34,95 +35,33 @@ export default function ConversationAvenue() {
         },
     ]
     
-    const sketchingAndPrototypingImages = [
+    const fabricationImages = [
         {
-            imageTitle: "onsight-ideation.jpeg",
-            altText: "sketching backpack ideations"
+            imageTitle: "ca-fabrication-1.png",
+            altText: "Graphics of the stop sign"
         },
         {
-            imageTitle: "onsight-prototyping.jpeg",
-            altText: "collage of backpack prototypes"
+            imageTitle: "ca-fabrication-2.png",
+            altText: "Vinyl being printed"
         },
         {
-            imageTitle: "onsight-refined-concepts.jpeg",
-            altText: "collage of refined backpack concepts"
+            imageTitle: "ca-fabrication-3.png",
+            altText: "3d cutting the elements"
         }
     ]
 
-    const finalImages = [
+    const publicInstallationImages = [
         {
-            imageTitle: "onsight-final-camerabag.jpeg",
-            altText: "graphic of the finalized backpack"
+            imageTitle: "ca-pi-2.jpeg",
+            altText: "graphic of the the final sing"
         },
         {
-            imageTitle: "onsight-final-materials.jpeg",
-            altText: "graphic of the finalized materials"
+            imageTitle: "ca-pi-3.jpeg",
+            altText: "a woman standing near a sign"
         },
         {
-            imageTitle: "onsight-final-techpack.jpeg",
-            altText: "graphic of the finalized backpack"
-        }
-    ]
-
-    const featureImages = [
-        {
-            imageTitle: "onsight-backpack-features.jpeg",
-            altText: "graphic describing the backpack features"
-        },
-        {
-            imageTitle: "onsight-camera-features.jpeg",
-            altText: "graphic describing the backpack's camera features"
-        }
-    ]
-
-    const inActionImages = [
-        {
-            imageTitle: "onsight-in-action-1.jpeg",
-            altText: "man wearing the backpack near a rock wall"
-        },
-        {
-            imageTitle: "onsight-in-action-2.jpeg",
-            altText: "man wearing the backpack near a rock wall"
-        },
-        {
-            imageTitle: "onsight-in-action-3.jpeg",
-            altText: "man wearing the backpack near a rock wall"
-        },
-        {
-            imageTitle: "onsight-in-action-4.jpeg",
-            altText: "man wearing the backpack near a rock wall"
-        },
-        {
-            imageTitle: "onsight-in-action-5.jpeg",
-            altText: "man wearing the backpack near a rock wall"
-        },
-        {
-            imageTitle: "onsight-in-action-6.jpeg",
-            altText: "man wearing the backpack near a rock wall"
-        },
-        {
-            imageTitle: "onsight-in-action-7.jpeg",
-            altText: "man wearing the backpack near a rock wall"
-        },
-        {
-            imageTitle: "onsight-in-action-8.jpeg",
-            altText: "man wearing the backpack near a rock wall"
-        },
-        {
-            imageTitle: "onsight-in-action-9.jpeg",
-            altText: "man wearing the backpack near a rock wall"
-        },
-        {
-            imageTitle: "onsight-in-action-1.jpeg",
-            altText: "man wearing the backpack near a rock wall"
-        },
-        {
-            imageTitle: "onsight-in-action-10.jpeg",
-            altText: "man wearing the backpack near a rock wall"
-        },
-        {
-            imageTitle: "onsight-in-action-11.jpeg",
-            altText: "man wearing the backpack near a rock wall"
+            imageTitle: "ca-pi-4.jpeg",
+            altText: "closeup of the finalized sign"
         }
     ]
     
@@ -147,20 +86,32 @@ export default function ConversationAvenue() {
                     <iframe className='w-100' title="vimeo-player" src="https://player.vimeo.com/video/688581880?h=0a2b9e741d" height="360" frameborder="0" allowfullscreen></iframe>
                 </div>
 
-                <SectionHeader text="Participatory Research" />
+                <SectionHeader text="PARTICIPATORY RESEARCH" />
                 <Paragraph text={"This project initially began as an inquiry into how dating apps have worked (or failed to work) among college students during the pandemic. We learned from our research participants that the isolation they were experiencing wasn’t limited to romantic relationships, it extended to platonic ones as well."} />
                 <TwoColumnImageLayout project="ConversationAvenue" imageData={researchImages} />
 
                 <Spacer />
 
-                <SectionHeader text="Sketching" />
+                <SectionHeader text="SKETCHING" />
                 <Paragraph text={"After coming up with over 50 ideas for how to address our desired topic, we settled on the idea of an interactive street sign that people could receive conversational prompts from. We settled on a few key elements: A large, unconventional main sign to catch people’s attention, A series of stickers that people could write on and tag the sign, answering the prompt “What do you want people to know about you?”, An interactive button that would provide audio prompts upon being pushed"} />
                 <TwoColumnImageLayout project="ConversationAvenue" imageData={sketchingImages} />
                 <Spacer />
 
-                <SectionHeader text="Moodboard" />
-                <Paragraph text={"After coming up with over 50 ideas for how to address our desired topic, we settled on the idea of an interactive street sign that people could receive conversational prompts from. We settled on a few key elements: A large, unconventional main sign to catch people’s attention, A series of stickers that people could write on and tag the sign, answering the prompt “What do you want people to know about you?”, An interactive button that would provide audio prompts upon being pushed"} />
-                <TwoColumnImageLayout project="ConversationAvenue" imageData={sketchingImages} />
+                <SectionHeader text="MOODBOARD" />
+                <Paragraph text={"We were largely inspired by visual forms that communicate an individual’s presence in a public space, such as street art and interactive art exhibits. We also considered the traditional format of street signs and the bold visual language of the icons used."} />
+                <FullWidthImage project="ConversationAvenue" imageName={"ca-moodboard.jpeg"} altText={"stopsign moodboard"} />
+                
+                <SectionHeader text="STORYBOARD" />
+                <FullWidthImage project="ConversationAvenue" imageName={"ca-storyboard.jpeg"} altText={"stopsign storyboard"} />
+                
+                <SectionHeader text="FABRICATION" />
+                <ThreeColumnImageLayout project="ConversationAvenue" imageData={fabricationImages} />
+
+                <SectionHeader text="PUBLIC INSTALLATION" />
+                <FullWidthImage project="ConversationAvenue" imageName={"ca-pi-1.jpeg"} altText={"a colorful road sign in a park with someone walking nearby"} />
+                <Spacer />
+                <ThreeColumnImageLayout project="ConversationAvenue" imageData={publicInstallationImages} />
+                <Spacer />
                 <Spacer />
 
             </div>

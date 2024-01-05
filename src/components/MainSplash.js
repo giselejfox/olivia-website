@@ -53,12 +53,11 @@ export function ProjectBar() {
                     CONVERSATION AVE
                 </Link>
                 </div>
-                {/*
                 <div className="mx-2">
                 <Link className="main-splash-link fw-bold" to="/site-archive-cite" onClick={handleLinkClick}>
                     SITE / ARCHIVE / SITE
                 </Link>
-                </div> */}
+                </div>
             </div>
         </div>
         

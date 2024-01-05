@@ -30,8 +30,11 @@ export default function FloatingShapes() {
         return () => window.removeEventListener("mousemove", manageMouse)
     }, [])
 
+    // Adjust the zoom factor based on the screen size so we can see the name
+    const zoom = window.innerWidth < 768 ? 5 : 10
+
     return (
-        <Canvas style={{background: "#FFFFFF"}} orthographic camera={{position: [0, 0, 100], zoom: 10}}>
+        <Canvas style={{background: "#FFFFFF"}} orthographic camera={{position: [0, 0, 100], zoom: zoom}}>
             <Model mouse={smoothMouse}/>
             <Environment preset="studio"/>
         </Canvas>
@@ -42,8 +45,6 @@ export default function FloatingShapes() {
 function Model({mouse}) {
 
     const { nodes } = useGLTF("/img/floating-shapes/homepagesmallsize.glb");
-    console.log("Main Nodes")
-    console.log(nodes)
 
     return (
         <group>

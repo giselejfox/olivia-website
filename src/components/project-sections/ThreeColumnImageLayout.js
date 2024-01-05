@@ -2,9 +2,9 @@
 
 export default function ThreeColumnImageLayout({ project, imageData }) {
 
-    const imageElements = imageData.map((image) => {
+    const imageElements = imageData.map((image, index) => {
         return (
-            <div className="col d-flex justify-content-center align-items-center">
+            <div key={image.imageTitle} className="col d-flex justify-content-center align-items-center">
                 <img className="col-image" src={"img/" + project + "/" + image.imageTitle} alt={image.altText} />
             </div>
         )

@@ -107,8 +107,8 @@ export default function Beam() {
 
                 <Paragraph text={"Beam utilizes smart technology to provide on enhanced experience. A mini projector with the ability to adjust angles is embedded on the top of Beam's base alongside surface sensing technology. This projector displays the inter­face on the board, which slides into the base and is stabilized by magnets embedded in the base and the board's frame. Users can navigate the inter­face using the touch bar. Workout statistics are stored in Beam's interface that can be navigated using the touch bar on the top of the base. Users can track progress including their average time and success rate for a workout for specific days, weeks, and months."} />
 
-                <div className="container d-flex justify-content-center">
-                    <iframe width="560" height="315" src="https://www.youtube.com/embed/3FG6hDLRaQk?si=-1dqPzlpL576V32p&amp;" title="YouTube video player" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; gyroscope; web-share" allowfullscreen></iframe>
+                <div className="vh-100 d-flex justify-content-center">
+                    <iframe width="100%" height="90%" src="https://www.youtube.com/embed/3FG6hDLRaQk?si=-1dqPzlpL576V32p&amp;" title="YouTube video player" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; gyroscope; web-share" allowfullscreen></iframe>
                 </div>
                 
                 <Spacer />

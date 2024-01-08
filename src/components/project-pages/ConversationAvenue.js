@@ -82,8 +82,8 @@ export default function ConversationAvenue() {
                     date="MAR 2021"
                 />  
 
-                <div className="d-flex justify-content-center">
-                    <iframe className='w-100' title="vimeo-player" src="https://player.vimeo.com/video/688581880?h=0a2b9e741d" height="360" frameborder="0" allowfullscreen></iframe>
+                <div className="vh-100 d-flex justify-content-center">
+                    <iframe width="100%" height="90%" src="https://www.youtube-nocookie.com/embed/dZMdTcgaXIE?si=qFujqm2H6ADjQ7C5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
                 </div>
 
                 <SectionHeader text="PARTICIPATORY RESEARCH" />

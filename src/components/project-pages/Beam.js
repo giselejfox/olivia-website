@@ -77,7 +77,7 @@ export default function Beam() {
                     description="A balance board and lamp."
                     projectType="INDIVIDUAL PROJECT"
                     duration="10 WEEKS"
-                    date="DEC - MAR 2022"
+                    date="DEC-MAR 2022"
                 /> 
 
                 <FullWidthImage project="Beam" imageName="beamonfloor3.jpg" altText="Man standing on a balance beam and another balance beams showing workout stats to the right" />

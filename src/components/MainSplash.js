@@ -58,11 +58,11 @@ export function ProjectBar() {
                     SITE / ARCHIVE / SITE
                 </Link>
                 </div>
-                <div className="mx-2">
+                {/* <div className="mx-2">
                 <Link className="main-splash-link fw-bold" to="/coda" onClick={handleLinkClick}>
                     CODA
                 </Link>
-                </div>
+                </div> */}
             </div>
         </div>
         

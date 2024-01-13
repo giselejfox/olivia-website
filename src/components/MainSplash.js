@@ -1,5 +1,6 @@
-import React from 'react';
+import { Suspense, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { BallTriangle } from 'react-loader-spinner'
 
 import Navbar from "./Navbar";
 import FloatingShapesWrapper from "./FloatingShapesWrapper";
@@ -8,7 +9,10 @@ export default function MainSplash() {
 
     return (
         <div>
-            <FloatingShapesWrapper />
+            <Suspense fallback={<LoadingSpinner />}>
+                <FloatingShapesWrapper />
+            </Suspense>
+            {/* <LoadingSpinner /> */}
             <div className="content-wrapper d-flex vh-100 flex-column justify-content-between">
                 <Navbar />
                 <ProjectBar />
@@ -17,6 +21,24 @@ export default function MainSplash() {
     )
 
 }
+
+function LoadingSpinner() {
+    return (
+        <div className='floating-shapes-wrapper d-flex flex-row align-items-center justify-content-center'>
+            <BallTriangle
+                height={100}
+                width={100}
+                radius={5}
+                color="grey"
+                ariaLabel="ball-triangle-loading"
+                wrapperStyle={{}}
+                wrapperClass=""
+                visible={true}
+            />
+        </div>
+  
+    );
+};
 
 export function ProjectBar() {
 

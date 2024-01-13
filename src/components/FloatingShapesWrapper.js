@@ -3,10 +3,10 @@
 import React from 'react';
 import FloatingShapes from './name-animations/FloatingShapes';
 
-const FloatingShapesWrapper = () => {
+function FloatingShapesWrapper({ handleSetIsLoading }) {
   return (
     <div className="floating-shapes-wrapper">
-      <FloatingShapes />
+      <FloatingShapes handleSetIsLoading={handleSetIsLoading} />
     </div>
   );
 };

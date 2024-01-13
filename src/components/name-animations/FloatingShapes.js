@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Canvas } from '@react-three/fiber'
-import { Environment, useGLTF, Float, Html } from '@react-three/drei'
+import { Environment, useGLTF, Float } from '@react-three/drei'
 import { useMotionValue, useSpring, useTransform } from "framer-motion"
 import { motion } from 'framer-motion-3d';
 import * as THREE from 'three';
@@ -33,9 +33,10 @@ export default function FloatingShapes() {
     // Adjust the zoom factor based on the screen size so we can see the name
     const zoom = window.innerWidth < 768 ? 5 : 10
 
+
     return (
         <Canvas style={{background: "#FFFFFF"}} orthographic camera={{position: [0, 0, 100], zoom: zoom}}>
-            <Model mouse={smoothMouse}/>
+            <Model mouse={smoothMouse} />
             <Environment preset="studio"/>
         </Canvas>
     )
@@ -44,19 +45,19 @@ export default function FloatingShapes() {
 
 function Model({mouse}) {
 
-    const { nodes } = useGLTF("/img/floating-shapes/homepagesmallsize.glb");
+  const { nodes } = useGLTF('/img/floating-shapes/homepagesmallsize.glb')
 
-    return (
-        <group>
-          <Mesh node={nodes.Codatest} multiplier={8} mouse={mouse} />
-          <Mesh node={nodes.Default021} multiplier={8} mouse={mouse} />
-          <Mesh node={nodes.Default023} multiplier={8} mouse={mouse} />
-          <Mesh node={nodes.final_join} multiplier={8} mouse={mouse} />
-          <Mesh node={nodes.industrialboottest} multiplier={8} mouse={mouse} />
-          <Mesh node={nodes.stitchloaferstest} multiplier={8} mouse={mouse} />
-          <Mesh node={nodes.Text} multiplier={0} mouse={mouse} mainText={true}/>
-        </group>
-    );
+  return (
+    <group>
+      {Object.keys(nodes).length !== 0 && <Mesh node={nodes.Codatest} multiplier={8} mouse={mouse} />}
+      {Object.keys(nodes).length !== 0 && <Mesh node={nodes.Default021} multiplier={8} mouse={mouse} />}
+      {Object.keys(nodes).length !== 0 && <Mesh node={nodes.Default023} multiplier={8} mouse={mouse} />}
+      {Object.keys(nodes).length !== 0 && <Mesh node={nodes.final_join} multiplier={8} mouse={mouse} />}
+      {Object.keys(nodes).length !== 0 && <Mesh node={nodes.industrialboottest} multiplier={8} mouse={mouse} />}
+      {Object.keys(nodes).length !== 0 && <Mesh node={nodes.stitchloaferstest} multiplier={8} mouse={mouse} />}
+      {Object.keys(nodes).length !== 0 && <Mesh node={nodes.Text} multiplier={0} mouse={mouse} mainText={true}/>}
+    </group>
+  );
 }
   
 useGLTF.preload("/img/floating-shapes/homepagesmallsize.glb");

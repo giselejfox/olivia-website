@@ -1,6 +1,8 @@
 import Navbar from "../Navbar"
 import HTMLFlipBook from "react-pageflip";
 
+import { SlickSlider } from "../project-sections/ImageCarousel";
+
 
 export default function Coda() {
 
@@ -11,6 +13,9 @@ export default function Coda() {
                 <Navbar />
                 <div className="d-flex w-100 justify-content-center">
                     <MyBook />
+                </div>
+                <div className="container">
+                    <SlickSlider />
                 </div>
             </div>
         </div>

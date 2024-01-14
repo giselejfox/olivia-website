@@ -1,6 +1,6 @@
 import { Suspense, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { BallTriangle } from 'react-loader-spinner'
+import { Vortex } from 'react-loader-spinner'
 
 import Navbar from "./Navbar";
 import FloatingShapesWrapper from "./FloatingShapesWrapper";
@@ -25,15 +25,15 @@ export default function MainSplash() {
 function LoadingSpinner() {
     return (
         <div className='floating-shapes-wrapper d-flex flex-row align-items-center justify-content-center'>
-            <BallTriangle
-                height={100}
-                width={100}
-                radius={5}
-                color="grey"
-                ariaLabel="ball-triangle-loading"
-                wrapperStyle={{}}
-                wrapperClass=""
+            <Vortex
                 visible={true}
+                height="300"
+                width="300"
+                ariaLabel="vortex-loading"
+                wrapperStyle={{}}
+                wrapperClass="vortex-wrapper"
+                // colors={["#002FA7", "#000000", "#01796f", "#DFFF00", "#FF0000", "#EDAE49"]}
+                colors={["#000000"]}
             />
         </div>
   

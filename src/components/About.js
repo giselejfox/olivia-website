@@ -59,9 +59,9 @@ export default function About() {
                             <a className="email-link fw-bold text-decoration-none" href="mailto:oomen@uw.edu">oomen@uw.edu</a>
                             <div className="d-flex flex-row mt-3">
                                 <IconContext.Provider value={{ size: "1.5rem", className: "global-class-name" }}>
-                                    <span className="circle me-3"><SiInstagram /></span>
-                                    <span className="circle me-3"><GoMail /></span>
-                                    <span className="circle me-3"><FaLinkedinIn /></span>
+                                    <a href="https://www.instagram.com/oomenstudio/" aria-label="Instagram"><span className="circle me-3"><SiInstagram /></span></a>
+                                    <a href="mailto:oomen@uw.edu" aria-label="Email"><span className="circle me-3"><GoMail /></span></a>
+                                    <a href="https://www.linkedin.com/in/oliviaoomen/" aria-label="LinkedIn"><span className="circle me-3"><FaLinkedinIn /></span></a>
                                 </IconContext.Provider>
                             </div>
                         </div>

@@ -49,7 +49,7 @@ function Model({mouse}) {
 
   return (
     <group>
-      {Object.keys(nodes).length !== 0 && <Mesh node={nodes.Codatest} multiplier={8} mouse={mouse} />}
+      {/* {Object.keys(nodes).length !== 0 && <Mesh node={nodes.Codatest} multiplier={8} mouse={mouse} />} */}
       {Object.keys(nodes).length !== 0 && <Mesh node={nodes.Default021} multiplier={8} mouse={mouse} />}
       {Object.keys(nodes).length !== 0 && <Mesh node={nodes.Default023} multiplier={8} mouse={mouse} />}
       {Object.keys(nodes).length !== 0 && <Mesh node={nodes.final_join} multiplier={8} mouse={mouse} />}

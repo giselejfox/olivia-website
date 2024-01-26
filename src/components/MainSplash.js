@@ -77,7 +77,7 @@ export function ProjectBar() {
                 </div>
                 <div className="mx-2">
                 <Link className="main-splash-link fw-bold" to="/site-archive-cite" onClick={handleLinkClick}>
-                    SITE / ARCHIVE / SITE
+                    SITE / ARCHIVE / CITE
                 </Link>
                 </div>
                 {/* <div className="mx-2">

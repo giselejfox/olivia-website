@@ -449,6 +449,47 @@ textarea.shoe-text-input:focus {
   color: black !important;
 }
 
+/* _______ HONORS PROJECT ________*/
+
+.custom-modal {
+  max-width: 90% !important;
+}
+
+.background-image {
+  background-size: contain !important ;
+
+  /* sm < 667 */
+  width: 1100px; 
+  height: 770px; 
+
+  position: relative;
+}
+
+.topic-icon {
+  position: absolute;
+  z-index: 1;
+  cursor: pointer
+}
+
+
+/* HEIGHT BREAKPOINTS */
+
+/* md >= 667 & < 900 */
+@media (min-height: 667px) { 
+  .background-image {
+    width: 1400px; 
+    height: 980px; 
+  }
+}
+
+/* lg >= 900 */
+@media (min-height: 900px) { 
+  .background-image {
+    width: 1700px; 
+    height: 1190px; 
+  }
+}
+
 
 /* _______ MEDIA QUERIES _______ */
 
@@ -468,6 +509,10 @@ textarea.shoe-text-input:focus {
   .about-container {
     margin-left: 10rem;
     margin-right: 10rem;
+  }
+
+  .custom-modal {
+    max-width: 50% !important;
   }
 
 }

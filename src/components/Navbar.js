@@ -26,12 +26,12 @@ export default function Navbar() {
                             to="/about"
                         >ABOUT</Link>
                     </li>
-                    {/* <li className="nav-item">
+                    <li className="nav-item">
                         <Link 
-                            className={"nav-link active fw-bold " + (location.pathname === '/sole-opinion' ? "text-decoration-line-through" : '')}
-                            to="/sole-opinion"
-                        >SOLE OPINION</Link>
-                    </li> */}
+                            className={"nav-link active fw-bold " + (location.pathname === '/honors-project' ? "text-decoration-line-through" : '')}
+                            to="/honors-project"
+                        >HONORS PROJECT</Link>
+                    </li>
                 </ul>
                 </div>
             </div>

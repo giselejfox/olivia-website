@@ -1,6 +1,6 @@
 
 export default function BottleContent() {
     return (
-        <div>Bottle Bitch!</div>
+        <div>Bottle woooooo!</div>
     )
 }

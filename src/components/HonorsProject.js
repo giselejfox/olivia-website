@@ -6,6 +6,7 @@ import ImagePreloader from "./honors-project-components/ImagePreloader";
 import BackgroundAndIcons from "./honors-project-components/BackgroundAndIcons";
 
 import findIconHeight from "../helpers/findIconHeight";
+import IntroModal from "./honors-project-components/IntroModal";
 
 export default function HonorsProject() {
 
@@ -20,19 +21,21 @@ export default function HonorsProject() {
       return acc;
     }, {})
   );
+  // Determines whether or not to show the intro modal
+  const [showIntroModal, setShowIntroModal] = useState(true)
   // Determines whether or not the modal with the writing about a topic is showing
-  const [showModal, setShowModal] = useState(false)
+  const [showTopicModal, setShowTopicModal] = useState(false)
   // Sets what content to show inside the modal based on what icon you clicked on
-  const [modalContentTitle, setModalContentTitle] = useState("")
+  const [topicModalContentTitle, setTopicModalContentTitle] = useState("")
 
 
   // ___ HANDLERS ___
-  
-  const handleCloseModal = () => setShowModal(false);
+  const handleCloseIntroModal = () => setShowIntroModal(false)
+  const handleCloseTopicModal = () => setShowTopicModal(false);
   const handleProjectClick = (contentTitle) => {
     // Tells the modal what to show, opens the modal, and changes the status of the icon to true so it turns from white to the image
-    setModalContentTitle(contentTitle)
-    setShowModal(true)
+    setTopicModalContentTitle(contentTitle)
+    setShowTopicModal(true)
     console.log(projectIconStatus)
     // If the project hasn't been clicked before it updates the status to having been clicked
     if (!projectIconStatus[contentTitle]) {
@@ -62,7 +65,8 @@ export default function HonorsProject() {
   return (
     <div className="App">
       <BackgroundAndIcons pinnedImageElements={pinnedImageElements} />
-      <ProjectModal showModal={showModal} modalContentTitle={modalContentTitle} handleCloseModal={handleCloseModal} />
+      <IntroModal showModal={showIntroModal} handleCloseModal={handleCloseIntroModal} />
+      <ProjectModal showModal={showTopicModal} modalContentTitle={topicModalContentTitle} handleCloseModal={handleCloseTopicModal} />
       {/* This preloads the 8 gif images */}
       {[...Array(8).keys()].map((index) => (
         <ImagePreloader key={"image-preloader" + index} imageNumber={index + 1} />

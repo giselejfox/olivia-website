@@ -51,7 +51,7 @@ export default function ProjectModal({showModal, modalContentTitle, handleCloseM
   
     return (
       <Modal show={showModal} onHide={handleCloseModal} dialogClassName="custom-modal">
-        <Modal.Header style={{ ...customStyles, border: 'none' }} closeButton>
+        <Modal.Header style={{ ...customStyles, border: 'none' }} closeButton >
         {/* Dynamically set the modal title based on modalContentTitle */}
         <Modal.Title>{getHeaderForTitle(modalContentTitle)} </Modal.Title>
       </Modal.Header>

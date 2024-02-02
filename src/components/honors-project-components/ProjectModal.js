@@ -57,9 +57,6 @@ export default function ProjectModal({showModal, modalContentTitle, handleCloseM
       </Modal.Header>
         <Modal.Body style={{ ...customStyles, maxHeight: '80vh', overflowY: 'auto'}}>
         <ModalBodyContent contentTitle={modalContentTitle} /></Modal.Body>
-        <Modal.Footer style={{ ...customStyles, border: 'none' }}>
-          <Button variant="secondary" onClick={handleCloseModal}>Close</Button>
-        </Modal.Footer>
       </Modal>
     )
 }

@@ -41,6 +41,9 @@ export default function ProjectModal({showModal, modalContentTitle, handleCloseM
   
     return (
       <Modal show={showModal} onHide={handleCloseModal} dialogClassName="custom-modal">
+        <Modal.Header closeButton>
+        <Modal.Title>{modalContentTitle}</Modal.Title>
+      </Modal.Header>
         <Modal.Body style={{ ...customStyles, maxHeight: '80vh', overflowY: 'auto'}}>
         <ModalBodyContent contentTitle={modalContentTitle} /></Modal.Body>
         <Modal.Footer style={{ ...customStyles, border: 'none' }}>

@@ -37,12 +37,23 @@ export default function ProjectModal({showModal, modalContentTitle, handleCloseM
     }
   };
 
+  const getHeaderForTitle = (title) => {
+    switch (title) {
+      case 'sewing-machine':
+        return 'Sewing Machine';
+      // Add cases for other titles as needed
+      default:
+        return title; // Use the title as is for the default
+    }
+  };
+
   const customStyles = getCustomStyles();
   
     return (
       <Modal show={showModal} onHide={handleCloseModal} dialogClassName="custom-modal">
-        <Modal.Header closeButton>
-        <Modal.Title>{modalContentTitle}</Modal.Title>
+        <Modal.Header style={{ ...customStyles, border: 'none' }} closeButton>
+        {/* Dynamically set the modal title based on modalContentTitle */}
+        <Modal.Title>{getHeaderForTitle(modalContentTitle)} </Modal.Title>
       </Modal.Header>
         <Modal.Body style={{ ...customStyles, maxHeight: '80vh', overflowY: 'auto'}}>
         <ModalBodyContent contentTitle={modalContentTitle} /></Modal.Body>

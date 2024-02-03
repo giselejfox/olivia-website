@@ -47,6 +47,12 @@ export default function ProjectModal({showModal, modalContentTitle, handleCloseM
         return 'Materials Matter!';
       case 'newspaper':
         return 'Illustration at The Daily';
+      case 'record-player':
+        return 'Ethnomusicology';
+      case 'headphones':
+        return 'Making Music';
+      case 'games':
+        return 'Yahtzee!';
       // Add cases for other titles as needed
       default:
         return title; // Use the title as is for the default

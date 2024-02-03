@@ -41,6 +41,10 @@ export default function ProjectModal({showModal, modalContentTitle, handleCloseM
     switch (title) {
       case 'sewing-machine':
         return 'Sewing Machine';
+      case 'laptop':
+        return 'System.out.println(“Who says coding can’t be creative?”);';
+      case 'fabric':
+        return 'Materials Matter!';
       // Add cases for other titles as needed
       default:
         return title; // Use the title as is for the default

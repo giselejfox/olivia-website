@@ -23,7 +23,7 @@ export default function Coda() {
 
 }
 
-function MyBook(props) {
+function MyBook() {
 
     return (
       <HTMLFlipBook width={395} height={448}>

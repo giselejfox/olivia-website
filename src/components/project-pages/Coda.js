@@ -8,13 +8,7 @@ import gsap from 'gsap'
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Canvas } from '@react-three/fiber';
-import { Environment, useGLTF, Float } from '@react-three/drei'
-
-import { SlickSlider } from "../project-sections/ImageCarousel";
-
-
-
-
+import { Environment, useGLTF } from '@react-three/drei'
 
 export default function Coda() {
 
@@ -27,7 +21,7 @@ export default function Coda() {
                     <MyBook />
                 </div>
                 <div className="container">
-                    <SlickSlider />
+                    {/* <SlickSlider /> */}
                 </div>
                 <SpinScrollModel />
                 <Spacer />
@@ -38,7 +32,6 @@ export default function Coda() {
             <MainSplash />
         </div>
     )
-
 }
 
 function SpinScrollModel() {

@@ -455,8 +455,21 @@ textarea.shoe-text-input:focus {
   max-width: 90% !important;
 }
 
+.modal-content {
+  border: 10px solid black !important;
+  border-radius: 30px !important;
+}
+
+.modal-header {
+  border-bottom: none !important;
+}
+
+.modal-body {
+  border-radius: 20px;
+}
+
 .modal-title {
-  font-weight: 600 !important;
+  font-weight: 700 !important;
 }
 
 .background-image {
@@ -473,6 +486,35 @@ textarea.shoe-text-input:focus {
   position: absolute;
   z-index: 1;
   cursor: pointer
+}
+
+/* Scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 25px;
+  border-radius: 20px;
+  margin-right: 30px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: black;
+  border-radius: 25px;
+  margin-right: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: white;
+  border-radius: 20px;
+  border: 7px solid black !important;
+
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(255, 139, 1);
 }
 
 
@@ -505,6 +547,11 @@ textarea.shoe-text-input:focus {
   .sole-opinion-hero-section h1 {
     font-size: 8rem
   }
+  .modal-header {
+    margin-left: 3rem !important;
+    margin-right: 3rem !important
+  }
+  
 }
 
 /* lg */

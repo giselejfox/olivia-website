@@ -67,10 +67,6 @@ export default function HonorsProject() {
       <BackgroundAndIcons pinnedImageElements={pinnedImageElements} />
       <IntroModal showModal={showIntroModal} handleCloseModal={handleCloseIntroModal} />
       <ProjectModal showModal={showTopicModal} modalContentTitle={topicModalContentTitle} handleCloseModal={handleCloseTopicModal} />
-      {/* This preloads the 8 gif images */}
-      {[...Array(8).keys()].map((index) => (
-        <ImagePreloader key={"image-preloader" + index} imageNumber={index + 1} />
-      ))}
     </div>
   );
 }

@@ -1,4 +1,4 @@
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 import ModalBodyContent from './ModalBodyContent';
@@ -59,15 +59,15 @@ export default function ProjectModal({showModal, modalContentTitle, handleCloseM
     }
   };
 
-  const customStyles = getCustomStyles();
+  // const customStyles = getCustomStyles();
   
     return (
       <Modal show={showModal} onHide={handleCloseModal} dialogClassName="custom-modal">
-        <Modal.Header style={{ ...customStyles, border: 'none' }} closeButton >
+        <Modal.Header style={{}} closeButton >
         {/* Dynamically set the modal title based on modalContentTitle */}
         <Modal.Title>{getHeaderForTitle(modalContentTitle)} </Modal.Title>
       </Modal.Header>
-        <Modal.Body style={{ ...customStyles, maxHeight: '80vh', overflowY: 'auto'}}>
+        <Modal.Body style={{ maxHeight: '80vh', overflowY: 'auto'}}>
         <ModalBodyContent contentTitle={modalContentTitle} /></Modal.Body>
       </Modal>
     )

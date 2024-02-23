@@ -455,6 +455,10 @@ textarea.shoe-text-input:focus {
   max-width: 90% !important;
 }
 
+.modal-title {
+  font-weight: 600 !important;
+}
+
 .background-image {
   background-size: contain !important ;
 

@@ -52,10 +52,10 @@ export default function HonorsProject() {
     const iconHeight = findIconHeight(window.innerHeight, imageData)
     // If the icon is labeled as having been clicked (projectIconStatus[title] = true) we show the clicked version, otherwise the unclicked version
     return (
-      <div onClick={() => handleProjectClick(imageData.title)} key={index + imageData.imageTitle} className="topic-icon" style={{top:imageData.percentFromTop, left:imageData.percentFromLeft}}>
+      <button type="button" onClick={() => handleProjectClick(imageData.title)} key={index + imageData.imageTitle} className="topic-icon" style={{top:imageData.percentFromTop, left:imageData.percentFromLeft}}>
         {projectIconStatus[imageData.title] && <img style={{height: iconHeight}} src={"img/honors-project/pinned-images/"+imageData.title+"-clicked.png"} alt={imageData.altText} /> }
         {!projectIconStatus[imageData.title] && <img style={{height: iconHeight}} src={"img/honors-project/pinned-images/"+imageData.title+"-unclicked.png"} alt={imageData.altText} /> }
-      </div>
+      </button>
     )  
   })
 

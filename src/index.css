@@ -456,7 +456,7 @@ textarea.shoe-text-input:focus {
 }
 
 .modal-content {
-  border: 10px solid black !important;
+  border: 5px solid black !important;
   border-radius: 30px !important;
 }
 
@@ -471,6 +471,25 @@ textarea.shoe-text-input:focus {
 .modal-title {
   font-weight: 700 !important;
 }
+
+button.topic-icon {
+  background: none;
+  color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+button.topic-icon:hover {
+  opacity: .5;
+}
+
+button.topic-icon:focus {
+  opacity: .5;
+}
+
 
 .background-image {
   background-size: contain !important ;
@@ -492,31 +511,8 @@ textarea.shoe-text-input:focus {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 25px;
-  border-radius: 20px;
-  margin-right: 30px;
+  display: none;
 }
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: black;
-  border-radius: 25px;
-  margin-right: 5px;
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background: white;
-  border-radius: 20px;
-  border: 7px solid black !important;
-
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: rgb(255, 139, 1);
-}
-
 
 /* HEIGHT BREAKPOINTS */
 

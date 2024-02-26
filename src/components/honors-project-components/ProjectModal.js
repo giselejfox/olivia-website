@@ -40,7 +40,7 @@ export default function ProjectModal({showModal, modalContentTitle, handleCloseM
   const getHeaderForTitle = (title) => {
     switch (title) {
       case 'sewing-machine':
-        return 'Sewing Machine';
+        return 'Learning Sew Much About Softgoods!';
       case 'laptop':
         return 'System.out.println(“Who says coding can’t be creative?”);';
       case 'fabric':

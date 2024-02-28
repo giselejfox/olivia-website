@@ -53,6 +53,10 @@ export default function ProjectModal({showModal, modalContentTitle, handleCloseM
         return 'Making Music';
       case 'games':
         return 'Yahtzee!';
+      case 'bottle':
+          return 'Tulips, Windmills, and Textbooks: Studying Abroad in the Netherlands';
+      case 'printer':
+        return 'Nailing It... Literally: Learning Manufacturing Techniques';
       // Add cases for other titles as needed
       default:
         return title; // Use the title as is for the default

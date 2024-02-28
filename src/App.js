@@ -28,7 +28,7 @@ function App() {
         <Route path="conversation-ave" element={<ConversationAvenue />} />
         <Route path="site-archive-cite" element={<SiteArchiveSite />} />
         <Route path="coda" element={<Coda />} />
-        <Route path="honors-project" element={<HonorsProject />} />
+        <Route path="honors-portfolio" element={<HonorsProject />} />
         <Route path="*" element={<MainSplash />} />
       </Routes>
     </div>

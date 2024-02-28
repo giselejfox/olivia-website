@@ -436,6 +436,12 @@ textarea.shoe-text-input:focus {
 
 /* _______ HONORS PROJECT ________*/
 
+.background-image{
+  margin-top: calc(-1 * var(--navbar-height)); /* The navbar height*/
+  /* z-index: -1; */
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0) 80%, rgba(255, 255, 255, 1) 90%), url("../public/img/honors-project/background-gif/liv-sewing.gif");
+}
+
 .custom-modal {
   max-width: 90% !important;
 }

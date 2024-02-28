@@ -4,6 +4,7 @@ import { pinnedImagesData } from "../data/pinnedImagesData";
 import ProjectModal from "./honors-project-components/ProjectModal"
 import ImagePreloader from "./honors-project-components/ImagePreloader";
 import BackgroundAndIcons from "./honors-project-components/BackgroundAndIcons";
+import Navbar from "./Navbar"
 
 import findIconHeight from "../helpers/findIconHeight";
 import IntroModal from "./honors-project-components/IntroModal";
@@ -64,6 +65,7 @@ export default function HonorsProject() {
 
   return (
     <div className="App">
+      <Navbar />
       <BackgroundAndIcons pinnedImageElements={pinnedImageElements} />
       <IntroModal showModal={showIntroModal} handleCloseModal={handleCloseIntroModal} />
       <ProjectModal showModal={showTopicModal} modalContentTitle={topicModalContentTitle} handleCloseModal={handleCloseTopicModal} />

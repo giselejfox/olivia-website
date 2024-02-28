@@ -6,7 +6,7 @@ export default function Navbar() {
     const location = useLocation();
     
     return (
-        <nav className="navbar navbar-expand-lg py-5 px-4">
+        <nav className="navbar navbar-expand-lg py-5 px-4" style={{zIndex: 2}}>
             <div className="container-fluid">
                 <Link className="navbar-brand fw-bold" to="/work">OLIVIA OOMEN</Link>
                 <button className="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -16,21 +16,21 @@ export default function Navbar() {
                 <ul className="navbar-nav">
                     <li className="nav-item">
                         <Link 
-                            className={"nav-link active fw-bold " + ( (location.pathname !== '/about' & location.pathname !== '/sole-opinion') ? "text-decoration-line-through" : '')}
+                            className={"nav-link active fw-bold " + ( (location.pathname === '/work' & location.pathname !== '/sole-opinion') ? "text-decoration-line-through" : '')}
                             to="/work"
                         >WORK</Link>
+                    </li>
+                    <li className="nav-item">
+                        <Link 
+                            className={"nav-link active fw-bold " + (location.pathname === '/honors-portfolio' ? "text-decoration-line-through" : '')}
+                            to="/honors-portfolio"
+                        >HONORS PORTFOLIO</Link>
                     </li>
                     <li className="nav-item">
                         <Link 
                             className={"nav-link active fw-bold " + (location.pathname === '/about' ? "text-decoration-line-through" : '')}
                             to="/about"
                         >ABOUT</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link 
-                            className={"nav-link active fw-bold " + (location.pathname === '/honors-project' ? "text-decoration-line-through" : '')}
-                            to="/honors-project"
-                        >HONORS PROJECT</Link>
                     </li>
                 </ul>
                 </div>

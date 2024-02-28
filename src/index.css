@@ -1,8 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'DM sans', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -22,22 +20,9 @@ a:hover {
   text-decoration: line-through;
 }
 
-/* For fading in and out when going to new projects */
-.fade-screen {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: white; /* Set the initial background color */
-  opacity: 1;
-  pointer-events: none;
-  transition: opacity 0.5s ease-in-out; /* Adjust the transition duration as needed */
-  z-index: 9999; /* Ensure it's above other elements */
-}
-
-.fade-out {
-  opacity: 0;
+h1 {
+  font-weight: 700 !important;
+  letter-spacing: 0.1rem;
 }
 
 
@@ -470,6 +455,19 @@ textarea.shoe-text-input:focus {
 
 .modal-title {
   font-weight: 700 !important;
+}
+
+.modal-footer {
+  border: none !important;
+  padding: 0px !important;
+  padding-bottom: 3rem !important;
+}
+
+.modal-body > button {
+  margin-right: 10px;
+  border-radius: 50px;
+  width: 8rem;
+  background-color: black;
 }
 
 button.topic-icon {

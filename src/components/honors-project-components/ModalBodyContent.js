@@ -7,6 +7,7 @@ import RecordplayerContent from "./modal-contents/RecordplayerContent"
 import SewingmachineContent from "./modal-contents/SewingmachineContent"
 import GamesContent from "./modal-contents/GamesContent"
 import PrinterContent from "./modal-contents/PrinterContent"
+import LearningstatementContent from "./modal-contents/LearningstatementContent"
 
 /* 
 
@@ -27,6 +28,7 @@ export default function ModalBodyContent({ contentTitle }) {
             {contentTitle === "sewing-machine" && <SewingmachineContent />}
             {contentTitle === "games" && <GamesContent />}
             {contentTitle === "printer" && <PrinterContent />}
+            {contentTitle === "learningstatement" && <LearningstatementContent />}
         </div>
     )
 }

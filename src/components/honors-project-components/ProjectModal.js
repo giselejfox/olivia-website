@@ -57,6 +57,8 @@ export default function ProjectModal({showModal, modalContentTitle, handleCloseM
           return 'Tulips, Windmills, and Textbooks: Studying Abroad in the Netherlands';
       case 'printer':
         return 'Nailing It... Literally: Learning Manufacturing Techniques';
+      case 'learningstatement':
+          return 'Reflecting on My Learning';
       // Add cases for other titles as needed
       default:
         return title; // Use the title as is for the default

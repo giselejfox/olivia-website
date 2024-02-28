@@ -44,6 +44,15 @@ export const pinnedImagesData = [
         lgHeight: "140px",
     },
     {
+        title: "learningstatement",
+        altText: "a teal sign",
+        percentFromTop: "16%",
+        percentFromLeft: "35%",
+        smHeight: "50px",
+        mdHeight: "70px",
+        lgHeight: "80px",
+    },
+    {
         title: "laptop",
         altText: "a red industrial sewing machine",
         percentFromTop: "28%",

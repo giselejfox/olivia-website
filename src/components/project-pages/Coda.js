@@ -1,7 +1,12 @@
 import Navbar from "../Navbar"
 import MainSplash from "../MainSplash";
 import Spacer from "../project-sections/Spacer";
+import ProjectHeader from "../project-sections/ProjectHeader"
 import HTMLFlipBook from "react-pageflip";
+import SectionHeader from "../project-sections/SectionHeader"
+import FullWidthImage from "../project-sections/FullWidthImage"
+import Paragraph from "../project-sections/Paragraph"
+import TwoColumnImageLayout from "../project-sections/TwoColumnImageLayout"
 
 import { useRef } from "react";
 import gsap from 'gsap'
@@ -12,14 +17,74 @@ import { Environment, useGLTF } from '@react-three/drei'
 
 export default function Coda() {
 
+    const researchImages2 = [
+        {
+            imageTitle: "codaEmpathy.jpg",
+            altText: "two people at desks, one on a balance board"
+        },
+        {
+            imageTitle: "codaPersona.jpg",
+            altText: "people using balance boards in multiple stances"  
+        }
+    ]
+
     return (
         <div>
             <div style={{background:"white"}}>
                 <div id="top"></div>
                 <Navbar />
+
+                <ProjectHeader
+                    title="CODA"
+                    description="An eco-concious wristband and app capturing shared memories, extending the event experience beyond the music festival"
+                    projectType="COLLABORATORS: SAM RIERA"
+                    duration="11 WEEKS"
+                    date="2023"
+                />      
+
+                <div className="vh-100 d-flex justify-content-center">
+                    <iframe width="100%" height="90%" src="https://www.youtube-nocookie.com/embed/PlbtC0DTJlc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                
+                <SectionHeader text="RESEARCH" />
+                <Paragraph text={"To approach designing a new product for the live music environment, we interviewed concert professionals, musicians, and concertgoers. Hearing their concert habits, opinions on sustainability and merchandise, and personal goals at live music events built a foundational understanding of the problem space. These interviews were often looked back on while designing. (Turn pages below)"} />
+
                 <div className="d-flex w-100 justify-content-center">
                     <MyBook />
                 </div>
+                <Spacer />
+                <SectionHeader text="USER MAPPING" />
+                <TwoColumnImageLayout project="Coda" imageData={researchImages2} />
+                <Spacer />
+                <SectionHeader text="MOODBOARD" />
+                <Paragraph text={"Compostable — Natural — Textured - Organic"} />
+                <FullWidthImage project="Coda" imageName="codaMood.jpg" altText="mood board" />
+                
+                <SectionHeader text="IDEATION" />
+                <FullWidthImage project="Coda" imageName="codaSketches.jpg" altText="collage of sketches" />
+                <Spacer />
+
+                <SectionHeader text="MATERIAL EXPLORATION" />
+                <Paragraph text={"Since the beginning materials mattered. We focused on minimizing the product's footprint and planning an intentional lifecycle. We conducted physical experiments to figure out which material was best. We gathered drink waste material from surrounding cafes and breweries to test. All materials had to be biodegradable in order to not leave a lasting mark on the planet and promote sustainable thinking. We ended up choosing a hardened fiber pulp, beeswax, cotton, and a combination of coffee grounds and natural thickening agents as our materials to work with. "} />
+                <FullWidthImage project="Coda" imageName="codaFabric.jpg" altText="collage of fabric images" />
+                <Spacer />
+                <Paragraph text={"Text "} />
+                <FullWidthImage project="Coda" imageName="codaCoffee.jpg" altText="collage of fabric images" />
+                
+                <Spacer />
+                <Paragraph text={"Text "} />
+                <FullWidthImage project="Coda" imageName="codaEarplugs.jpg" altText="collage of fabric images" />
+                
+                <Spacer />
+                <Paragraph text={"Rough Material Prototype"} />
+                <FullWidthImage project="Coda" imageName="codaPrototype.jpg" altText="collage of fabric images" />
+                
+                <Spacer />
+                <FullWidthImage project="Coda" imageName="codaEarplugscontext.jpg" altText="collage of fabric images" />
+                
+                <Spacer />
+
+
                 <div className="container">
                     {/* <SlickSlider /> */}
                 </div>

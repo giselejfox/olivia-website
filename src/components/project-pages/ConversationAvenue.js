@@ -99,7 +99,7 @@ export default function ConversationAvenue() {
 
                 <SectionHeader text="MOODBOARD" />
                 <Paragraph text={"We were largely inspired by visual forms that communicate an individual’s presence in a public space, such as street art and interactive art exhibits. We also considered the traditional format of street signs and the bold visual language of the icons used."} />
-                <FullWidthImage project="ConversationAvenue" imageName={"ca-moodboard.jpeg"} altText={"stopsign moodboard"} />
+                <FullWidthImage project="ConversationAvenue" imageName={"caMood.jpg"} altText={"stopsign moodboard"} />
                 
                 <SectionHeader text="STORYBOARD" />
                 <FullWidthImage project="ConversationAvenue" imageName={"ca-storyboard.jpeg"} altText={"stopsign storyboard"} />

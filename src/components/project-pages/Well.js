@@ -92,7 +92,7 @@ export default function Well() {
                 <FullWidthImage project="Well" imageName="WellColorLine.jpg" altText="Examples of kettles in different colors" />
             </div>
 
-            <MainSplash />
+            {/* <MainSplash /> */}
         </div>
     )
 }

@@ -109,7 +109,7 @@ export default function Coda() {
                 <Spacer />
                 <Spacer />
             </div>
-            <MainSplash />
+            {/* <MainSplash /> */}
         </div>
     )
 }

@@ -116,7 +116,7 @@ export default function ConversationAvenue() {
 
             </div>
 
-            <MainSplash />
+            {/* <MainSplash /> */}
         </div>
     )
 }

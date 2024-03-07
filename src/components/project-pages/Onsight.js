@@ -168,7 +168,7 @@ export default function Onsight() {
 
             </div>
 
-            <MainSplash />
+            {/* <MainSplash /> */}
         </div>
     )
 }

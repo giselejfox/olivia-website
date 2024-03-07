@@ -63,7 +63,7 @@ export default function Spur() {
 
             </div>
 
-            <MainSplash />
+            {/* <MainSplash /> */}
         </div>
     )
 }

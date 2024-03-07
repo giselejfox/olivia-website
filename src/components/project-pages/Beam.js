@@ -8,6 +8,7 @@ import Spacer from "../project-sections/Spacer"
 import TwoColumnImageLayout from "../project-sections/TwoColumnImageLayout"
 import Paragraph from "../project-sections/Paragraph"
 import { ImageCarousel, SmallImageCarousel } from "../project-sections/ImageCarousel"
+import MainSplash2D from "../MainSplash2D"
 
 export default function Beam() {
 
@@ -66,7 +67,7 @@ export default function Beam() {
 
     return(
         <div>
-            <div style={{background:"white"}}>
+            <div style={{background:"white", zIndex: 2}}>
 
                 <div id="top"></div>
 
@@ -117,8 +118,9 @@ export default function Beam() {
                 <ImageCarousel project="Beam" imageData={endRenders} />
 
                 <Spacer />
+
             </div>
-            <MainSplash />
+            {/* <MainSplash2D /> */}
         </div>
     )
 }

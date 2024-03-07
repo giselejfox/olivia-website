@@ -90,7 +90,7 @@ export default function SiteArchiveSite() {
 
             </div>
 
-            <MainSplash />
+            {/* <MainSplash /> */}
         </div>
     )
 }

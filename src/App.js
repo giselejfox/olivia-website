@@ -8,20 +8,20 @@ import Beam from './components/project-pages/Beam';
 import Spur from './components/project-pages/Spur.js'
 import Onsight from './components/project-pages/Onsight.js'
 
-import SoleOpinion from './components/SoleOpinion.js';
+// import SoleOpinion from './components/SoleOpinion.js';
 import ConversationAvenue from './components/project-pages/ConversationAvenue.js';
 import SiteArchiveSite from './components/project-pages/SiteArchiveCite.js';
 import Coda from './components/project-pages/Coda.js';
 import HonorsProject from './components/HonorsProject.js';
-import TestMainSplash from './components/TestMainSplash.js';
+import MainSplash2D from './components/MainSplash2D.js';
 
 function App() {
   return (
     <div>
       <Routes>
-        <Route index element={<MainSplash />} />
+        <Route index element={<MainSplash2D />} />
         <Route path="about" element={<About />} />
-        <Route path="sole-opinion" element={<SoleOpinion />} />
+        {/* <Route path="sole-opinion" element={<SoleOpinion />} /> */}
         <Route path="well" element={<Well />} />
         <Route path="beam" element={<Beam />} />
         <Route path="spur" element={<Spur />} />
@@ -30,8 +30,7 @@ function App() {
         <Route path="site-archive-cite" element={<SiteArchiveSite />} />
         <Route path="coda" element={<Coda />} />
         <Route path="honors-portfolio" element={<HonorsProject />} />
-        <Route path="test-main-splash" element={<TestMainSplash />} />
-        <Route path="*" element={<MainSplash />} />
+        <Route path="*" element={<MainSplash2D />} />
       </Routes>
     </div>
   );

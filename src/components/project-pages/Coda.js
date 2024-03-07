@@ -66,21 +66,36 @@ export default function Coda() {
 
                 <SectionHeader text="MATERIAL EXPLORATION" />
                 <Paragraph text={"Since the beginning materials mattered. We focused on minimizing the product's footprint and planning an intentional lifecycle. We conducted physical experiments to figure out which material was best. We gathered drink waste material from surrounding cafes and breweries to test. All materials had to be biodegradable in order to not leave a lasting mark on the planet and promote sustainable thinking. We ended up choosing a hardened fiber pulp, beeswax, cotton, and a combination of coffee grounds and natural thickening agents as our materials to work with. "} />
+                <Paragraph text={"We experimented with various methods for creating a wristband with a singular piece of fabric. Since we wanted the wristband to unfold into a banana, we were focused on utilizing twisting to create a cord-like texture that would compress the fabric. We also experimented with natural dye processes and researched screen-printing with coffee."} />
+               
                 <FullWidthImage project="Coda" imageName="codaFabric.jpg" altText="collage of fabric images" />
                 <Spacer />
-                <Paragraph text={"Text "} />
+                <Paragraph text={"Coffee grounds were mixed in a recipe to create a material with a similar strength to reinforced concrete. The beads were polished with a coating of beeswax."} />
                 <FullWidthImage project="Coda" imageName="codaCoffee.jpg" altText="collage of fabric images" />
                 
                 <Spacer />
-                <Paragraph text={"Text "} />
+                <Paragraph text={"To create the earplugs, both biofoam and beeswax were experimented with. The beeswax and cotton combination was more durable and allows users to shape their earplugs custom to their ears. We created a mold and paper pulp to create a shell for the earplugs, creating a removable bead."} />
                 <FullWidthImage project="Coda" imageName="codaEarplugs.jpg" altText="collage of fabric images" />
                 
                 <Spacer />
                 <Paragraph text={"Rough Material Prototype"} />
                 <FullWidthImage project="Coda" imageName="codaPrototype.jpg" altText="collage of fabric images" />
                 
+                
+                <SectionHeader text="FINAL SOLUTION" />
+                <FullWidthImage project="Coda" imageName="codaCallout.jpg" altText="collage of fabric images" />
+                
                 <Spacer />
+                <Paragraph text={"Removable earplugs protect concertgoer's ears."} />
                 <FullWidthImage project="Coda" imageName="codaEarplugscontext.jpg" altText="collage of fabric images" />
+                
+                <Spacer />
+                <Paragraph text={"Personalized wristband code links to the app."} />
+                <FullWidthImage project="Coda" imageName="codaInterface.jpg" altText="collage of fabric images" />
+                
+                <Spacer />
+                <Paragraph text={"At home, the wristband untwists into a scarf and the coffee beads dissolve when soaked in water."} />
+                <FullWidthImage project="Coda" imageName="codaTransform.jpg" altText="collage of fabric images" />
                 
                 <Spacer />
 

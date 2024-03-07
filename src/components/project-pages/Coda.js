@@ -103,11 +103,11 @@ export default function Coda() {
                 <div className="container">
                     {/* <SlickSlider /> */}
                 </div>
-                <SpinScrollModel />
+                {/* <SpinScrollModel />
                 <Spacer />
                 <Spacer />
                 <Spacer />
-                <Spacer />
+                <Spacer /> */}
             </div>
             {/* <MainSplash /> */}
         </div>

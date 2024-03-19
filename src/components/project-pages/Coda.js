@@ -99,6 +99,7 @@ export default function Coda() {
                 
                 <Spacer />
 
+                <Navbar />
 
                 <div className="container">
                     {/* <SlickSlider /> */}

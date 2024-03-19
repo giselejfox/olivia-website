@@ -61,6 +61,8 @@ export default function Spur() {
 
                 <Spacer />
 
+                <Navbar />
+
             </div>
 
             {/* <MainSplash /> */}

@@ -166,6 +166,8 @@ export default function Onsight() {
                 <Spacer />
                 <Spacer />
 
+                <Navbar />
+
             </div>
 
             {/* <MainSplash /> */}

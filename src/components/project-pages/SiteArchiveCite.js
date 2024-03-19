@@ -86,6 +86,8 @@ export default function SiteArchiveSite() {
                 <ImageCarousel project="SiteArchiveCite" imageData={publicInstallationImages} />
                 <Spacer />
                 <Spacer />
+
+                <Navbar />
                 
 
             </div>

@@ -90,6 +90,8 @@ export default function Well() {
                 <FullWidthImage project="Well" imageName="kettlecablemanagement.19.jpg" altText="View of kettle base" />
                 <FullWidthImage project="Well" imageName="kettleexplode.jpg" altText="Expanded view of kettle" />
                 <FullWidthImage project="Well" imageName="WellColorLine.jpg" altText="Examples of kettles in different colors" />
+
+                <Navbar />
             </div>
 
             {/* <MainSplash /> */}

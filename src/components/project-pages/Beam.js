@@ -118,6 +118,7 @@ export default function Beam() {
                 <ImageCarousel project="Beam" imageData={endRenders} />
 
                 <Spacer />
+                <Navbar />
 
             </div>
             {/* <MainSplash2D /> */}

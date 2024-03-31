@@ -3,9 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@babylonjs/core": "^7.0.0",
+    "@babylonjs/loaders": "^7.0.0",
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@fortawesome/react-fontawesome": "^0.2.0",
+    "@google/model-viewer": "^3.4.0",
     "@gsap/react": "^2.1.0",
     "@mui/icons-material": "^5.14.8",
     "@react-three/drei": "^9.91.0",
@@ -45,7 +48,7 @@
     "react-slick": "^0.29.0",
     "react-three-fiber": "^6.0.13",
     "slick-carousel": "^1.8.1",
-    "three": "^0.158.0",
+    "three": "^0.160.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

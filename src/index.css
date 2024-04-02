@@ -15,6 +15,15 @@ code {
   --white: #ffffff;
 }
 
+.no-underline-link {
+  text-decoration: none;
+  font-weight: 800;
+  color: black
+}
+
+.no-underline-link:hover {
+  text-decoration: line-through !important;
+}
 
 a:hover {
   text-decoration: line-through;

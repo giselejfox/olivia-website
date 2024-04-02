@@ -14,6 +14,7 @@ import SiteArchiveSite from './components/project-pages/SiteArchiveCite.js';
 import Coda from './components/project-pages/Coda.js';
 import HonorsProject from './components/HonorsProject.js';
 import MainSplash2D from './components/MainSplash2D.js';
+import Resume from './components/Resume.js';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="site-archive-cite" element={<SiteArchiveSite />} />
         <Route path="coda" element={<Coda />} />
         <Route path="honors-portfolio" element={<HonorsProject />} />
+        <Route path="resume" element={<Resume />} />
         <Route path="*" element={<MainSplash2D />} />
       </Routes>
     </div>

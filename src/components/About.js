@@ -10,7 +10,7 @@ import { IconContext } from "react-icons";
 function ModelViewer() {
     return (
         <>
-            <model-viewer style={{height: "150vh", width: "100%"}} src="img/aboutmefigure-compressed02.glb" camera-controls tone-mapping="commerce" poster="poster.webp"></model-viewer>  
+            <model-viewer style={{height: "150vh", width: "100%"}} src="img/aboutmefigure-compressed02-opt.glb" camera-controls tone-mapping="commerce" poster="poster.webp"></model-viewer>  
         </>
     )
 }

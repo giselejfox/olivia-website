@@ -10,7 +10,7 @@ import { IconContext } from "react-icons";
 function ModelViewer() {
     return (
         <>
-            <model-viewer style={{height: "150vh", width: "100%"}} src="img/aboutmefigure-compressed02-opt.glb" camera-controls tone-mapping="commerce" poster="poster.webp"></model-viewer>  
+            <model-viewer style={{height: "80vh", width: "100%"}} src="img/aboutmefigure-compressed02.glb" camera-controls tone-mapping="commerce" poster="img/poster.png"></model-viewer>  
         </>
     )
 }
@@ -21,8 +21,8 @@ export default function About() {
         <div>
             <Navbar />
             <div className="container">
-                <div className="row">
-                    <div className="col-12 col-md-5" style={{paddingRight: "5rem"}}>
+                <div className="row mx-md-5">
+                    <div className="col-12 col-md-6" style={{paddingRight: "5rem"}}>
                         <section>
                             <h1 className="mt-5 mb-4">HI, I'M OLIVIA OOMEN</h1>
                             <p className="mb-5">I'm an interdisciplinary creative focused on using design as a tool to shift culture and improve lives. Majoring in Industrial Design and being in the Interdisciplinary Honors Program at the University of Washington has allowed me to develop and use my skills synthesizing information and solving problems through design. When I'm not in the studio designing, I'm making music, drawing, bouldering with friends, drinking coffee & tea, visiting museums, going to the library, and developing photos taken on film.</p>
@@ -42,7 +42,7 @@ export default function About() {
                             </div>
                         </section>                   
                     </div>
-                    <div className="col-12 col-md-7">
+                    <div className="col-12 col-md-6">
                         <ModelViewer />
                     </div>
                 </div>

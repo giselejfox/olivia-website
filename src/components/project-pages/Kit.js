@@ -8,7 +8,7 @@ import TwoColumnImageLayout from "../project-sections/TwoColumnImageLayout"
 import Paragraph from "../project-sections/Paragraph"
 import { ImageCarousel } from "../project-sections/ImageCarousel"
 
-export default function Beam() {
+export default function Kit() {
 
     const researchImages1 = [
         {
@@ -40,26 +40,6 @@ export default function Beam() {
         {
             imageTitle: "beamtouchbar.jpg",
             altText: "someone touching the top of the balance board"  
-        },
-        {
-            imageTitle: 'beamrestingonfloorconcretefocalpoint.jpg',
-            altText: "someone using the balance board and looking at the projection on the floor"
-        },
-        {
-            imageTitle: "balancelamponshelf.jpg",
-            altText: "balance board lit up on a shelf"  
-        },
-        {
-            imageTitle: "balanceboardfrontcontext.jpg",
-            altText: "closeup of someone using the balance board"
-        },
-        { 
-            imageTitle: "balanceboardonshelf.jpg",
-            altText: "balance board on a shelf"
-        },
-        {
-            imageTitle: "black-beam-day.jpg",
-            altText: "black balance beam in a living room"  
         }
     ]
 
@@ -72,8 +52,8 @@ export default function Beam() {
                 <Navbar />
 
                 <ProjectHeader
-                    title="Beam"
-                    description="A balance board and lamp."
+                    title="Kit"
+                    description="Sick ass shoe."
                     projectType="INDIVIDUAL PROJECT"
                     duration="10 WEEKS"
                     date="DEC-MAR 2022"

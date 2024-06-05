@@ -15,6 +15,9 @@ import Coda from './components/project-pages/Coda.js';
 import HonorsProject from './components/HonorsProject.js';
 import MainSplash2D from './components/MainSplash2D.js';
 import Resume from './components/Resume.js';
+import Kit from './components/project-pages/Kit.js';
+import Motion from './components/project-pages/Motion.js';
+import Rest from './components/project-pages/Rest.js';
 
 function App() {
   return (
@@ -30,6 +33,9 @@ function App() {
         <Route path="conversation-ave" element={<ConversationAvenue />} />
         <Route path="site-archive-cite" element={<SiteArchiveSite />} />
         <Route path="coda" element={<Coda />} />
+        <Route path="kit" element={<Kit />} />
+        <Route path="motion" element={<Motion />} />
+        <Route path="Rest" element={<Rest />} />
         <Route path="honors-portfolio" element={<HonorsProject />} />
         <Route path="resume" element={<Resume />} />
         <Route path="*" element={<MainSplash2D />} />

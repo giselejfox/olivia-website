@@ -225,23 +225,28 @@ export function ProjectBar() {
     return (
         <div style={{ zIndex: 2 }} className="d-flex flex-wrap justify-content-center project-bar mb-5 pb-4">
             <div className="mx-2">
-                <Link className="main-splash-link fw-bold" to="/well" onClick={handleLinkClick}>
-                    WELL
-                </Link>
-            </div>
-            <div className="mx-2">
-                <Link className="main-splash-link fw-bold" to="/beam" onClick={handleLinkClick}>
-                    BEAM
-                </Link>
-            </div>
-            <div className="mx-2">
-                <Link className="main-splash-link fw-bold" to="/spur" onClick={handleLinkClick}>
-                    SPUR
-                </Link>
-            </div>
-            <div className="mx-2">
                 <Link className="main-splash-link fw-bold" to="/onsight" onClick={handleLinkClick}>
                     ONSIGHT
+                </Link>
+            </div>
+            <div className="mx-2">
+                <Link className="main-splash-link fw-bold" to="/kit" onClick={handleLinkClick}>
+                    KIT
+                </Link>
+            </div>
+            <div className="mx-2">
+                <Link className="main-splash-link fw-bold" to="/rest" onClick={handleLinkClick}>
+                    REST
+                </Link>
+            </div>
+            <div className="mx-2">
+                <Link className="main-splash-link fw-bold" to="/motion" onClick={handleLinkClick}>
+                    MOTION
+                </Link>
+            </div>
+            <div className="mx-2">
+                <Link className="main-splash-link fw-bold" to="/well" onClick={handleLinkClick}>
+                    WELL
                 </Link>
             </div>
             <div className="mx-2">
@@ -259,7 +264,16 @@ export function ProjectBar() {
                     CODA
                 </Link>
             </div>
+            {/* <div className="mx-2">
+                <Link className="main-splash-link fw-bold" to="/beam" onClick={handleLinkClick}>
+                    BEAM
+                </Link>
+            </div>
+            <div className="mx-2">
+                <Link className="main-splash-link fw-bold" to="/spur" onClick={handleLinkClick}>
+                    SPUR
+                </Link>
+            </div> */}
         </div>
-
     );
 }

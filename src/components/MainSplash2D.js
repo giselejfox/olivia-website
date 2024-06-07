@@ -35,13 +35,6 @@ function FloatingImages2D() {
 
     const navigate = useNavigate()
 
-    // const [mouseDown, setMouseDown] = useState(false)
-    // const [mouseMoveWhileDown, setMouseMoveWhileDown] = useState(false)
-
-    // This helps us double click to open the project page
-    // Will contain the time of the last body click and which body it clicked on
-    // const [lastMouseDownInfo, setLastMouseDownInfo] = useState({bodyLabel: "starter", date: 0})
-
     useEffect(() => {
 
         const engine = initializeEngine();

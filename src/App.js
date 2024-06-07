@@ -35,7 +35,7 @@ function App() {
         <Route path="coda" element={<Coda />} />
         <Route path="kit" element={<Kit />} />
         <Route path="motion" element={<Motion />} />
-        <Route path="Rest" element={<Rest />} />
+        <Route path="rest" element={<Rest />} />
         <Route path="honors-portfolio" element={<HonorsProject />} />
         <Route path="resume" element={<Resume />} />
         <Route path="*" element={<MainSplash2D />} />

@@ -52,14 +52,14 @@ export default function Motion() {
                 <Navbar />
 
                 <ProjectHeader
-                    title="Motion"
-                    description="I'm MOVINGGG"
-                    projectType="INDIVIDUAL PROJECT"
+                    title="MOTION"
+                    description="MOTION is the second edition of the REMADE BY UW DESIGN project, which focuses on upcycling. This limited edition collection of bags comes in three sizes, with two adjustable and removable straps. The bags are crafted from used retail banners and industrial printing offcuts, connecting waste from the beginning and end of the retail banner cycle into a single product."
+                    projectType="COLLABORATOR: SOPHIA ZENG, ADVISOR: KAREN CHENG"
                     duration="10 WEEKS"
-                    date="DEC-MAR 2022"
+                    date="MAR-JUN 2024"
                 /> 
 
-                <FullWidthImage project="Beam" imageName="beamonfloor3.jpg" altText="Man standing on a balance beam and another balance beams showing workout stats to the right" />
+                <FullWidthImage project="Motion" imageName="motionequation.gif" altText="A image showing industrial textile waste added to waste retail banners equals different bags" />
 
                 <SectionHeader text="RESEARCH" />
                 <FullWidthImage project="Beam" imageName="icons.jpg" />

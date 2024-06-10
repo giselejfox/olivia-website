@@ -64,7 +64,7 @@ function FloatingImages2D() {
         const conversationAve = createPicture(canvasWidth * .75, canvasHeight * .4, 'img/homepage-2d-floting-images/conversationavehomepage.png', .6, "conversation-ave");
         const guitarCaseBench = createPicture(canvasWidth * .85, canvasHeight * .85, 'img/homepage-2d-floting-images/guitarcasebenchhomepage.png', .1, "");
         const onsight = createPicture(canvasWidth * .1, canvasHeight * .75, 'img/homepage-2d-floting-images/onsighthomepage.png', .2, "onsight");
-        const spur = createPicture(canvasWidth * .1, canvasHeight * .2, 'img/homepage-2d-floting-images/spurhomepage.png', .15, "spur");
+        const spur = createPicture(canvasWidth * .1, canvasHeight * .2, 'img/homepage-2d-floting-images/spurhomepage.png', .14, "spur");
         const well = createPicture(canvasWidth * .5, canvasHeight * .8, 'img/homepage-2d-floting-images/wellhomepage.png', .2, "well");
         const motion = createPicture(canvasWidth * .5, canvasHeight * .8, 'img/homepage-2d-floting-images/motionhomepage.png', .08, "motion");
         const kit = createPicture(canvasWidth * .5, canvasHeight * .8, 'img/homepage-2d-floting-images/kithomepage.png', .2, "kit");

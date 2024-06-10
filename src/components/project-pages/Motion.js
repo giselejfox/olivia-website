@@ -20,7 +20,29 @@ export default function Motion() {
             altText: "boots standing on a balance board"  
         }
     ]
+
+    const wallImages = [
+        {
+            imageTitle: "remadefront.jpg",
+            altText: "sketched of kettle variations"
+        },
+        {
+            imageTitle: "remadewallwithperson.jpg",
+            altText: "paper prototype kettle variations"  
+        }
+    ]
     
+    const personImages = [
+        {
+            imageTitle: "remadeonfront.jpg",
+            altText: "sketched of kettle variations"
+        },
+        {
+            imageTitle: "remadeonback.jpg",
+            altText: "paper prototype kettle variations"  
+        }
+    ]
+
     const researchImages2 = [
         {
             imageTitle: "Benefits-of-Balance-Board-for-Physical--Mental-Health_3da1e39cd1b.jpg",
@@ -61,14 +83,13 @@ export default function Motion() {
 
                 <FullWidthImage project="Motion" imageName="motionequation.gif" altText="A image showing industrial textile waste added to waste retail banners equals different bags" />
 
-                <SectionHeader text="RESEARCH" />
-                <FullWidthImage project="Beam" imageName="icons.jpg" />
-                <Paragraph text={"Balance boards have several health benefits including increasing coordination, strengthening leg muscles, helping injury recovery, and improving posture. However, users can’t easily track their time balancing, it’s difficult to track progress over time, boards are difficult to store when not in use, aesthetics rarely blend well with home interiors, and it can be difficult to come up with new workout ideas. These pain points were seen as opportunities to enhance the user experience of balance boards using new technology and innovative design."} />
-                <TwoColumnImageLayout project="Beam" imageData={researchImages1} />
-                <TwoColumnImageLayout project="Beam" imageData={researchImages2} />
-
+                <SectionHeader text="SHOP" />
+                <TwoColumnImageLayout project="Motion" imageData={wallImages} />
+                <Paragraph text={"The project’s display in the ‘Shop the Show’ section of the 2024 UW Design Show at the Jacob Lawrence Gallery, where bags were available for sale."} />
+               
                 <SectionHeader text="INSPIRATION" />
-                <Paragraph text="Sustainable — Minimal — Elegant — Convertible" />
+                <TwoColumnImageLayout project="Motion" imageData={personImages} />
+                
                 <FullWidthImage project="Beam" imageName="collage-other-inspiration.jpg" altText="collage of colorful arched hallways, terazzo materials, and smart mirrors"/>
 
                 <SectionHeader text="IDEATION SKETCHING" />

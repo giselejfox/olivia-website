@@ -33,6 +33,7 @@ function FloatingImages2D() {
     const wellRef = useRef(null);
     const textRef = useRef(null);
     const motionRef = useRef(null);
+    const kitRef = useRef(null);
 
     const navigate = useNavigate()
 
@@ -66,6 +67,7 @@ function FloatingImages2D() {
         const spur = createPicture(canvasWidth * .1, canvasHeight * .2, 'img/homepage-2d-floting-images/spurhomepage.png', .15, "spur");
         const well = createPicture(canvasWidth * .5, canvasHeight * .8, 'img/homepage-2d-floting-images/wellhomepage.png', .2, "well");
         const motion = createPicture(canvasWidth * .5, canvasHeight * .8, 'img/homepage-2d-floting-images/motionhomepage.png', .08, "motion");
+        const kit = createPicture(canvasWidth * .5, canvasHeight * .8, 'img/homepage-2d-floting-images/kithomepage.png', .2, "kit");
 
         const text = Bodies.rectangle(canvasWidth / 2, canvasHeight / 2, 1, 1, {
             isStatic: true, // Set the body as static
@@ -85,6 +87,7 @@ function FloatingImages2D() {
         spurRef.current = spur;
         wellRef.current = well;
         motionRef.current = motion;
+        kitRef.current = kit;
         textRef.current = text
 
         // makes it spurt out
@@ -95,6 +98,7 @@ function FloatingImages2D() {
         Body.setAngularVelocity(spur, .1)
         Body.setAngularVelocity(well, .1)
         Body.setAngularVelocity(motion, .1)
+        Body.setAngularVelocity(kit, .1)
 
         const mouse = Mouse.create(render.canvas);
         const mouseConstraint = MouseConstraint.create(engine, {
@@ -129,7 +133,7 @@ function FloatingImages2D() {
             }
         });
 
-        World.add(engine.world, [...walls, text, beam, conversationAve, guitarCaseBench, onsight, spur, well, motion]);
+        World.add(engine.world, [...walls, text, beam, conversationAve, guitarCaseBench, onsight, spur, well, motion, kit]);
         World.add(engine.world, mouseConstraint);
 
         Runner.run(engine);

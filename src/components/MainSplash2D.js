@@ -98,7 +98,7 @@ function FloatingImages2D() {
         Body.setAngularVelocity(spur, .1)
         Body.setAngularVelocity(well, .1)
         Body.setAngularVelocity(motion, .1)
-        Body.setAngularVelocity(kit, .1)
+        // Body.setAngularVelocity(kit, .1)
 
         const mouse = Mouse.create(render.canvas);
         const mouseConstraint = MouseConstraint.create(engine, {

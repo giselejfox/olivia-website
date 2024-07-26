@@ -33,6 +33,7 @@ function FloatingImages2D() {
     const wellRef = useRef(null);
     const textRef = useRef(null);
     const motionRef = useRef(null);
+    const kitRef = useRef(null);
 
     const navigate = useNavigate()
 
@@ -97,6 +98,7 @@ function FloatingImages2D() {
         Body.setAngularVelocity(spur, .1)
         Body.setAngularVelocity(well, .1)
         Body.setAngularVelocity(motion, .1)
+        Body.setAngularVelocity(kit, .1)
 
         const mouse = Mouse.create(render.canvas);
         const mouseConstraint = MouseConstraint.create(engine, {
@@ -131,7 +133,7 @@ function FloatingImages2D() {
             }
         });
 
-        World.add(engine.world, [...walls, text, beam, conversationAve, guitarCaseBench, onsight, spur, well, motion]);
+        World.add(engine.world, [...walls, text, beam, conversationAve, guitarCaseBench, onsight, spur, well, motion, kit]);
         World.add(engine.world, mouseConstraint);
 
         Runner.run(engine);

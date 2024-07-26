@@ -52,14 +52,20 @@ export default function Kit() {
                 <Navbar />
 
                 <ProjectHeader
-                    title="Kit"
-                    description="Sick ass shoe."
-                    projectType="INDIVIDUAL PROJECT"
+                    title="KIT"
+                    description="KIT is a modular shoe system created to address the
+                    footwear industry’s sustainability crisis. Balancing
+                    self‑expression with environmental responsibility, the
+                    three‑part system can be quickly separated to swap out
+                    styles, making repair and recycling much simpler.
+                    Highly functional without sacrificing style, KIT helps save
+                    space in your closet and in our landfills."
+                    projectType="COLLABORATORS: SARAH KLASSEN, NAOMI PLEASURE-PARK"
                     duration="10 WEEKS"
-                    date="DEC-MAR 2022"
+                    date="MAR-JUN 2024"
                 /> 
 
-                <FullWidthImage project="Beam" imageName="beamonfloor3.jpg" altText="Man standing on a balance beam and another balance beams showing workout stats to the right" />
+                <FullWidthImage project="Kit" imageName="kitParts.jpg" altText="Man standing on a balance beam and another balance beams showing workout stats to the right" />
 
                 <SectionHeader text="RESEARCH" />
                 <FullWidthImage project="Beam" imageName="icons.jpg" />

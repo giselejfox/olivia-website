@@ -106,25 +106,6 @@ export default function Motion() {
                 <SectionHeader text="CONTEXT" />
                 <TwoColumnImageLayout project="Motion" imageData={personImages} />
                 
-                <SectionHeader text="IDEATION" />
-                <FullWidthImage project="Beam" imageName="sketching.jpg" altText="collage of balance beam sketches"/>
-
-                <SectionHeader text="CONCEPT RENDERS" />
-                <FullWidthImage project="Beam" imageName="beamrestingonfloor.13.jpg" altText="View beam on the floor" />
-                
-                <Spacer />
-
-                <Paragraph text={"Storing balance boards is often challenging given they are used frequently and are an irregular, fairly large form. Beam eliminates this issue by turning into a lamp with adjustable colors when not in use, making it aesthetically pleasing to keep out."} />
-                <FullWidthImage project="Beam" imageName="Beamlightlivingroom.jpg" altText="beam in a living room at dusk" />
-                
-                <Spacer />
-
-                <Paragraph text={"Beam utilizes smart technology to provide on enhanced experience. A mini projector with the ability to adjust angles is embedded on the top of Beam's base alongside surface sensing technology. This projector displays the inter­face on the board, which slides into the base and is stabilized by magnets embedded in the base and the board's frame. Users can navigate the inter­face using the touch bar. Workout statistics are stored in Beam's interface that can be navigated using the touch bar on the top of the base. Users can track progress including their average time and success rate for a workout for specific days, weeks, and months."} />
-
-                <Spacer />
-
-                <Paragraph text={"Beam offers users ideas for different exercises and workout routines, including but not limited to balancing time trials, planks, squats, mountain climbers, tricep dips, and controlled board movements. Beam allows users to set an amount of time for their workout of choice. When balancing, a focal point is projected on the floor or the wall which aids the user in balancing. The amount of time that has passed is displayed as the progress circles surrounding the focal point are slowly filled. "} />
-               
                 <Spacer />
                 <Navbar />
 

@@ -76,7 +76,7 @@ function FloatingImages2D() {
                 sprite: {
                     texture: 'img/homepage-2d-floting-images/texthomepage.png',
                     xScale: isBigScreen(canvasWidth) ? .2 : .1,
-                    yScale: isBigScreen(canvasWidth) ? .1 : .1,
+                    yScale: isBigScreen(canvasWidth) ? .2 : .1,
                 }
             }
         });
@@ -133,7 +133,7 @@ function FloatingImages2D() {
             }
         });
 
-        World.add(engine.world, [...walls, text, beam, conversationAve, guitarCaseBench, onsight, spur, well, motion, kit]);
+        World.add(engine.world, [...walls, text, beam, conversationAve, guitarCaseBench, onsight, spur, well, motion]);
         World.add(engine.world, mouseConstraint);
 
         Runner.run(engine);

@@ -137,7 +137,7 @@ function FloatingImages2D() {
             }
         });
 
-        World.add(engine.world, [...walls, text, beam, conversationAve, guitarCaseBench, onsight, spur, well, motion]);
+        World.add(engine.world, [...walls, text, beam, conversationAve, guitarCaseBench, onsight, spur, well, motion, kit]);
         World.add(engine.world, mouseConstraint);
 
         Runner.run(engine);
@@ -234,21 +234,21 @@ export function ProjectBar() {
                     ONSIGHT
                 </Link>
             </div>
-            {/* <div className="mx-2">
+            <div className="mx-2">
                 <Link className="main-splash-link fw-bold" to="/kit" onClick={handleLinkClick}>
                     KIT
                 </Link>
             </div>
-            <div className="mx-2">
+            {/* <div className="mx-2">
                 <Link className="main-splash-link fw-bold" to="/rest" onClick={handleLinkClick}>
                     REST
                 </Link>
-            </div>
+            </div> */}
             <div className="mx-2">
                 <Link className="main-splash-link fw-bold" to="/motion" onClick={handleLinkClick}>
                     MOTION
                 </Link>
-            </div> */}
+            </div>
             <div className="mx-2">
                 <Link className="main-splash-link fw-bold" to="/well" onClick={handleLinkClick}>
                     WELL

@@ -60,22 +60,23 @@ function FloatingImages2D() {
         const canvasWidth = window.innerWidth; 
         const canvasHeight = window.innerHeight; 
 
-        const beam = createPicture(canvasWidth * .55, canvasHeight * .3, 'img/homepage-2d-floting-images/beamhomepage.png', .3, "beam");
-        const conversationAve = createPicture(canvasWidth * .75, canvasHeight * .4, 'img/homepage-2d-floting-images/conversationavehomepage.png', .6, "conversation-ave");
-        const guitarCaseBench = createPicture(canvasWidth * .85, canvasHeight * .85, 'img/homepage-2d-floting-images/guitarcasebenchhomepage.png', .1, "");
-        const onsight = createPicture(canvasWidth * .1, canvasHeight * .75, 'img/homepage-2d-floting-images/onsighthomepage.png', .2, "onsight");
-        const spur = createPicture(canvasWidth * .1, canvasHeight * .2, 'img/homepage-2d-floting-images/spurhomepage.png', .14, "spur");
-        const well = createPicture(canvasWidth * .5, canvasHeight * .8, 'img/homepage-2d-floting-images/wellhomepage.png', .2, "well");
-        const motion = createPicture(canvasWidth * .5, canvasHeight * .8, 'img/homepage-2d-floting-images/motionhomepage.png', .08, "motion");
-        const kit = createPicture(canvasWidth * .5, canvasHeight * .8, 'img/homepage-2d-floting-images/kithomepage.png', .2, "kit");
+        function isBigScreen(canvasWidth) { return canvasWidth >= 768 }
+
+        const beam = createPicture(canvasWidth * .55, canvasHeight * .3, 'img/homepage-2d-floting-images/beamhomepage.png', isBigScreen(canvasWidth) ? .4 : .2, "beam");
+        const conversationAve = createPicture(canvasWidth * .75, canvasHeight * .4, 'img/homepage-2d-floting-images/conversationavehomepage.png', isBigScreen(canvasWidth) ? .6 : .3, "conversation-ave");
+        const guitarCaseBench = createPicture(canvasWidth * .85, canvasHeight * .85, 'img/homepage-2d-floting-images/guitarcasebenchhomepage.png', isBigScreen(canvasWidth) ? .1 : .05, "");
+        const onsight = createPicture(canvasWidth * .1, canvasHeight * .75, 'img/homepage-2d-floting-images/onsighthomepage.png', isBigScreen(canvasWidth) ? .2 : .1, "onsight");
+        const spur = createPicture(canvasWidth * .1, canvasHeight * .2, 'img/homepage-2d-floting-images/spurhomepage.png', isBigScreen(canvasWidth) ? .15 : .07, "spur");
+        const well = createPicture(canvasWidth * .5, canvasHeight * .8, 'img/homepage-2d-floting-images/wellhomepage.png', isBigScreen(canvasWidth) ? .2 : .1, "well");
+        const motion = createPicture(canvasWidth * .5, canvasHeight * .8, 'img/homepage-2d-floting-images/motionhomepage.png', isBigScreen(canvasWidth) ? .08 : .04, "motion");
 
         const text = Bodies.rectangle(canvasWidth / 2, canvasHeight / 2, 1, 1, {
             isStatic: true, // Set the body as static
             render: {
                 sprite: {
                     texture: 'img/homepage-2d-floting-images/texthomepage.png',
-                    xScale: .2,
-                    yScale: .2,
+                    xScale: isBigScreen(canvasWidth) ? .2 : .1,
+                    yScale: isBigScreen(canvasWidth) ? .1 : .1,
                 }
             }
         });
@@ -87,7 +88,6 @@ function FloatingImages2D() {
         spurRef.current = spur;
         wellRef.current = well;
         motionRef.current = motion;
-        kitRef.current = kit;
         textRef.current = text
 
         // makes it spurt out
@@ -98,7 +98,7 @@ function FloatingImages2D() {
         Body.setAngularVelocity(spur, .1)
         Body.setAngularVelocity(well, .1)
         Body.setAngularVelocity(motion, .1)
-        Body.setAngularVelocity(kit, .1)
+        // Body.setAngularVelocity(kit, .1)
 
         const mouse = Mouse.create(render.canvas);
         const mouseConstraint = MouseConstraint.create(engine, {
@@ -230,7 +230,7 @@ export function ProjectBar() {
                     ONSIGHT
                 </Link>
             </div>
-            <div className="mx-2">
+            {/* <div className="mx-2">
                 <Link className="main-splash-link fw-bold" to="/kit" onClick={handleLinkClick}>
                     KIT
                 </Link>
@@ -244,7 +244,7 @@ export function ProjectBar() {
                 <Link className="main-splash-link fw-bold" to="/motion" onClick={handleLinkClick}>
                     MOTION
                 </Link>
-            </div>
+            </div> */}
             <div className="mx-2">
                 <Link className="main-splash-link fw-bold" to="/well" onClick={handleLinkClick}>
                     WELL
@@ -265,7 +265,7 @@ export function ProjectBar() {
                     CODA
                 </Link>
             </div>
-            {/* <div className="mx-2">
+            <div className="mx-2">
                 <Link className="main-splash-link fw-bold" to="/beam" onClick={handleLinkClick}>
                     BEAM
                 </Link>
@@ -274,7 +274,7 @@ export function ProjectBar() {
                 <Link className="main-splash-link fw-bold" to="/spur" onClick={handleLinkClick}>
                     SPUR
                 </Link>
-            </div> */}
+            </div>
         </div>
     );
 }

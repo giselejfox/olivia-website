@@ -69,6 +69,9 @@ function FloatingImages2D() {
         const spur = createPicture(canvasWidth * .1, canvasHeight * .2, 'img/homepage-2d-floting-images/spurhomepage.png', isBigScreen(canvasWidth) ? .15 : .07, "spur");
         const well = createPicture(canvasWidth * .5, canvasHeight * .8, 'img/homepage-2d-floting-images/wellhomepage.png', isBigScreen(canvasWidth) ? .2 : .1, "well");
         const motion = createPicture(canvasWidth * .5, canvasHeight * .8, 'img/homepage-2d-floting-images/motionhomepage.png', isBigScreen(canvasWidth) ? .08 : .04, "motion");
+        const kit = createPicture(canvasWidth * .9, canvasHeight * .9, 'img/homepage-2d-floting-images/kithomepage.png', isBigScreen(canvasWidth) ? .2 : .4, "kit");
+
+        
 
         const text = Bodies.rectangle(canvasWidth / 2, canvasHeight / 2, 1, 1, {
             isStatic: true, // Set the body as static
@@ -88,6 +91,7 @@ function FloatingImages2D() {
         spurRef.current = spur;
         wellRef.current = well;
         motionRef.current = motion;
+        kitRef.current=kit;
         textRef.current = text
 
         // makes it spurt out
@@ -98,7 +102,7 @@ function FloatingImages2D() {
         Body.setAngularVelocity(spur, .1)
         Body.setAngularVelocity(well, .1)
         Body.setAngularVelocity(motion, .1)
-        // Body.setAngularVelocity(kit, .1)
+        Body.setAngularVelocity(kit, .1)
 
         const mouse = Mouse.create(render.canvas);
         const mouseConstraint = MouseConstraint.create(engine, {

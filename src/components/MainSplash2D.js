@@ -6,6 +6,24 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from "./Navbar";
 
 export default function MainSplash2D() {
+    // Add resize event listener to the main component
+    useEffect(() => {
+        let resizeTimer;
+        const handleResize = () => {
+            clearTimeout(resizeTimer);
+            // Debounce the resize event to prevent multiple reloads
+            resizeTimer = setTimeout(() => {
+                window.location.reload();
+            }, 250);
+        };
+
+        window.addEventListener('resize', handleResize);
+        
+        return () => {
+            window.removeEventListener('resize', handleResize);
+            clearTimeout(resizeTimer);
+        };
+    }, []);
 
     return (
         <div>
@@ -20,7 +38,6 @@ export default function MainSplash2D() {
 
 
 function FloatingImages2D() {
-
     const boxRef = useRef(null);
     const canvasRef = useRef(null);
 
@@ -38,7 +55,6 @@ function FloatingImages2D() {
     const navigate = useNavigate()
 
     useEffect(() => {
-
         const engine = initializeEngine();
         const render = initializeRender(engine, canvasRef, boxRef);
         const walls = createWalls();
@@ -60,8 +76,6 @@ function FloatingImages2D() {
         const canvasWidth = window.innerWidth; 
         const canvasHeight = window.innerHeight; 
 
-        // function isBigScreen { return canvasWidth >= 768 }
-
         const isBigScreen = canvasWidth >= 768
 
         const beam = createPicture(canvasWidth * .55, canvasHeight * .3, 'img/homepage-2d-floting-images/beamhomepage.png', isBigScreen ? .4 : .2, "beam");
@@ -71,7 +85,7 @@ function FloatingImages2D() {
         const spur = createPicture(canvasWidth * .1, canvasHeight * .2, 'img/homepage-2d-floting-images/spurhomepage.png', isBigScreen ? .15 : .07, "spur");
         const well = createPicture(canvasWidth * .5, canvasHeight * .8, 'img/homepage-2d-floting-images/wellhomepage.png', isBigScreen ? .2 : .1, "well");
         const motion = createPicture(canvasWidth * .5, canvasHeight * .8, 'img/homepage-2d-floting-images/motionhomepage.png', isBigScreen ? .08 : .04, "motion");
-        const kit = createPicture(canvasWidth * .9, canvasHeight * .9, 'img/homepage-2d-floting-images/kithomepage.png', isBigScreen ? .2 : .4, "kit");
+        const kit = createPicture(canvasWidth * .9, canvasHeight * .9, 'img/homepage-2d-floting-images/kithomepage.png', isBigScreen ? .2 : .2, "kit");
 
         const text = Bodies.rectangle(canvasWidth / 2, canvasHeight / 2, 1, 1, {
             isStatic: true, // Set the body as static
@@ -143,6 +157,14 @@ function FloatingImages2D() {
         Runner.run(engine);
         Render.run(render);
 
+        // Clean up on component unmount
+        return () => {
+            Render.stop(render);
+            World.clear(engine.world);
+            Engine.clear(engine);
+            render.canvas.remove();
+            render.canvas = null;
+        };
     }, []);
 
     return (
@@ -180,7 +202,6 @@ const initializeEngine = () => {
 };
 
 const initializeRender = (engine, canvasRef, boxRef) => {
-
     const windowHeight = window.innerHeight
     const windowWidth = window.innerWidth
 
@@ -222,7 +243,6 @@ const createWalls = () => {
 };
 
 export function ProjectBar() {
-
     const handleLinkClick = () => {
         window.scrollTo(0, 0);
     }

@@ -1,3 +1,5 @@
+import { useState } from "react"
+
 import Navbar from "../Navbar"
 
 import ProjectHeader from "../project-sections/ProjectHeader"
@@ -7,6 +9,8 @@ import Spacer from "../project-sections/Spacer"
 import TwoColumnImageLayout from "../project-sections/TwoColumnImageLayout"
 import Paragraph from "../project-sections/Paragraph"
 import { ImageCarousel } from "../project-sections/ImageCarousel"
+import { client } from '../../client'
+import { useEffect } from "react"
 
 export default function Beam() {
 
@@ -63,6 +67,25 @@ export default function Beam() {
         }
     ]
 
+    const [articleTitle, setArticleTitle] = useState("")
+
+    useEffect(() => {
+        const fetchSectionInfo = async () => {
+            try {
+                const response = await client.getEntries({content_type: 'projectPage' })
+                console.log(response)
+
+                setArticleTitle(response.items[0].fields.externalTitle)
+
+            } catch (err) {
+                console.error(err)
+            }
+        }
+
+        fetchSectionInfo()
+    })
+
+
     return(
         <div>
             <div style={{background:"white", zIndex: 2}}>
@@ -72,7 +95,7 @@ export default function Beam() {
                 <Navbar />
 
                 <ProjectHeader
-                    title="Beam"
+                    title={articleTitle}
                     description="A balance board and lamp."
                     projectType="INDIVIDUAL PROJECT"
                     duration="10 WEEKS"

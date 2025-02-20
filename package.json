@@ -20,6 +20,7 @@
     "ammo.js": "^0.0.10",
     "bootstrap": "^5.3.1",
     "cannon": "^0.6.2",
+    "contentful": "^10.15.1",
     "drei": "^2.2.21",
     "firebase": "^10.3.1",
     "framer-motion": "^10.16.16",

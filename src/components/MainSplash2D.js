@@ -60,26 +60,26 @@ function FloatingImages2D() {
         const canvasWidth = window.innerWidth; 
         const canvasHeight = window.innerHeight; 
 
-        function isBigScreen(canvasWidth) { return canvasWidth >= 768 }
+        // function isBigScreen { return canvasWidth >= 768 }
 
-        const beam = createPicture(canvasWidth * .55, canvasHeight * .3, 'img/homepage-2d-floting-images/beamhomepage.png', isBigScreen(canvasWidth) ? .4 : .2, "beam");
-        const conversationAve = createPicture(canvasWidth * .75, canvasHeight * .4, 'img/homepage-2d-floting-images/conversationavehomepage.png', isBigScreen(canvasWidth) ? .6 : .3, "conversation-ave");
-        const guitarCaseBench = createPicture(canvasWidth * .85, canvasHeight * .85, 'img/homepage-2d-floting-images/guitarcasebenchhomepage.png', isBigScreen(canvasWidth) ? .1 : .05, "");
-        const onsight = createPicture(canvasWidth * .1, canvasHeight * .75, 'img/homepage-2d-floting-images/onsighthomepage.png', isBigScreen(canvasWidth) ? .2 : .1, "onsight");
-        const spur = createPicture(canvasWidth * .1, canvasHeight * .2, 'img/homepage-2d-floting-images/spurhomepage.png', isBigScreen(canvasWidth) ? .15 : .07, "spur");
-        const well = createPicture(canvasWidth * .5, canvasHeight * .8, 'img/homepage-2d-floting-images/wellhomepage.png', isBigScreen(canvasWidth) ? .2 : .1, "well");
-        const motion = createPicture(canvasWidth * .5, canvasHeight * .8, 'img/homepage-2d-floting-images/motionhomepage.png', isBigScreen(canvasWidth) ? .08 : .04, "motion");
-        const kit = createPicture(canvasWidth * .9, canvasHeight * .9, 'img/homepage-2d-floting-images/kithomepage.png', isBigScreen(canvasWidth) ? .2 : .4, "kit");
+        const isBigScreen = canvasWidth >= 768
 
-        
+        const beam = createPicture(canvasWidth * .55, canvasHeight * .3, 'img/homepage-2d-floting-images/beamhomepage.png', isBigScreen ? .4 : .2, "beam");
+        const conversationAve = createPicture(canvasWidth * .75, canvasHeight * .4, 'img/homepage-2d-floting-images/conversationavehomepage.png', isBigScreen ? .6 : .3, "conversation-ave");
+        const guitarCaseBench = createPicture(canvasWidth * .85, canvasHeight * .85, 'img/homepage-2d-floting-images/guitarcasebenchhomepage.png', isBigScreen ? .1 : .05, "");
+        const onsight = createPicture(canvasWidth * .1, canvasHeight * .75, 'img/homepage-2d-floting-images/onsighthomepage.png', isBigScreen ? .2 : .1, "onsight");
+        const spur = createPicture(canvasWidth * .1, canvasHeight * .2, 'img/homepage-2d-floting-images/spurhomepage.png', isBigScreen ? .15 : .07, "spur");
+        const well = createPicture(canvasWidth * .5, canvasHeight * .8, 'img/homepage-2d-floting-images/wellhomepage.png', isBigScreen ? .2 : .1, "well");
+        const motion = createPicture(canvasWidth * .5, canvasHeight * .8, 'img/homepage-2d-floting-images/motionhomepage.png', isBigScreen ? .08 : .04, "motion");
+        const kit = createPicture(canvasWidth * .9, canvasHeight * .9, 'img/homepage-2d-floting-images/kithomepage.png', isBigScreen ? .2 : .4, "kit");
 
         const text = Bodies.rectangle(canvasWidth / 2, canvasHeight / 2, 1, 1, {
             isStatic: true, // Set the body as static
             render: {
                 sprite: {
                     texture: 'img/homepage-2d-floting-images/texthomepage.png',
-                    xScale: isBigScreen(canvasWidth) ? .2 : .1,
-                    yScale: isBigScreen(canvasWidth) ? .2 : .1,
+                    xScale: isBigScreen ? .2 : .1,
+                    yScale: isBigScreen ? .2 : .1,
                 }
             }
         });

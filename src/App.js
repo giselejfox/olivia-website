@@ -1,13 +1,14 @@
 import { Routes, Route } from 'react-router-dom'
 
-import MainSplash from './components/MainSplash';
+import { useState, useEffect } from 'react';
+
+// import MainSplash from './components/MainSplash';
 import About from './components/About';
 
 import Well from './components/project-pages/Well';
 import Beam from './components/project-pages/Beam';
 import Spur from './components/project-pages/Spur.js'
 import Onsight from './components/project-pages/Onsight.js'
-
 // import SoleOpinion from './components/SoleOpinion.js';
 import ConversationAvenue from './components/project-pages/ConversationAvenue.js';
 import SiteArchiveSite from './components/project-pages/SiteArchiveCite.js';
@@ -18,12 +19,29 @@ import Resume from './components/Resume.js';
 import Kit from './components/project-pages/Kit.js';
 import Motion from './components/project-pages/Motion.js';
 import Rest from './components/project-pages/Rest.js';
+import ProjectListingPage from './components/ProjectListingPage.js';
+
+function ResponsiveHome() {
+  const [isBigScreen, setIsBigScreen] = useState(window.innerWidth > 768);
+
+  useEffect(() => {
+    const checkScreen = () => setIsBigScreen(window.innerWidth > 768);
+    window.addEventListener('resize', checkScreen);
+    return () => window.removeEventListener('resize', checkScreen);
+  }, []);
+
+  console.log("isBigScreen:", isBigScreen);
+
+  return isBigScreen ? <MainSplash2D /> : <ProjectListingPage />;
+}
 
 function App() {
+
   return (
     <div>
       <Routes>
-        <Route index element={<MainSplash2D />} />
+        <Route index element={<ResponsiveHome />} />
+        {/* <Route index element={ <ProjectListingPage />} /> */}
         <Route path="about" element={<About />} />
         {/* <Route path="sole-opinion" element={<SoleOpinion />} /> */}
         <Route path="well" element={<Well />} />
